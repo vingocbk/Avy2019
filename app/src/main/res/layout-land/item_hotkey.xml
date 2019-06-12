@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="1">
+
+        <TextView
+                style="@style/Regular_H5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:layout_marginLeft="@dimen/padding_24dp"
+                android:layout_marginRight="@dimen/padding_24dp"
+                android:background="@drawable/ic_border"
+                android:textColor="@color/md_grey_white"
+                android:text="Đóng/ Mở"/>
+
+        <TextView
+                style="@style/Regular_H5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:layout_marginLeft="@dimen/padding_24dp"
+                android:layout_marginRight="@dimen/padding_24dp"
+                android:background="@drawable/ic_border"
+                android:textColor="@color/md_grey_white"
+                android:text="Đóng/ Mở"/>
+
+
+        <TextView
+                style="@style/Regular_H5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:layout_marginLeft="@dimen/padding_24dp"
+                android:layout_marginRight="@dimen/padding_24dp"
+                android:background="@drawable/ic_border"
+                android:textColor="@color/md_grey_white"
+                android:text="Đóng/ Mở"/>
+
+
+        <TextView
+                style="@style/Regular_H5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:layout_marginLeft="@dimen/padding_24dp"
+                android:layout_marginRight="@dimen/padding_24dp"
+                android:background="@drawable/ic_border"
+                android:textColor="@color/md_grey_white"
+                android:text="Đóng/ Mở"/>
+
+
+        <TextView
+                style="@style/Regular_H5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:layout_marginLeft="@dimen/padding_24dp"
+                android:layout_marginRight="@dimen/padding_24dp"
+                android:background="@drawable/ic_border"
+                android:textColor="@color/md_grey_white"
+                android:text="Đóng/ Mở"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        <TextView
+                style="@style/Regular_H5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:layout_marginLeft="@dimen/padding_24dp"
+                android:layout_marginRight="@dimen/padding_24dp"
+                android:background="@drawable/bg_border"
+                android:textColor="@color/md_grey_800_dark"
+                android:text="@string/txt_hotkey"/>
+
+        <TextView
+                style="@style/Regular_H5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:layout_marginLeft="@dimen/padding_24dp"
+                android:layout_marginRight="@dimen/padding_24dp"
+                android:background="@drawable/bg_border"
+                android:textColor="@color/md_grey_800_dark"
+                android:text="@string/txt_hotkey"/>
+
+        <TextView
+                style="@style/Regular_H5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:layout_marginLeft="@dimen/padding_24dp"
+                android:layout_marginRight="@dimen/padding_24dp"
+                android:background="@drawable/bg_border"
+                android:textColor="@color/md_grey_800_dark"
+                android:text="@string/txt_hotkey"/>
+
+
+        <TextView
+                style="@style/Regular_H5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:layout_marginLeft="@dimen/padding_24dp"
+                android:layout_marginRight="@dimen/padding_24dp"
+                android:background="@drawable/bg_border"
+                android:textColor="@color/md_grey_800_dark"
+                android:text="@string/txt_hotkey"/>
+
+
+        <TextView
+                style="@style/Regular_H5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:layout_marginLeft="@dimen/padding_24dp"
+                android:layout_marginRight="@dimen/padding_24dp"
+                android:background="@drawable/bg_border"
+                android:textColor="@color/md_grey_800_dark"
+                android:text="@string/txt_hotkey"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</LinearLayout>

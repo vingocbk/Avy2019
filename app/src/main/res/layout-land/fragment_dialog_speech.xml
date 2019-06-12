@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_border_dialog"
+        android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/icon_with_64dp"
+            android:layout_height="@dimen/icon_with_64dp"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="@dimen/padding_16dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_logo_64"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Regular_H4"
+            android:id="@+id/tv_speech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/md_grey_white"
+            android:text="@string/txt_talk"
+            tools:text="Hãy nói gì đó ...."/>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_speech"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/padding_16dp"
+            android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

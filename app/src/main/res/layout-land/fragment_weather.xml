@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/layout_weather"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@drawable/ic_clear_sky"
+                android:layout_height="match_parent">
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3B000000"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                <com.arbelkilani.clock.Clock
+                        android:id="@+id/clock"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/padding_8dp"
+                        app:minutes_values_factor="0.3"
+                        app:seconds_progress_factor="0.4"
+                        app:minutes_progress_factor="0"
+                        app:clock_value_step="quarter"
+                        app:border_color="@color/md_grey_white"
+                        app:show_center="true"
+                        app:center_outer_color="@color/md_grey_white"
+                        app:center_inner_color="@color/md_grey_white"
+                        app:clock_value_disposition="alternate"
+                        app:show_hours_values="false"
+                        app:show_degree="true"
+                        app:hours_needle_color="@color/md_grey_white"
+                        app:minutes_needle_color="@color/md_grey_white"
+                        app:seconds_needle_color="@color/md_grey_white"
+                        app:degree_color="@color/md_grey_white"
+                        app:show_seconds_needle="true"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_date"
+                        style="@style/Regular_H2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_marginBottom="@dimen/padding_8dp"
+                        android:text="Thứ ba , 30 tháng 01"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="6">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center|bottom"
+                        android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_weather_status"
+                            android:layout_width="@dimen/icon_with_48dp"
+                            android:layout_height="@dimen/icon_with_48dp"
+                            android:layout_marginBottom="@dimen/padding_8dp"
+                            android:src="@drawable/ic_sunny_cloudy"/>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_weathre_status"
+                            style="@style/Regular_H2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/md_grey_white"
+                            android:text="Trời nhiều mây"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center|bottom"
+                        android:layout_height="match_parent">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding_8dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_temperature"
+                                style="@style/Regular_H8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/md_grey_white"
+                                android:text="28"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_degree"
+                                style="@style/Regular_H3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/md_grey_white"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@+id/tv_temperature"
+                                android:text="o"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Regular_H8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/md_grey_white"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@+id/tv_degree"
+                                android:text="C"/>
+                    </RelativeLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_location"
+                            style="@style/Regular_H5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/md_grey_white"
+                            android:text="Hà Nội"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="@dimen/icon_with_56dp"
+                            android:layout_height="@dimen/icon_with_48dp"
+                            android:gravity="center"
+                            android:background="@drawable/bg_border_weather"
+                            android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_with_24dp"
+                                android:layout_height="@dimen/icon_with_24dp"
+                                android:src="@drawable/icon_in_house"/>
+
+
+                        <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_insider_temperature"
+                                    style="@style/Regular_H3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/md_grey_white"
+                                    android:text="28"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                    android:textSize="10sp"
+                                    android:id="@+id/tv_inside_degree"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/md_grey_white"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_toRightOf="@+id/tv_insider_temperature"
+                                    android:text="o"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/Regular_H3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/md_grey_white"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_toRightOf="@+id/tv_inside_degree"
+                                    android:text="C"/>
+
+                        </RelativeLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="@dimen/icon_with_56dp"
+                            android:layout_height="@dimen/icon_with_48dp"
+                            android:gravity="center"
+                            android:background="@drawable/bg_border_weather"
+                            android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_with_24dp"
+                                android:layout_height="@dimen/icon_with_24dp"
+                                android:src="@drawable/icon_out_house"/>
+
+                        <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_outside_temperature"
+                                    style="@style/Regular_H3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/md_grey_white"
+                                    android:text="28"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_outside_degree"
+                                    android:textSize="7sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/md_grey_white"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_toRightOf="@+id/tv_outside_temperature"
+                                    android:text="o"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/Regular_H3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/md_grey_white"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_toRightOf="@+id/tv_outside_degree"
+                                    android:text="C"/>
+
+                        </RelativeLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="@dimen/icon_with_56dp"
+                            android:layout_height="@dimen/icon_with_48dp"
+                            android:gravity="center"
+                            android:background="@drawable/bg_border_weather"
+                            android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_with_24dp"
+                                android:layout_height="@dimen/icon_with_24dp"
+                                android:padding="@dimen/padding_2dp"
+                                android:src="@drawable/icon_humidity"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_humidity_temperature"
+                                style="@style/Regular_H3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/md_grey_white"
+                                android:text="28%"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</RelativeLayout>

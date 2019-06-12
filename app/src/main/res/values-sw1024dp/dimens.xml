@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--text size all app.-->
+    <dimen name="txt_12sp">17sp</dimen>
+    <dimen name="txt_13sp">18sp</dimen>
+    <dimen name="txt_14sp">20sp</dimen>
+    <dimen name="txt_15sp">21sp</dimen>
+    <dimen name="txt_16sp">23sp</dimen>
+    <dimen name="txt_18sp">26sp</dimen>
+    <dimen name="txt_20sp">28sp</dimen>
+    <dimen name="txt_22sp">31sp</dimen>
+    <dimen name="txt_40sp">57sp</dimen>
+
+    <dimen name="padding_2dp">3dp</dimen>
+    <dimen name="padding_4dp">4dp</dimen>
+    <dimen name="padding_6dp">9dp</dimen>
+    <dimen name="padding_8dp">11dp</dimen>
+    <dimen name="padding_10dp">14dp</dimen>
+    <dimen name="padding_12dp">17dp</dimen>
+    <dimen name="padding_15dp">21dp</dimen>
+    <dimen name="padding_16dp">23dp</dimen>
+    <dimen name="padding_18dp">26dp</dimen>
+    <dimen name="padding_24dp">34dp</dimen>
+    <dimen name="padding_32dp">46dp</dimen>
+    <dimen name="padding_40dp">57dp</dimen>
+
+    <dimen name="icon_with_16dp">23dp</dimen>
+    <dimen name="icon_with_24dp">34dp</dimen>
+    <dimen name="icon_with_48dp">68dp</dimen>
+    <dimen name="icon_with_56dp">80dp</dimen>
+    <dimen name="icon_with_64dp">91dp</dimen>
+    <dimen name="icon_with_72dp">242dp</dimen>
+    <dimen name="icon_with_130dp">185dp</dimen>
+    <dimen name="icon_with_120dp">171dp</dimen>
+
+</resources>

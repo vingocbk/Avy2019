@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/md_grey_black">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/padding_10dp"
+            android:layout_weight="3.1">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/color_black"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/padding_10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Bold_H7"
+                    android:textColor="@color/md_grey_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/padding_32dp"
+                    android:text="@string/txt_smelly_smell"/>
+
+            <com.suke.widget.SwitchButton
+                    android:id="@+id/switch_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    app:sb_button_color="@color/color_control"
+                    android:layout_marginEnd="@dimen/padding_32dp"
+                    app:sb_checked_color="@android:color/transparent"
+                    app:sb_show_indicator="false"
+                    app:sb_checked="true"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/color_black"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/padding_10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Bold_H7"
+                    android:textColor="@color/md_grey_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/padding_32dp"
+                    android:text="@string/txt_ventilators"/>
+
+            <com.suke.widget.SwitchButton
+                    android:id="@+id/switch_ventilators"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    app:sb_button_color="@color/color_control"
+                    android:layout_marginEnd="@dimen/padding_32dp"
+                    app:sb_checked_color="@android:color/transparent"
+                    app:sb_show_indicator="false"
+                    app:sb_checked="true"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/color_black"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/padding_10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Bold_H7"
+                    android:textColor="@color/md_grey_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/padding_32dp"
+                    android:text="@string/txt_lights"/>
+
+            <com.suke.widget.SwitchButton
+                    android:id="@+id/switch_lights"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    app:sb_button_color="@color/color_control"
+                    android:layout_marginEnd="@dimen/padding_32dp"
+                    app:sb_checked_color="@android:color/transparent"
+                    app:sb_show_indicator="false"
+                    app:sb_checked="true"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/color_black"
+                android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Bold_H7"
+                    android:textColor="@color/md_grey_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/padding_32dp"
+                    android:text="@string/txt_microwave"/>
+
+            <com.suke.widget.SwitchButton
+                    android:id="@+id/switch_microwave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    app:sb_button_color="@color/color_control"
+                    android:layout_marginEnd="@dimen/padding_32dp"
+                    app:sb_checked_color="@android:color/transparent"
+                    app:sb_show_indicator="false"
+                    app:sb_checked="true"/>
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="6">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/color_black"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/padding_10dp">
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/color_black"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/padding_10dp">
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/color_black"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/padding_10dp">
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/color_black"
+                android:layout_weight="1">
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</LinearLayout>

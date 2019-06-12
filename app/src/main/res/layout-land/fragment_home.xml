@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layout_top"
+            android:orientation="vertical"
+            android:layout_above="@+id/layout_bottom">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/padding_10dp"
+                android:layout_weight="0.8">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/padding_10dp"
+                    android:layout_weight="1">
+
+                <FrameLayout
+                        android:id="@+id/container_weather"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <FrameLayout
+                    android:id="@+id/container_header"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+            </FrameLayout>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dinh_duong"
+                    android:layout_marginStart="@dimen/padding_10dp"
+                    android:layout_weight="1">
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/padding_10dp"
+                android:layout_weight="0.9">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/padding_10dp"
+                    android:layout_weight="1">
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bg_1"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/md_pink_100_dark"
+                    android:layout_weight="2">
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/padding_10dp"
+                    android:layout_weight="1">
+
+                <FrameLayout
+                        android:id="@+id/container_music"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                </FrameLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.3"
+                android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_black"
+                    android:layout_marginEnd="@dimen/padding_10dp"
+                    android:gravity="bottom"
+                    android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:src="@drawable/bg_paint"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_black"
+                    android:layout_weight="2">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:src="@drawable/background_kitchen_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/padding_10dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="@dimen/padding_6dp"
+                        android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/layout_manager"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/color_manager"
+                            android:layout_marginEnd="@dimen/padding_6dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_with_48dp"
+                                android:layout_height="@dimen/icon_with_48dp"
+                                android:src="@drawable/icon_manager"/>
+
+                        <TextView
+                                style="@style/Regular_H4"
+                                android:textColor="@color/md_grey_white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:layout_marginTop="@dimen/padding_8dp"
+                                android:text="@string/txt_manager"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/layout_all_app"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/color_all_app"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_with_48dp"
+                                android:layout_height="@dimen/icon_with_48dp"
+                                android:src="@drawable/icon_all_app"/>
+
+                        <TextView
+                                style="@style/Regular_H4"
+                                android:textColor="@color/md_grey_white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:layout_marginTop="@dimen/padding_8dp"
+                                android:text="@string/txt_all_app"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/layout_mart"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/color_avy_mart"
+                            android:layout_marginStart="@dimen/padding_6dp"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_with_48dp"
+                                android:layout_height="@dimen/icon_with_48dp"
+                                android:src="@drawable/icon_avy_mart"/>
+
+                        <TextView
+                                style="@style/Regular_H4"
+                                android:textColor="@color/md_grey_white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_8dp"
+                                android:textAllCaps="true"
+                                android:text="@string/txt_avy_mart"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/layout_control"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/color_control"
+                            android:layout_marginEnd="@dimen/padding_6dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_with_48dp"
+                                android:layout_height="@dimen/icon_with_48dp"
+                                android:src="@drawable/icon_control"/>
+
+                        <TextView
+                                style="@style/Regular_H4"
+                                android:textColor="@color/md_grey_white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_8dp"
+                                android:textAllCaps="true"
+                                android:text="@string/txt_control"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/layout_setting"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/color_setting"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_with_48dp"
+                                android:layout_height="@dimen/icon_with_48dp"
+                                android:src="@drawable/icon_setting"/>
+
+                        <TextView
+                                style="@style/Regular_H4"
+                                android:textColor="@color/md_grey_white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_setting"
+                                android:textAllCaps="true"
+                                android:layout_marginTop="@dimen/padding_8dp"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/layout_natrition"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/color_nutrition"
+                            android:layout_marginStart="@dimen/padding_6dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_with_48dp"
+                                android:layout_height="@dimen/icon_with_48dp"
+                                android:src="@drawable/icon_natru"/>
+
+                        <TextView
+                                style="@style/Regular_H4"
+                                android:textColor="@color/md_grey_white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_nutrition"
+                                android:textAllCaps="true"
+                                android:layout_marginTop="@dimen/padding_8dp"
+                                tools:text="Dinh duong"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

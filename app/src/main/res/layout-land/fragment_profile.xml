@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/root_profile"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/color_black"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:gravity="center|top">
+
+        <View android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="4">
+
+            <EditText
+                    android:id="@+id/edt_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_border"
+                    android:paddingLeft="@dimen/padding_16dp"
+                    android:layout_margin="@dimen/padding_8dp"
+                    android:hint="@string/txt_user_name"/>
+
+
+            <com.app.avy.ui.view.editext.MaskedEditText
+                    android:id="@+id/edt_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_border"
+                    android:paddingLeft="@dimen/padding_16dp"
+                    android:layout_margin="@dimen/padding_8dp"
+                    android:inputType="date"
+                    android:hint="@string/txt_birthday"/>
+
+            <EditText
+                    android:id="@+id/edt_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_border"
+                    android:paddingLeft="@dimen/padding_16dp"
+                    android:layout_margin="@dimen/padding_8dp"
+                    android:inputType="phone"
+                    android:hint="@string/txt_sdt"/>
+
+
+            <EditText
+                    android:id="@+id/edt_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_border"
+                    android:paddingLeft="@dimen/padding_16dp"
+                    android:layout_margin="@dimen/padding_8dp"
+                    android:hint="@string/txt_mail"/>
+
+            <EditText
+                    android:id="@+id/edt_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_border"
+                    android:paddingLeft="@dimen/padding_16dp"
+                    android:layout_margin="@dimen/padding_8dp"
+                    android:hint="@string/txt_address"/>
+
+            <TextView
+                    android:id="@+id/tv_update"
+                    style="@style/Regular_H6"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/ic_border_press"
+                    android:paddingLeft="@dimen/padding_16dp"
+                    android:layout_margin="@dimen/padding_8dp"
+                    android:textColor="@color/color_control"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:text="@string/txt_update"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="3"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>

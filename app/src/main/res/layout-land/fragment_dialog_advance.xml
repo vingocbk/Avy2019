@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:background="@drawable/ic_border_dialog">
+
+    <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Regular_H5"
+            android:textColor="@color/md_grey_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/txt_advanced_title"/>
+
+    <EditText
+            android:id="@+id/edt_pass"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_border"
+            android:paddingLeft="@dimen/padding_16dp"
+            android:layout_marginStart="@dimen/icon_with_48dp"
+            android:layout_marginEnd="@dimen/icon_with_48dp"
+            android:layout_marginTop="@dimen/padding_24dp"
+            android:inputType="numberPassword"
+            android:hint="@string/txt_pass"/>
+
+    <TextView
+            android:id="@+id/tv_validate_pass"
+            style="@style/Regular_H6"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_border_press"
+            android:paddingStart="@dimen/padding_16dp"
+            android:layout_marginTop="@dimen/padding_24dp"
+            android:textColor="@color/color_control"
+            android:layout_marginStart="@dimen/icon_with_48dp"
+            android:layout_marginEnd="@dimen/icon_with_48dp"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:text="Hoàn thành"/>
+
+
+</LinearLayout>

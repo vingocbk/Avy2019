@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/frameLayoutView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.app.avy.ui.view.autoscroll.AutoScrollViewPager
+            android:id="@+id/viewpager_collection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:stopWhenTouch="true"
+            app:slideInterval="5000"
+            app:slideDirection="right"/>
+
+
+    <com.app.avy.ui.view.autoscroll.ViewPagerIndicator
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            app:itemScale="1"
+            app:itemIcon="@drawable/white_circle"
+            app:itemSelectedTint="@color/color_control"
+            android:layout_marginBottom="@dimen/padding_8dp"
+            app:itemSize="@dimen/padding_8dp"/>
+
+</RelativeLayout>

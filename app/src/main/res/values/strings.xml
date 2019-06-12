@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Avy2019</string>
+    <string name="txt_nutrition">Dinh Dưỡng</string>
+    <string name="txt_setting">Cài đặt</string>
+    <string name="txt_control">Điều khiển</string>
+    <string name="txt_avy_mart">Avy mart</string>
+    <string name="txt_all_app">All app</string>
+    <string name="txt_manager">Quản lý</string>
+    <string name="txt_note">Điều khiển ngăn kéo</string>
+    <string name="txt_window_open">Tủ đang mở</string>
+    <string name="txt_window_warning">Tủ sự cố</string>
+    <string name="txt_emty">Tủ trống</string>
+    <string name="txt_color_light">Màu sắc đèn</string>
+    <string name="txt_opacity">Ánh sáng</string>
+    <string name="txt_setup_hotkey">Thiết lập phím nóng</string>
+    <string name="txt_setup">Setup</string>
+    <string name="txt_hotkey">HotKey</string>
+    <string name="txt_off">Turn Off</string>
+    <string name="txt_info">Thông tin cá nhân</string>
+    <string name="txt_other_device">Thiết bị khác</string>
+    <string name="txt_setting_window">Cài đặt tủ bếp</string>
+    <string name="txt_manage_cupboard">Quản lý tủ bếp</string>
+    <string name="txt_user_name">Họ và tên :</string>
+    <string name="txt_birthday">Sinh nhật :</string>
+    <string name="txt_sdt">Số điện thoại :</string>
+    <string name="txt_mail">Mail :</string>
+    <string name="txt_address">Địa chỉ nhà riêng :</string>
+    <string name="txt_update">Cập nhật thông tin</string>
+    <string name="txt_smelly_smell">Hút mùi</string>
+    <string name="txt_ventilators">Quạt thông gió</string>
+    <string name="txt_lights">Đèn chiếu sáng</string>
+    <string name="txt_microwave">Lò vi sóng</string>
+    <string name="txt_search">Tìm kiếm</string>
+    <string name="txt_talk">Hãy nói gì đó ....</string>
+    <string name="txt_save">Save</string>
+    <string name="txt_delete">Delete</string>
+    <string name="txt_select">Select</string>
+    <string name="txt_view">View</string>
+
+
+    <string name="clear_sky">Trời nắng</string>
+    <string name="few_clouds">Nắng có mây</string>
+    <string name="scattered_clouds">Trời nhiều mây</string>
+    <string name="shower_rain">Trời có mưa</string>
+    <string name="thunderstorm">Trời có bão</string>
+    <string name="snow">Trời có tuyết</string>
+    <string name="mist">Trời có sương</string>
+    <string name="drizzle">Trời mưa phùn</string>
+    <string name="txt_cabin_type">Tủ bếp dạng</string>
+    <string name="txt_volume">Âm lượng</string>
+    <string name="txt_cabin_count">Tổng số ngăn tủ</string>
+    <string name="txt_language">Ngôn ngữ</string>
+    <string name="txt_cabin_control">Số ngăn tủ điều khiển</string>
+    <string name="txt_setting_advanced">Cài đặt nâng cao</string>
+    <string name="txt_pass">Mật khẩu</string>
+    <string name="txt_advanced_title">Mời bạn nhập mật khẩu để vào cài đặt nâng cao !</string>
+
+    <string name="reduce">Reduce Volume</string>
+    <string name="increase">Increase Volume</string>
+    <string name="next">Next Song</string>
+    <string name="prev">Previous Song</string>
+    <string name="currentTrack">Current Track</string>
+
+    <string name="info_state_string">PlaybackState</string>
+    <string name="info_title_string">Title</string>
+    <string name="info_artist_string">Artist</string>
+    <string name="info_album_string">Album</string>
+</resources>

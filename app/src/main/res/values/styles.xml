@@ -1,0 +1,147 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme_main" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@color/md_grey_black</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Spinner" parent="android:Widget.Holo.Light.Spinner">
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:dropDownSelector">?android:selectableItemBackground</item>
+        <item name="android:divider">@null</item>
+    </style>
+
+    <style name="MySeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressBackgroundTint">@color/md_grey_white</item>
+        <item name="android:progressTint">@color/color_control</item>
+<!--
+        <item name="android:colorControlActivated">#c51162</item>
+-->
+    </style>
+
+    <string name="unknown">Unknown</string>
+    <string name="service_name">Audio remote control service</string>
+
+    <style name="SpinnerDialog" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:popupBackground">#ff00ff</item>
+        <item name="colorPrimary">#ff00ff</item>
+        <item name="colorPrimaryDark">#ffff00</item>
+        <item name="colorAccent">#ff0000</item>
+    </style>
+
+    <!-- font text Regular all app.-->
+    <style name="Regular_H2">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/txt_12sp</item>
+    </style>
+
+
+    <style name="Regular_H3">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/txt_13sp</item>
+    </style>
+
+    <style name="Regular_H4">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/txt_14sp</item>
+    </style>
+
+    <style name="Regular_H5">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/txt_15sp</item>
+    </style>
+
+
+    <style name="Regular_H6">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/txt_16sp</item>
+    </style>
+
+    <style name="Regular_H7">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/txt_18sp</item>
+    </style>
+
+
+    <style name="Regular_H8">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/txt_20sp</item>
+    </style>
+
+    <!-- font text Medium all app.-->
+
+    <style name="Medium_H3">
+        <item name="android:fontFamily">@font/lato_medium</item>
+        <item name="android:textSize">@dimen/txt_13sp</item>
+    </style>
+
+    <style name="Medium_H4">
+        <item name="android:fontFamily">@font/lato_medium</item>
+        <item name="android:textSize">@dimen/txt_14sp</item>
+    </style>
+
+
+    <style name="Medium_H5">
+        <item name="android:fontFamily">@font/lato_medium</item>
+        <item name="android:textSize">@dimen/txt_15sp</item>
+    </style>
+
+
+    <style name="Medium_H6">
+        <item name="android:fontFamily">@font/lato_medium</item>
+        <item name="android:textSize">@dimen/txt_16sp</item>
+    </style>
+
+    <!-- font text Bold all app.-->
+
+    <style name="Bold_H3">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/txt_13sp</item>
+    </style>
+
+    <style name="Bold_H4">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/txt_14sp</item>
+    </style>
+
+
+    <style name="Bold_H5">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/txt_15sp</item>
+    </style>
+
+    <style name="Bold_H6">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/txt_16sp</item>
+    </style>
+
+
+    <style name="Bold_H7">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/txt_18sp</item>
+    </style>
+
+    <style name="Bold_H8">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/txt_20sp</item>
+    </style>
+
+    <!-- checkbox -->
+
+    <style name="CheckBoxTheme" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/md_grey_white</item>
+        <item name="colorControlActivated">@color/color_control</item>
+    </style>
+    
+
+</resources>

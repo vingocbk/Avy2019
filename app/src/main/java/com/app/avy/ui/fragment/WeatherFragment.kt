@@ -19,6 +19,7 @@ import androidx.core.content.PermissionChecker.checkCallingOrSelfPermission
 import com.app.avy.BaseFragment
 import com.app.avy.R
 import com.app.avy.module.CurrentWeather
+import com.app.avy.module.WeatherData
 import com.app.avy.network.NetworkService
 import com.app.avy.network.RetrofitHelper
 import com.app.avy.utils.Constant
@@ -60,6 +61,8 @@ class WeatherFragment : BaseFragment(), LocationListener {
     private val PERMISSION_REQUEST = 10
     private val MIN_DISTANCE_CHANGE_FOR_UPDATES: Float = 0F
     private val MIN_TIME_BW_UPDATES: Long = 1000 * 5 * 1
+    private val mLat = 21.03
+    private val mLon = 105.85
 
     override fun getID() = R.layout.fragment_weather
 
@@ -70,9 +73,9 @@ class WeatherFragment : BaseFragment(), LocationListener {
         tv_weathre_status = view!!.tv_weathre_status
         tv_humidity_temperature = view!!.tv_humidity_temperature
         tv_location = view!!.tv_location
+        mNetworkService = RetrofitHelper.getInstance().getNetworkService(Constant.BASE_URL_WEATHER)
         initCheckPermission()
         tv_date.text = Constant.getDate()
-        mNetworkService = RetrofitHelper.getInstance().getNetworkService(Constant.BASE_URL_WEATHER)
     }
 
     private fun initCheckPermission() {
@@ -138,9 +141,12 @@ class WeatherFragment : BaseFragment(), LocationListener {
                     )
                     mAddress = listAddress[0]
                     val currentAddress = mAddress.getAddressLine(0)
-                    Toast.makeText(context, currentAddress.toString(), Toast.LENGTH_LONG).show()
                     tv_location.text = currentAddress.split(",")[1]
-                    getDataWeather(mLocationGPS!!.latitude, mLocationGPS!!.longitude)
+                    if (WeatherData.getCurrentWeather() != null) {
+                        updateView(WeatherData.getCurrentWeather()!!)
+                    } else {
+                        getDataWeather(mLocationGPS!!.latitude, mLocationGPS!!.longitude)
+                    }
                     mLocationManager.removeUpdates(this)
                 }
             }
@@ -178,6 +184,7 @@ class WeatherFragment : BaseFragment(), LocationListener {
                 override fun onNext(t: CurrentWeather) {
                     // handle data
                     updateView(t)
+                    WeatherData.setCurrentWeather(t)
 
                 }
 
@@ -276,6 +283,8 @@ class WeatherFragment : BaseFragment(), LocationListener {
                     mLocationNetWork = localNetWorkLocation
                 }
             }
+        } else {
+            getDataWeather(mLat, mLon)
         }
     }
 

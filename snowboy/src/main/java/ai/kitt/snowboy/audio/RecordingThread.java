@@ -17,24 +17,24 @@ import ai.kitt.snowboy.MsgEnum;
 import ai.kitt.snowboy.SnowboyDetect;
 
 public class RecordingThread {
-     static {
-         System.loadLibrary("snowboy-detect-android");
-     }
+    static {
+        System.loadLibrary("snowboy-detect-android");
+    }
 
     private static final String TAG = RecordingThread.class.getSimpleName();
 
     private static final String ACTIVE_RES = Constants.ACTIVE_RES;
     private static final String ACTIVE_UMDL = Constants.ACTIVE_UMDL;
-    
+
     private boolean shouldContinue;
     private AudioDataReceivedListener listener = null;
     private Handler handler = null;
     private Thread thread;
-    
+
     private static String strEnvWorkSpace = Constants.DEFAULT_WORK_SPACE;
-    private String activeModel = strEnvWorkSpace+ACTIVE_UMDL;    
-    private String commonRes = strEnvWorkSpace+ACTIVE_RES;   
-    
+    private String activeModel = strEnvWorkSpace + ACTIVE_UMDL;
+    private String commonRes = strEnvWorkSpace + ACTIVE_RES;
+
     private SnowboyDetect detector = new SnowboyDetect(commonRes, activeModel);
     private MediaPlayer player = new MediaPlayer();
 
@@ -42,18 +42,18 @@ public class RecordingThread {
         this.handler = handler;
         this.listener = listener;
 
-        detector.SetSensitivity("0.7");
+        detector.SetSensitivity("0.35,0.35,0.35");
         detector.SetAudioGain(1);
         detector.ApplyFrontend(true);
         try {
-            player.setDataSource(strEnvWorkSpace+"ding.wav");
+            player.setDataSource(strEnvWorkSpace + "ding.wav");
             player.prepare();
         } catch (IOException e) {
             Log.e(TAG, "Playing ding sound error", e);
         }
     }
 
-    private void sendMessage(MsgEnum what, Object obj){
+    private void sendMessage(MsgEnum what, Object obj) {
         if (null != handler) {
             Message msg = handler.obtainMessage(what.ordinal(), obj);
             handler.sendMessage(msg);
@@ -83,24 +83,23 @@ public class RecordingThread {
     }
 
 
-
     private void record() {
         Log.v(TAG, "Start");
         android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_AUDIO);
 
         // Buffer size in bytes: for 0.1 second of audio
-        int bufferSize = (int)(Constants.SAMPLE_RATE * 0.1 * 2);
+        int bufferSize = (int) (Constants.SAMPLE_RATE * 0.1 * 2);
         if (bufferSize == AudioRecord.ERROR || bufferSize == AudioRecord.ERROR_BAD_VALUE) {
             bufferSize = Constants.SAMPLE_RATE * 2;
         }
 
         byte[] audioBuffer = new byte[bufferSize];
         AudioRecord record = new AudioRecord(
-            MediaRecorder.AudioSource.DEFAULT,
-            Constants.SAMPLE_RATE,
-            AudioFormat.CHANNEL_IN_MONO,
-            AudioFormat.ENCODING_PCM_16BIT,
-            bufferSize);
+                MediaRecorder.AudioSource.DEFAULT,
+                Constants.SAMPLE_RATE,
+                AudioFormat.CHANNEL_IN_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                bufferSize);
 
         if (record.getState() != AudioRecord.STATE_INITIALIZED) {
             Log.e(TAG, "Audio Record can't initialize!");
@@ -120,7 +119,7 @@ public class RecordingThread {
             if (null != listener) {
                 listener.onAudioDataReceived(audioBuffer, audioBuffer.length);
             }
-            
+
             // Converts to short array.
             short[] audioData = new short[audioBuffer.length / 2];
             ByteBuffer.wrap(audioBuffer).order(ByteOrder.LITTLE_ENDIAN).asShortBuffer().get(audioData);

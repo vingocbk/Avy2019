@@ -30,7 +30,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
             .commit()
 
         ///
-        childFragmentManager.beginTransaction().replace(R.id.container_music, MusicFragment())
+        childFragmentManager.beginTransaction().add(R.id.container_music, MusicFragment())
             .addToBackStack(MusicFragment::class.java.simpleName)
             .commit()
         onEvenClick()

@@ -51,7 +51,7 @@ class SnowboySupport(var context: Context, listenner: OnSpeechListenner) {
 
         mContext = context
         mListener = listenner
-        setProperVolume()
+        restoreVolume()
         AppResCopy.copyResFromAssetsToSD(mContext)
         recordingThread = RecordingThread(handle, AudioDataSaver())
         playbackThread = PlaybackThread()
@@ -70,8 +70,8 @@ class SnowboySupport(var context: Context, listenner: OnSpeechListenner) {
         val audioManager = mContext.getSystemService(Context.AUDIO_SERVICE) as AudioManager
         preVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
         val maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
-        val properVolume = (maxVolume.toFloat() * 0.8).toInt()
-        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, preVolume, 0)
+        val properVolume = (maxVolume.toFloat() * 0.3).toInt()
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, properVolume, 0)
         val currentVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
     }
 

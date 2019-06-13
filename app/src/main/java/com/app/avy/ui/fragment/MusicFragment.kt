@@ -56,6 +56,7 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
     var mImgNext: AppCompatImageView? = null
     var isPlay: Boolean = false
     lateinit var animRotate: Animation
+    var isCheck = false
 
 
     private val mBrowserAppsUpdated = object : FindMediaAppsTask.AppListUpdatedCallback {
@@ -64,6 +65,7 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
         ) {
             if (mediaAppEntries.isEmpty()) {
                 // Show an error if no apps were found.
+
                 return
             }
             for (i in mediaAppEntries.indices) {
@@ -72,6 +74,16 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
                     "sessionToken " + mediaAppEntries[i].appName + "--" + mediaAppEntries[i].sessionToken
                 )
             }
+
+            if (mediaAppEntries[mediaAppEntries.size - 1].sessionToken == null && !isCheck) {
+                enableColtrol(false)
+                mTvtile?.isSelected = true
+                mTvtile?.text =
+                    "Chưa có bài hát nào   Chưa có bài hát nào   Chưa có bài hát nào   Chưa có bài hát nào   Chưa có bài hát nào"
+                mTvartist?.visibility = View.GONE
+            }
+
+
         }
     }
 
@@ -130,7 +142,6 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
             mImgPauseAndPlay?.setImageResource(R.drawable.ic_pause)
         }
 
-
         val mAudioManager = context!!.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
         val mMediaSessionListener = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
@@ -172,9 +183,11 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
     }
 
     override fun mediaAppDetail(mediaAppDetails: MutableList<out MediaAppDetails>?) {
-        Log.e(TAG, "------->" + mediaAppDetails)
         mediaAppDetails?.let {
+            isCheck = true
             mMediaAppDetails = it[0]
+            enableColtrol(true)
+            mTvartist?.visibility = View.VISIBLE
             setupMedia()
         }
     }
@@ -206,7 +219,8 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
         super.onStop()
     }
 
-    override fun onDestroy() {
+
+    override fun onDestroyView() {
         mController?.let {
             it.unregisterCallback(mCallback)
             mController = null
@@ -216,8 +230,15 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
             mBrowser!!.disconnect()
         }
         mBrowser = null
+        super.onDestroyView()
+    }
 
-        super.onDestroy()
+    fun enableColtrol(isEnable: Boolean) {
+        imgAlbumArt?.isEnabled = isEnable
+        mImgBack?.isEnabled = isEnable
+        mImgNext?.isEnabled = isEnable
+        mImgPauseAndPlay?.isEnabled = isEnable
+
     }
 
     private fun setupMedia() {
@@ -297,6 +318,9 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
             mTvtile?.isSelected = true
             mTvtile?.text = mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE).plus("    ")
                 .plus(mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE)).plus("    ")
+                .plus(mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE)).plus("    ")
+                .plus(mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE))
+
             mTvartist?.text = mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_ARTIST)
             // tv_album.text = mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_ALBUM)
 

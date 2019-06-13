@@ -15,7 +15,8 @@
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_albumArt"
                 android:layout_width="@dimen/icon_with_130dp"
-                android:layout_height="@dimen/icon_with_130dp"/>
+                android:layout_height="@dimen/icon_with_130dp"
+                android:src="@drawable/ic_music"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -46,15 +46,20 @@ public class MaterialBetterSpinner extends MaterialAutoCompleteTextView implemen
     protected void onFocusChanged(boolean focused, int direction,
                                   Rect previouslyFocusedRect) {
         super.onFocusChanged(focused, direction, previouslyFocusedRect);
-        if (focused) {
-            performFiltering("", 0);
-            InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(getWindowToken(), 0);
-            setKeyListener(null);
-            dismissDropDown();
-        } else {
-            isPopup = false;
+        try {
+            if (focused) {
+                performFiltering("", 0);
+                InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getWindowToken(), 0);
+                setKeyListener(null);
+                dismissDropDown();
+            } else {
+                isPopup = false;
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
         }
+
     }
 
     @Override
@@ -66,7 +71,7 @@ public class MaterialBetterSpinner extends MaterialAutoCompleteTextView implemen
                 break;
             }
             case MotionEvent.ACTION_UP: {
-                long clickDuration = Calendar.getInstance().getTimeInMillis() - startClickTime;
+                /*long clickDuration = Calendar.getInstance().getTimeInMillis() - startClickTime;
                 if (clickDuration < MAX_CLICK_DURATION) {
                     if (isPopup) {
                         dismissDropDown();
@@ -76,7 +81,7 @@ public class MaterialBetterSpinner extends MaterialAutoCompleteTextView implemen
                         showDropDown();
                         isPopup = true;
                     }
-                }
+                }*/
             }
         }
 

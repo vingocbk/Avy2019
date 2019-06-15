@@ -30,12 +30,12 @@ class SpeechDialogFragment : DialogFragment() {
         (activity!!.getApplication() as MyApplication)
             .bus()
             .toObservable()
-            .subscribe(Consumer<Any> { `object` ->
+            .subscribe { `object` ->
                 if (`object` is String) {
                     if (`object`.isNotEmpty())
                         tv_speech.text = `object`
                 }
-            })
+            }
         return v
     }
 

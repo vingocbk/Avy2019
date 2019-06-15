@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_border_dialog">
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_search"
+            style="@style/Regular_H6"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:textColor="@color/md_grey_white"
+            android:textColorHint="@color/md_grey_500"
+            android:gravity="center|left"
+            android:drawableStart="@drawable/ic_search_black_24dp"
+            android:drawablePadding="@dimen/padding_8dp"
+            android:hint="@string/txt_search"
+            android:background="@null"
+            android:padding="@dimen/padding_4dp"
+            tools:ignore="RtlSymmetry"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_View"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tv_update"
+            android:layout_below="@+id/edt_search">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+            android:id="@+id/tv_update"
+            style="@style/Regular_H6"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/ic_border_press"
+            android:paddingStart="@dimen/padding_16dp"
+            android:layout_marginTop="@dimen/padding_24dp"
+            android:textColor="@color/color_control"
+            android:layout_margin="@dimen/padding_16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/padding_16dp"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:text="Cập nhật"/>
+
+</RelativeLayout>

@@ -26,6 +26,11 @@ object Constant {
 
     val API_KEY_WEATHER = "755e0b1311fb0c86d66bbabf8201a5c1"
 
+    val OFF_VOLUME = 20
+    val ON_VOLUME = 21
+    val INCREASE_VOLUME = 22
+    val REDUCTION_VOLUME = 23
+
 
     fun getInstalledApps(context: Context): List<AppList> {
         val res = ArrayList<AppList>()

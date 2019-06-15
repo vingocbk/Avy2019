@@ -32,6 +32,7 @@ class SettingCabinetFragment : BaseFragment(), View.OnClickListener, SeekBar.OnS
 
     override fun getID() = R.layout.fragment_setting_cabinet
 
+
     override fun onViewReady() {
         tv_setting_advanced.setOnClickListener(this)
         setDataSpinner()

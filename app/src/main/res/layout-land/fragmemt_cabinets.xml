@@ -33,7 +33,6 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"

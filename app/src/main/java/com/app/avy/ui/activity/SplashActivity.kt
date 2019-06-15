@@ -23,7 +23,6 @@ class SplashActivity : BaseActivity() {
     lateinit var mCabinetViewModle: CabinetViewModle
     lateinit var mWordViewModel: WordViewModel
 
-
     var array3: ArrayList<String> = arrayListOf(
         "Hạt nêm",
         "Dao",
@@ -62,35 +61,7 @@ class SplashActivity : BaseActivity() {
         "nguyệt quế",
         "hành hoa",
         "rau răm",
-        "hẹ",
-        "húng thơm",
-        "húng chó",
-        "cúc tần",
-        "mùi tàu",
-        "ngò",
-        "tía tô",
-        "thì là",
-        "lá chanh",
-        "lá ổi",
-        "lá đinh lăng",
-        "cần tây",
-        "tỏi tây",
-        "lá xương sông",
-        "lá lốt",
-        "lá quế",
-        "lá gấc",
-        "lá gừng",
-        "lá cúc tần",
-        "lá mơ tam thể",
-        "lá ớt",
-        "lá mác mật",
-        "lá bưởi",
-        "kinh giới",
-        "mò om",
-        "rau mùi",
-        "hương thảo",
-        "lá me",
-        "lá dứa"
+        "hẹ"
     )
 
     override fun getId() = R.layout.splash_activity
@@ -140,6 +111,7 @@ class SplashActivity : BaseActivity() {
 
         mWordViewModel.getAllWords().observe(this, Observer {
             if (it.isEmpty()) {
+
                 for (i in array3.indices) {
                     mWordViewModel.insert(Word(array3[i]))
                 }

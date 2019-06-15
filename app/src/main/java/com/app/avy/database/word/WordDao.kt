@@ -15,4 +15,13 @@ interface WordDao {
 
     @Query("SELECT * from word_table ORDER BY word ASC")
     fun getAllWords(): LiveData<List<Word>>
+
+
+    @Query("UPDATE word_table SET `select` = :select WHERE type = :type AND id = :id")
+    fun updateCabinet(id: String, type: String, select: Boolean)
+
+
+    @Query("SELECT * from word_table WHERE type =:type")
+    fun getWordWithId(type: String): LiveData<List<Word>>
+
 }

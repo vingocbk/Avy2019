@@ -26,6 +26,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
+import com.app.avy.snowboysupport.ConvertSpeechToText
 import com.app.avy.snowboysupport.SnowboySupport
 import java.util.*
 
@@ -94,7 +95,7 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
     }
 
     override fun onBufferReceived(buffer: ByteArray?) {
-        
+
     }
 
     override fun onPartialResults(partialResults: Bundle?) {
@@ -108,9 +109,11 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
     }
 
     override fun onBeginningOfSpeech() {
+
     }
 
     override fun onEndOfSpeech() {
+
     }
 
     override fun onError(error: Int) {
@@ -127,6 +130,9 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
         val str = data[0].toString()
         mSnownoySupport?.startRecording()
         Log.e(TAG, "onResults ")
+        if (str.trim().isNotEmpty()) {
+            ConvertSpeechToText((application as MyApplication), str).convertText()
+        }
     }
 
     fun onEvenClick() {

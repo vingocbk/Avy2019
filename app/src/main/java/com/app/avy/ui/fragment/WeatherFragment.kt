@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Context.LOCATION_SERVICE
 import android.content.pm.PackageManager
 import android.location.*
+import android.media.MediaPlayer
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -17,8 +18,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.PermissionChecker.checkCallingOrSelfPermission
 import com.app.avy.BaseFragment
+import com.app.avy.MyApplication
 import com.app.avy.R
 import com.app.avy.module.CurrentWeather
+import com.app.avy.module.MusicModule
 import com.app.avy.module.WeatherData
 import com.app.avy.network.NetworkService
 import com.app.avy.network.RetrofitHelper
@@ -30,7 +33,11 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_weather.*
 import kotlinx.android.synthetic.main.fragment_weather.view.*
+import java.io.IOException
 import java.lang.Exception
+import java.net.MalformedURLException
+import java.net.URL
+import java.nio.file.Path
 import java.util.*
 
 
@@ -63,9 +70,11 @@ class WeatherFragment : BaseFragment(), LocationListener {
     private val MIN_TIME_BW_UPDATES: Long = 1000 * 5 * 1
     private val mLat = 21.03
     private val mLon = 105.85
+    private var currentAddress = "Hà Nội"
 
     override fun getID() = R.layout.fragment_weather
 
+    @SuppressLint("CheckResult")
     override fun onViewReady() {
         tv_temperature = view!!.tv_temperature
         img_weather_status = view!!.img_weather_status
@@ -76,6 +85,25 @@ class WeatherFragment : BaseFragment(), LocationListener {
         mNetworkService = RetrofitHelper.getInstance().getNetworkService(Constant.BASE_URL_WEATHER)
         initCheckPermission()
         tv_date.text = Constant.getDate()
+
+        (activity!!.application as MyApplication)
+            .bus()
+            .toObservable()
+            .subscribe { `object` ->
+                if (`object` is WeatherData) {
+                    Log.e(TAG, " ok  ")
+                    var input = ""
+                    if (currentAddress != "Hà Nội") {
+                        val a = currentAddress.split("\\,".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+                        input =
+                            "Dự báo thời tiết tại ${a[a.size - 3]} ${a[a.size - 2]} ${tv_temperature.text} độ ${tv_weathre_status.text}"
+                    } else {
+                        input =
+                            "Dự báo thời tiết tại ${currentAddress} ${tv_temperature.text} độ ${tv_weathre_status.text}"
+                    }
+                    speak(input)
+                }
+            }
     }
 
     private fun initCheckPermission() {
@@ -140,8 +168,8 @@ class WeatherFragment : BaseFragment(), LocationListener {
                         mLocationGPS!!.longitude, 1
                     )
                     mAddress = listAddress[0]
-                    val currentAddress = mAddress.getAddressLine(0)
-                    tv_location.text = currentAddress.split(",")[1]
+                    currentAddress = mAddress.getAddressLine(0)
+                    tv_location.text = mAddress.getAddressLine(0).split(",")[1]
                     if (WeatherData.getCurrentWeather() != null) {
                         updateView(WeatherData.getCurrentWeather()!!)
                     } else {
@@ -288,5 +316,35 @@ class WeatherFragment : BaseFragment(), LocationListener {
         }
     }
 
+    fun speak(inputText: String) {
+        val ttsHost = "https://tts.vbeecore.com/api/tts"
+        var inputURLWithQuery: String? = null
+        val mediaPlayer: MediaPlayer
+
+        inputURLWithQuery = (ttsHost
+                + "?input_text=" + inputText
+                + "&app_id=5c120a91be92cc344a557c1b"
+                //+ "&voice=sg_female_xuanhong_vdts_48k-hsmm"
+                + "&hn_female_xuanthu_news_48k-hsmm"
+                //+ "&hn_female_thutrang_phrase_48k-hsmm"
+                //+ "&sg_male_xuankien_vdts_48k-hsmm"
+                //+ "&hn_male_xuantin_vdts_48k-hsmm"
+                + "&time=1544712375919"
+                + "&key=d7bb44372cb024156d0b8ac89170503f"
+                + "&user_id=46547"
+                + "&service_type=1"
+                + "&audio_type=mp3")
+        try {
+            mediaPlayer = MediaPlayer()
+            mediaPlayer.setDataSource(inputURLWithQuery)
+            mediaPlayer.prepare()
+            mediaPlayer.start()
+        } catch (e: MalformedURLException) {
+            e.printStackTrace()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
+    }
 
 }

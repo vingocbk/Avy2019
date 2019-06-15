@@ -35,6 +35,7 @@
 
     <dimen name="icon_with_56dp">56dp</dimen>
     <dimen name="with_170dp">170dp</dimen>
+    <dimen name="with_150dp">150dp</dimen>
 
 
 </resources>

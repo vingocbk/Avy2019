@@ -1,8 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="@color/color_black">
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_search"
+            style="@style/Regular_H6"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_border_editext"
+            android:layout_margin="@dimen/padding_16dp"
+            android:textColor="@color/md_grey_white"
+            android:textColorHint="@color/md_grey_500"
+            android:gravity="center|left"
+            android:drawableStart="@drawable/ic_search_black_24dp"
+            android:drawablePadding="@dimen/padding_8dp"
+            android:paddingStart="@dimen/padding_16dp"
+            android:hint="@string/txt_search"
+            tools:ignore="RtlSymmetry"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="2.5">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="center|start"
+                    android:paddingStart="@dimen/padding_16dp"
+                    android:layout_weight="5">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/with_170dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/bg_test"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    android:gravity="center|start"
+                    android:paddingStart="@dimen/padding_16dp"
+                    android:layout_weight="5">
+
+                <RelativeLayout
+                        android:orientation="horizontal"
+                        android:layout_width="@dimen/with_150dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="@dimen/padding_12dp"
+                        android:layout_marginBottom="@dimen/padding_12dp"
+                        android:background="@drawable/ic_border">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/padding_8dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="@dimen/padding_4dp"
+                            android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:src="@drawable/ic_circle_white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_count_1"
+                                style="@style/Bold_H5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/md_grey_black"
+                                android:layout_centerInParent="true"
+                                android:textAllCaps="true"
+                                android:text="1"/>
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Bold_H6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/md_grey_white"
+                            android:text="View"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                        android:orientation="horizontal"
+                        android:layout_width="@dimen/with_150dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="@dimen/padding_12dp"
+                        android:layout_marginBottom="@dimen/padding_12dp"
+                        android:background="@drawable/ic_border">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/padding_8dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="@dimen/padding_4dp"
+                            android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:src="@drawable/ic_circle_white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                        />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_count_2"
+                                style="@style/Bold_H5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/md_grey_black"
+                                android:layout_centerInParent="true"
+                                android:textAllCaps="true"
+                                android:text="2"/>
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Bold_H6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/md_grey_white"
+                            android:text="View"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:orientation="horizontal"
+                        android:layout_width="@dimen/with_150dp"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="@dimen/padding_12dp"
+                        android:layout_marginTop="@dimen/padding_12dp"
+                        android:background="@drawable/ic_border">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/padding_8dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="@dimen/padding_4dp"
+                            android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:src="@drawable/ic_circle_white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                        />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Bold_H5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/md_grey_black"
+                                android:layout_centerInParent="true"
+                                android:textAllCaps="true"
+                                android:text="3"/>
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Bold_H6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/md_grey_white"
+                            android:text="View"/>
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="7.5"
+                android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_View"
+                    android:numColumns="5"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <include
+                    android:id="@+id/item_full"
+                    layout="@layout/item_full"
+                    android:visibility="gone"/>
+
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 </LinearLayout>

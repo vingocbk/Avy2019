@@ -5,8 +5,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 
 class WordViewModel constructor(application: Application) : AndroidViewModel(application) {
-     var mRepository: WordRepository? = null
-     var mAllWords: LiveData<List<Word>>? = null
+    var mRepository: WordRepository? = null
+    var mAllWords: LiveData<List<Word>>? = null
 
     init {
         mRepository = WordRepository(application)
@@ -21,5 +21,8 @@ class WordViewModel constructor(application: Application) : AndroidViewModel(app
         mRepository!!.insert(word)
     }
 
+    fun getWordsWithId(type: String): LiveData<List<Word>> {
+        return mRepository!!.getWordWithId(type)
+    }
 
 }

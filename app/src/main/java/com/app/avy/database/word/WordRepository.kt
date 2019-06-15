@@ -20,6 +20,9 @@ class WordRepository(application: Application) {
         return mAllWord
     }
 
+    fun getWordWithId(type: String): LiveData<List<Word>> {
+        return mWordDao.getWordWithId(type)
+    }
 
     fun insert(word: Word) {
         insertAsyncTask(mWordDao).execute(word)

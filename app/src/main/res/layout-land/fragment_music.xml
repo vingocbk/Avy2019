@@ -64,6 +64,9 @@
                 android:textColor="@color/md_grey_white"
                 android:layout_centerInParent="true"
                 android:layout_above="@+id/tv_album"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:gravity="center"
                 tools:text="aaaaaa"/>
 
 

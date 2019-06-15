@@ -1,5 +1,6 @@
 package com.app.avy.ui.fragment
 
+import android.annotation.SuppressLint
 import com.app.avy.BaseFragment
 import com.app.avy.R
 import kotlinx.android.synthetic.main.fragment_music.*
@@ -33,6 +34,9 @@ import android.view.animation.LinearInterpolator
 import android.view.animation.RotateAnimation
 import android.widget.SeekBar
 import androidx.appcompat.widget.AppCompatImageView
+import com.app.avy.MyApplication
+import com.app.avy.module.MusicModule
+import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_music.seek_bar_volume
 import kotlinx.android.synthetic.main.fragment_setting_cabinet.*
 
@@ -57,6 +61,7 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
     var isPlay: Boolean = false
     lateinit var animRotate: Animation
     var isCheck = false
+    var preVolume = 0
 
 
     private val mBrowserAppsUpdated = object : FindMediaAppsTask.AppListUpdatedCallback {
@@ -116,6 +121,7 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
     // separate inner class that's only instantiated if the device is running L or later.
     var mMediaSessionListener: MediaSessionListener? = null
 
+    @SuppressLint("CheckResult")
     override fun onViewReady() {
         mTvtile = tv_tile
         mTvartist = tv_artist
@@ -157,6 +163,17 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
         mImgNext?.setOnClickListener(this)
         mImgPauseAndPlay?.setOnClickListener(this)
         mImgBack?.setOnClickListener(this)
+
+
+        (activity!!.application as MyApplication)
+            .bus()
+            .toObservable()
+            .subscribe { `object` ->
+                Log.e(TAG, "MusicModule")
+                if (`object` is MusicModule) {
+                    hanldeControlMusic(`object`.type)
+                }
+            }
     }
 
     override fun onClick(v: View?) {
@@ -238,12 +255,57 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
         mImgBack?.isEnabled = isEnable
         mImgNext?.isEnabled = isEnable
         mImgPauseAndPlay?.isEnabled = isEnable
+    }
 
+    fun hanldeControlMusic(type: Int) {
+        preVolume = audioManager?.getStreamVolume(AudioManager.STREAM_MUSIC)!!
+
+        when (type) {
+            PlaybackStateCompat.STATE_PLAYING -> {
+                isPlay = true
+                mController?.transportControls?.play()
+                mImgPauseAndPlay?.setImageResource(R.drawable.ic_play)
+                imgAlbumArt?.startAnimation(animRotate)
+            }
+            PlaybackStateCompat.STATE_PAUSED -> {
+                isPlay = false
+                mController?.transportControls?.pause()
+                mImgPauseAndPlay?.setImageResource(R.drawable.ic_pause)
+                imgAlbumArt?.clearAnimation()
+            }
+            PlaybackStateCompat.STATE_SKIPPING_TO_NEXT -> {
+                mController?.transportControls?.skipToNext()
+            }
+            PlaybackStateCompat.STATE_SKIPPING_TO_PREVIOUS -> {
+                mController?.transportControls?.skipToPrevious()
+            }
+
+            Constant.OFF_VOLUME -> {
+                audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC, 0, 0)
+                mSeekbarVolume?.progress = 0
+            }
+
+            Constant.ON_VOLUME -> {
+                audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC, 4, 0)
+                mSeekbarVolume?.progress = 4
+            }
+
+            Constant.INCREASE_VOLUME -> {
+                audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC, preVolume++, 0)
+                mSeekbarVolume?.progress = preVolume++
+
+            }
+
+            Constant.REDUCTION_VOLUME -> {
+                audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC, preVolume--, 0)
+                mSeekbarVolume?.progress = preVolume--
+            }
+        }
     }
 
     private fun setupMedia() {
         // Should now have a viable details.. connect to browser and service as needed.
-        if (mMediaAppDetails!!.componentName != null) {
+        if (mMediaAppDetails.componentName != null) {
             mBrowser = MediaBrowserCompat(
                 context, mMediaAppDetails!!.componentName,
                 object : MediaBrowserCompat.ConnectionCallback() {
@@ -287,97 +349,93 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
 
     @NonNull
     private fun fetchMediaInfo() {
+        try {
+            val playbackState = mController?.playbackState
+            if (playbackState == null) {
+                Log.e(TAG, "Failed to update media info, null PlaybackState.")
+                return
+            }
+            val mediaInfos = HashMap<String, String>()
+            mediaInfos[getString(R.string.info_state_string)] = playbackStateToName(playbackState.state)
 
-        val playbackState = mController?.playbackState
-        if (playbackState == null) {
-            Log.e(TAG, "Failed to update media info, null PlaybackState.")
-            return
-        }
+            val mediaMetadata = mController?.metadata
+            if (mediaMetadata != null) {
+                addMediaInfo(
+                    mediaInfos,
+                    getString(R.string.info_title_string),
+                    mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE)
+                )
+                addMediaInfo(
+                    mediaInfos,
+                    getString(R.string.info_artist_string),
+                    mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_ARTIST)
+                )
+                addMediaInfo(
+                    mediaInfos,
+                    getString(R.string.info_album_string),
+                    mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_ALBUM)
+                )
 
-        val mediaInfos = HashMap<String, String>()
-        mediaInfos[getString(R.string.info_state_string)] = playbackStateToName(playbackState.state)
+                mTvtile?.isSelected = true
+                mTvtile?.text = mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE).plus("    ")
+                    .plus(mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE)).plus("    ")
+                    .plus(mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE)).plus("    ")
+                    .plus(mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE))
 
-        val mediaMetadata = mController?.metadata
-        if (mediaMetadata != null) {
-            addMediaInfo(
-                mediaInfos,
-                getString(R.string.info_title_string),
-                mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE)
-            )
-            addMediaInfo(
-                mediaInfos,
-                getString(R.string.info_artist_string),
-                mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_ARTIST)
-            )
-            addMediaInfo(
-                mediaInfos,
-                getString(R.string.info_album_string),
-                mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_ALBUM)
-            )
+                mTvartist?.text = mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_ARTIST)
+                // tv_album.text = mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_ALBUM)
 
-            mTvtile?.isSelected = true
-            mTvtile?.text = mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE).plus("    ")
-                .plus(mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE)).plus("    ")
-                .plus(mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE)).plus("    ")
-                .plus(mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_TITLE))
-
-            mTvartist?.text = mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_ARTIST)
-            // tv_album.text = mediaMetadata.getString(MediaMetadataCompat.METADATA_KEY_ALBUM)
-
-            val art = mediaMetadata.getBitmap(MediaMetadataCompat.METADATA_KEY_ALBUM_ART)
-            if (art != null) {
-                imgAlbumArt?.setImageBitmap(art)
+                val art = mediaMetadata.getBitmap(MediaMetadataCompat.METADATA_KEY_ALBUM_ART)
+                if (art != null) {
+                    imgAlbumArt?.setImageBitmap(art)
+                } else {
+                    imgAlbumArt?.setImageResource(R.drawable.ic_music)
+                }
+                // Prefer user rating, but fall back to global rating if available.
+                var rating: RatingCompat? = mediaMetadata.getRating(MediaMetadataCompat.METADATA_KEY_USER_RATING)
+                if (rating == null) {
+                    rating = mediaMetadata.getRating(MediaMetadataCompat.METADATA_KEY_RATING)
+                }
             } else {
                 imgAlbumArt?.setImageResource(R.drawable.ic_music)
             }
-            // Prefer user rating, but fall back to global rating if available.
-            var rating: RatingCompat? = mediaMetadata.getRating(MediaMetadataCompat.METADATA_KEY_USER_RATING)
-            if (rating == null) {
-                rating = mediaMetadata.getRating(MediaMetadataCompat.METADATA_KEY_RATING)
+
+            val actions = playbackState.actions
+
+            if (actions and PlaybackStateCompat.ACTION_PREPARE_FROM_SEARCH != 0L) {
+                addMediaInfo(mediaInfos, "ACTION_PREPARE_FROM_SEARCH", "Supported")
             }
-        } else {
-            imgAlbumArt?.setImageResource(R.drawable.ic_music)
+            if (actions and PlaybackStateCompat.ACTION_PLAY_FROM_SEARCH != 0L) {
+                addMediaInfo(mediaInfos, "ACTION_PLAY_FROM_SEARCH", "Supported")
+            }
+
+            if (actions and PlaybackStateCompat.ACTION_PREPARE_FROM_MEDIA_ID != 0L) {
+                addMediaInfo(mediaInfos, "ACTION_PREPARE_FROM_MEDIA_ID", "Supported")
+            }
+            if (actions and PlaybackStateCompat.ACTION_PLAY_FROM_MEDIA_ID != 0L) {
+                addMediaInfo(mediaInfos, "ACTION_PLAY_FROM_MEDIA_ID", "Supported")
+            }
+
+            if (actions and PlaybackStateCompat.ACTION_PREPARE_FROM_URI != 0L) {
+                addMediaInfo(mediaInfos, "ACTION_PREPARE_FROM_URI", "Supported")
+            }
+            if (actions and PlaybackStateCompat.ACTION_PLAY_FROM_URI != 0L) {
+                addMediaInfo(mediaInfos, "ACTION_PLAY_FROM_URI", "Supported")
+            }
+
+            if (actions and PlaybackStateCompat.ACTION_PREPARE != 0L) {
+                addMediaInfo(mediaInfos, "ACTION_PREPARE", "Supported")
+            }
+            if (actions and PlaybackStateCompat.ACTION_PLAY != 0L) {
+                addMediaInfo(mediaInfos, "ACTION_PLAY", "Supported")
+            }
+
+            val sortedKeys = ArrayList(mediaInfos.keys)
+            Collections.sort(sortedKeys, KeyComparator())
+        } catch (e: IllegalStateException) {
+            e.printStackTrace()
         }
 
-        val actions = playbackState.actions
-
-        if (actions and PlaybackStateCompat.ACTION_PREPARE_FROM_SEARCH != 0L) {
-            addMediaInfo(mediaInfos, "ACTION_PREPARE_FROM_SEARCH", "Supported")
-        }
-        if (actions and PlaybackStateCompat.ACTION_PLAY_FROM_SEARCH != 0L) {
-            addMediaInfo(mediaInfos, "ACTION_PLAY_FROM_SEARCH", "Supported")
-        }
-
-        if (actions and PlaybackStateCompat.ACTION_PREPARE_FROM_MEDIA_ID != 0L) {
-            addMediaInfo(mediaInfos, "ACTION_PREPARE_FROM_MEDIA_ID", "Supported")
-        }
-        if (actions and PlaybackStateCompat.ACTION_PLAY_FROM_MEDIA_ID != 0L) {
-            addMediaInfo(mediaInfos, "ACTION_PLAY_FROM_MEDIA_ID", "Supported")
-        }
-
-        if (actions and PlaybackStateCompat.ACTION_PREPARE_FROM_URI != 0L) {
-            addMediaInfo(mediaInfos, "ACTION_PREPARE_FROM_URI", "Supported")
-        }
-        if (actions and PlaybackStateCompat.ACTION_PLAY_FROM_URI != 0L) {
-            addMediaInfo(mediaInfos, "ACTION_PLAY_FROM_URI", "Supported")
-        }
-
-        if (actions and PlaybackStateCompat.ACTION_PREPARE != 0L) {
-            addMediaInfo(mediaInfos, "ACTION_PREPARE", "Supported")
-        }
-        if (actions and PlaybackStateCompat.ACTION_PLAY != 0L) {
-            addMediaInfo(mediaInfos, "ACTION_PLAY", "Supported")
-        }
-
-        val stringBuilder = StringBuilder()
-
-        val sortedKeys = ArrayList(mediaInfos.keys)
-        Collections.sort(sortedKeys, KeyComparator())
-
-        /*  for (key in sortedKeys) {
-              stringBuilder.append(key).append(" = ").append(mediaInfos[key]).append('\n')
-          }
-          return stringBuilder.toString()*/
     }
 
     private fun addMediaInfo(mediaInfos: MutableMap<String, String>, key: String, value: String) {

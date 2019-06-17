@@ -25,4 +25,13 @@ class WordViewModel constructor(application: Application) : AndroidViewModel(app
         return mRepository!!.getWordWithId(type)
     }
 
+    fun deleteWord() {
+        mRepository!!.deleteAllWord()
+    }
+
+    fun updateWord(word: Word) {
+        mRepository!!.updateWord(word)
+    }
+
+
 }

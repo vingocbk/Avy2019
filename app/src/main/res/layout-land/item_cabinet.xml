@@ -54,7 +54,6 @@
             app:met_hideUnderline="true"
             android:textColor="@android:color/transparent"
             android:textColorHint="@android:color/transparent"
-            android:visibility="gone"
             android:gravity="center"
     />
 

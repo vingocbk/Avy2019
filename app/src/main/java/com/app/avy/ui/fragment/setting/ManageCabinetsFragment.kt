@@ -24,7 +24,7 @@ class ManageCabinetsFragment : BaseFragment(), View.OnClickListener {
         mWordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
         initRecyclerView()
         // data result
-        mWordViewModel.getWordsWithId("1").observe(this,
+        mWordViewModel.getWordsWithId(1.toString()).observe(this,
             Observer<List<Word>> {
                 for (i in it.indices) {
                     mAdapter.setData(it)

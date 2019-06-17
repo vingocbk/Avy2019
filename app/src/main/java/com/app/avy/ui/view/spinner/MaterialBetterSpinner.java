@@ -20,7 +20,7 @@ public class MaterialBetterSpinner extends MaterialAutoCompleteTextView implemen
 
     private static final int MAX_CLICK_DURATION = 200;
     private long startClickTime;
-    private boolean isPopup;
+    public boolean isPopup;
 
     public MaterialBetterSpinner(Context context) {
         super(context);
@@ -62,7 +62,7 @@ public class MaterialBetterSpinner extends MaterialAutoCompleteTextView implemen
 
     }
 
-    @Override
+    /*@Override
     public boolean onTouchEvent(MotionEvent event) {
 
         switch (event.getAction()) {
@@ -71,22 +71,22 @@ public class MaterialBetterSpinner extends MaterialAutoCompleteTextView implemen
                 break;
             }
             case MotionEvent.ACTION_UP: {
-                /*long clickDuration = Calendar.getInstance().getTimeInMillis() - startClickTime;
+                long clickDuration = Calendar.getInstance().getTimeInMillis() - startClickTime;
                 if (clickDuration < MAX_CLICK_DURATION) {
                     if (isPopup) {
                         dismissDropDown();
                         isPopup = false;
                     } else {
-                        requestFocus();
-                        showDropDown();
+                         requestFocus();
+                        // showDropDown();
                         isPopup = true;
                     }
-                }*/
+                }
             }
         }
 
         return super.onTouchEvent(event);
-    }
+    }*/
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -104,6 +104,10 @@ public class MaterialBetterSpinner extends MaterialAutoCompleteTextView implemen
 
 
         super.setCompoundDrawablesWithIntrinsicBounds(left, top, right, bottom);
+    }
+
+    public boolean getisPopup() {
+        return isPopup;
     }
 
 }

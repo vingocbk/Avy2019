@@ -22,6 +22,7 @@ class SplashActivity : BaseActivity() {
     lateinit var mHotkeyViewModel: HokeyViewModle
     lateinit var mCabinetViewModle: CabinetViewModle
     lateinit var mWordViewModel: WordViewModel
+    var mCount: Int = 0
 
     var array3: ArrayList<String> = arrayListOf(
         "Hạt nêm",
@@ -67,6 +68,8 @@ class SplashActivity : BaseActivity() {
     override fun getId() = R.layout.splash_activity
 
     override fun onViewReady() {
+        mCount =
+            SharedPreferencesManager.getInstance(this).getIntFromSharePreferen(SharedPreferencesManager.CABINET_NUMBER_DEFAULT)!!
         mHotkeyViewModel = ViewModelProviders.of(this).get(HokeyViewModle::class.java)
         mCabinetViewModle = ViewModelProviders.of(this).get(CabinetViewModle::class.java)
         mWordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
@@ -109,14 +112,20 @@ class SplashActivity : BaseActivity() {
                 }
             })
 
-        mWordViewModel.getAllWords().observe(this, Observer {
-            if (it.isEmpty()) {
 
-                for (i in array3.indices) {
-                    mWordViewModel.insert(Word(array3[i]))
+     //   mWordViewModel.deleteWord()
+
+        /*mWordViewModel.getAllWords().observe(this, Observer {
+            if (it.isEmpty()) {
+                for (i in 1..mCount) {
+                    for (j in array3.indices) {
+                        mWordViewModel.insert(Word(j.toString(), i.toString(), array3[j], false))
+                        Log.e("mWordViewModel", "insert----->" + array3[j] + "----" + i)
+                    }
                 }
             }
-        })
+        })*/
+
 
     }
 

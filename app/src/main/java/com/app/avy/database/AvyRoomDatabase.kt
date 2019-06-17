@@ -14,7 +14,7 @@ import com.app.avy.database.word.Word
 import com.app.avy.database.word.WordDao
 
 
-@Database(entities = [Word::class, Hotkey::class, Cabinet::class], version = 4)
+@Database(entities = [Word::class, Hotkey::class, Cabinet::class], version = 6)
 abstract class AvyRoomDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao

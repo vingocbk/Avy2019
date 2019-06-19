@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Clear</string>
+	<string name="action_delete">ລຶບ</string>
+	<string name="action_share">Share</string>
+	<string name="dialog_wallpaper">ທ່ານຕ້ອງການທີ່ຈະກໍານົດຮູບທໍາອິດ?</string>
+	<string name="done_change_wall_paper">ກໍານົດຮູບສົບຜົນສໍາເລັດ!</string>
+	<string name="dialog_message">ທ່ານທີ່ທ່ານກໍາລັງໃຫ້ແນ່ໃຈວ່າຕ້ອງການທີ່ຈະລົບໄຟລ໌ຮູບນີ້ຢ່າງຖາວອນ?</string>
+	<string name="delete_photo_success">Photo ລຶບ</string>
+	<string name="preview">Preview</string>
+	<string name="title">ລັກສະນະ</string>
+</resources>

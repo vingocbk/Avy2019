@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Очистить</string>
+	<string name="action_delete">Удалить</string>
+	<string name="action_share">Поделиться</string>
+	<string name="dialog_wallpaper">Вы хотите установить обои для рабочего стола?</string>
+	<string name="done_change_wall_paper">Установить обои успешно!</string>
+	<string name="dialog_message">Вы действительно хотите удалить этот файл навсегда?</string>
+	<string name="delete_photo_success">Фотография удалена</string>
+	<string name="preview">предварительный просмотр</string>
+	<string name="title">символ</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Introduceți text</string>
+	<string name="loading">Se incarca...</string>
+	<string name="saving">Economisire...</string>
+</resources>

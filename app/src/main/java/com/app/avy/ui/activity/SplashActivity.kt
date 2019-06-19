@@ -24,47 +24,6 @@ class SplashActivity : BaseActivity() {
     lateinit var mWordViewModel: WordViewModel
     var mCount: Int = 0
 
-    var array3: ArrayList<String> = arrayListOf(
-        "Hạt nêm",
-        "Dao",
-        "Kéo",
-        "Muối",
-        "Mỳ chính",
-        "Nước mắm",
-        "Dầu ăn",
-        "Đũa bát",
-        "Riệu",
-        "Mật ong",
-        "Tương",
-        "Tương ớt",
-        "Mù tạt",
-        "Nước dừa",
-        "Nghệ",
-        "sả",
-        "riềng",
-        "gừng",
-        "tỏi",
-        "hành tây",
-        "củ niễng",
-        "hành củ",
-        "nghệ",
-        "củ kiệu",
-        "bột đao",
-        "mắm tôm",
-        "mắm tép",
-        "mắm tôm chua",
-        "mắm rươi",
-        "mắm cáy",
-        "mắm cua đồng",
-        "mắm bò hóc",
-        "mắm ba khía",
-        "mắm nêm",
-        "nguyệt quế",
-        "hành hoa",
-        "rau răm",
-        "hẹ"
-    )
-
     override fun getId() = R.layout.splash_activity
 
     override fun onViewReady() {
@@ -113,18 +72,24 @@ class SplashActivity : BaseActivity() {
             })
 
 
-     //   mWordViewModel.deleteWord()
-
-        /*mWordViewModel.getAllWords().observe(this, Observer {
+        //mWordViewModel.deleteWord()
+        mWordViewModel.getAllWords().observe(this, Observer {
             if (it.isEmpty()) {
                 for (i in 1..mCount) {
-                    for (j in array3.indices) {
-                        mWordViewModel.insert(Word(j.toString(), i.toString(), array3[j], false))
-                        Log.e("mWordViewModel", "insert----->" + array3[j] + "----" + i)
+                    for (j in Constant.itemDefault.indices) {
+                        mWordViewModel.insert(
+                            Word(
+                                j.toString(),
+                                i.toString(),
+                                Constant.itemDefault[j].toUpperCase(),
+                                false
+                            )
+                        )
+                        Log.e("mWordViewModel", "insert----->" + Constant.itemDefault[j].toUpperCase() + "----" + i)
                     }
                 }
             }
-        })*/
+        })
 
 
     }

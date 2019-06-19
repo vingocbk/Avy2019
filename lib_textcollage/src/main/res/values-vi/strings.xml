@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Ghép ảnh chữ</string>
+    <string name="clear">Xóa</string>
+    <string name="no_space_left_on_device">Bộ nhớ thiết bị ít hơn %d MB, không lưu được ảnh.</string>
+    <string name="action_delete">Xóa</string>
+    <string name="action_share">Chia sẻ</string>
+    <string name="dialog_wallpaper">Bạn có muốn đặt làm hình nền?</string>
+    <string name="done_change_wall_paper">Đặt hình nền thành công!</string>
+    <string name="dialog_message">Bạn có chắc chắn xóa vĩnh viễn ảnh này không?</string>
+    <string name="delete_photo_success">Ảnh đã bị xóa</string>
+    <string name="title">Ký tự</string>
+</resources>

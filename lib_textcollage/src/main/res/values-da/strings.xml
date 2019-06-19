@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Klar</string>
+	<string name="action_delete">Slet</string>
+	<string name="action_share">Del</string>
+	<string name="dialog_wallpaper">Ønsker du at indstille hjemme tapet?</string>
+	<string name="done_change_wall_paper">Indstil tapet med succes!</string>
+	<string name="dialog_message">Er du sikker på, at du vil slette denne fotofil permanent?</string>
+	<string name="delete_photo_success">Foto slettet</string>
+	<string name="preview">Eksempel</string>
+	<string name="title">Karakter</string>
+</resources>

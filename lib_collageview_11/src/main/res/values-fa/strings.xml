@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">متن را وارد کنید</string>
+	<string name="loading">بارگیری ...</string>
+	<string name="saving">صرفه جویی در...</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Введите текст</string>
+	<string name="loading">Loading ...</string>
+	<string name="saving">Сохранение ...</string>
+</resources>

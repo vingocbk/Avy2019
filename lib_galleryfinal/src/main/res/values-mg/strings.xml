@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Gallery</string>
+	<string name="all_photo">Photo rehetra</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Photo Crop</string>
+	<string name="crop_suc">Photo crop fahombiazana</string>
+	<string name="crop_fail">Photo crop tsy fahombiazana</string>
+	<string name="no_photo">Photo foana tsy mitondra fanatitra</string>
+	<string name="waiting">Andraso azafady...</string>
+	<string name="select_max_tips">Efa nahatratra ny isa ambony indrindra safidy!</string>
+	<string name="empty_sdcard">Tsy misy karatra SD</string>
+	<string name="open_gallery_fail">Gallery init tsy fahombiazana!</string>
+	<string name="take_photo_fail">Raiso sary tsy fahombiazana</string>
+	<string name="saving">Mitahiry sary ...</string>
+	<string name="please_reopen_gf">Please mamerina Gallery</string>
+	<string name="edit_letoff_photo_format">Ny sary endrika tsy manohana io hetsika!</string>
+	<string name="photo_list_empty">Tsy nahomby ny hahazo ny sary!</string>
+	<string name="preview">Preview</string>
+	<string name="permissions_tips_gallery">Ity fampiharana ny fidirana mangataka ny Gallery</string>
+	<string name="permissions_denied_tips">Tsy afaka ny hahazo sary</string>
+	<string name="maxsize_zero_tip">Max habe tokony ho lehibe noho zero ny</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Јасно</string>
+	<string name="action_delete">Избриши</string>
+	<string name="action_share">Објави</string>
+	<string name="dialog_wallpaper">Да ли желите да поставите позадину за кућу?</string>
+	<string name="done_change_wall_paper">Успјешно поставите позадину!</string>
+	<string name="dialog_message">Да ли сте сигурни да желите трајно избрисати ову слику?</string>
+	<string name="delete_photo_success">Фотографија избрисана</string>
+	<string name="preview">Преглед</string>
+	<string name="title">Карактер</string>
+</resources>

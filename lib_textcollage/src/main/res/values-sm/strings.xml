@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">manino</string>
+	<string name="action_delete">aveese</string>
+	<string name="action_share">Faasoa atu</string>
+	<string name="dialog_wallpaper">E te manao e faatulaga pepa puipui le fale?</string>
+	<string name="done_change_wall_paper">Seti manuia pepa puipui!</string>
+	<string name="dialog_message">Pe ua e mautinoa e te manao e aveese tumau lenei faila ata?</string>
+	<string name="delete_photo_success">Photo aveesea</string>
+	<string name="preview">tofo</string>
+	<string name="title">uiga</string>
+</resources>

@@ -39,6 +39,7 @@ import com.app.avy.module.MusicModule
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_music.seek_bar_volume
 import kotlinx.android.synthetic.main.fragment_setting_cabinet.*
+import java.lang.Exception
 
 
 class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListener, SeekBar.OnSeekBarChangeListener,
@@ -342,7 +343,7 @@ class MusicFragment : BaseFragment(), MediaSessionListener.MediaAppDetailListene
             mCallback.onMetadataChanged(mController?.metadata)
 
             Log.d(TAG, "MediaControllerCompat created")
-        } catch (remoteException: RemoteException) {
+        } catch (remoteException: Exception) {
             Log.e(TAG, "Failed to create MediaController from session token", remoteException)
         }
     }

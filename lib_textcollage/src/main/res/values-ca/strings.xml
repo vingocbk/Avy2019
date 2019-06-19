@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Clar</string>
+	<string name="action_delete">Suprimeix</string>
+	<string name="action_share">Compartir</string>
+	<string name="dialog_wallpaper">Voleu establir el paper tapís de casa?</string>
+	<string name="done_change_wall_paper">Establiu fons de pantalla amb èxit!</string>
+	<string name="dialog_message">Estàs segur que vols eliminar permanentment aquest fitxer de fotos?</string>
+	<string name="delete_photo_success">S\'ha suprimit la foto</string>
+	<string name="preview">Vista prèvia</string>
+	<string name="title">Personatge</string>
+</resources>

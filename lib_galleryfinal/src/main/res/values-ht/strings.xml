@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galeri</string>
+	<string name="all_photo">tout Photo</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Photo rekòt</string>
+	<string name="crop_suc">siksè Photo rekòt</string>
+	<string name="crop_fail">Photo echèk rekòt</string>
+	<string name="no_photo">Photo vid</string>
+	<string name="waiting">Souple tann...</string>
+	<string name="select_max_tips">Te rive seleksyon an kantite maksimòm!</string>
+	<string name="empty_sdcard">Pa gen kat SD</string>
+	<string name="open_gallery_fail">Galeri ini echèk!</string>
+	<string name="take_photo_fail">Pran echèk foto</string>
+	<string name="saving">Ekonomize foto ...</string>
+	<string name="please_reopen_gf">Tanpri reouvri Galeri</string>
+	<string name="edit_letoff_photo_format">Fòma a imaj pa sipòte operasyon sa a!</string>
+	<string name="photo_list_empty">Echwe pou pou jwenn foto a!</string>
+	<string name="preview">Preview</string>
+	<string name="permissions_tips_gallery">Sa a app mande aksè nan Galeri ou</string>
+	<string name="permissions_denied_tips">Kapab jwenn foto</string>
+	<string name="maxsize_zero_tip">Max gwosè yo ta dwe pi gran pase zewo</string>
+</resources>

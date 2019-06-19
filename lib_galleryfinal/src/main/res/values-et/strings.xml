@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galerii</string>
+	<string name="all_photo">Kõik fotod</string>
+	<string name="photo_edit">Foto redigeerimine</string>
+	<string name="photo_crop">Foto kärpimine</string>
+	<string name="crop_suc">Photo crop edu</string>
+	<string name="crop_fail">Foto saagimine</string>
+	<string name="no_photo">Foto on tühi</string>
+	<string name="waiting">Palun oota...</string>
+	<string name="select_max_tips">Maksimaalse arvu valik on jõudnud!</string>
+	<string name="empty_sdcard">SD-kaarti pole</string>
+	<string name="open_gallery_fail">Galerii init ebaõnnestumine!</string>
+	<string name="take_photo_fail">Võtke fotode rike</string>
+	<string name="saving">Pildi salvestamine ...</string>
+	<string name="please_reopen_gf">Palun avage Galerii uuesti</string>
+	<string name="edit_letoff_photo_format">Kujutise formaat ei toeta seda toimingut!</string>
+	<string name="photo_list_empty">Pilti ebaõnnestus!</string>
+	<string name="preview">Eelvaade</string>
+	<string name="permissions_tips_gallery">See rakendus, mis taotleb ligipääsu oma galeriile</string>
+	<string name="permissions_denied_tips">Pilte ei saa saada</string>
+	<string name="maxsize_zero_tip">Suurus peaks olema suurem kui null</string>
+</resources>

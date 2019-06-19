@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Intrinsenu u testu</string>
+	<string name="loading">Loading ...</string>
+	<string name="saving">Saving ...</string>
+</resources>

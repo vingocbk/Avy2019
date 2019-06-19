@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Clear</string>
+	<string name="action_delete">Fafao</string>
+	<string name="action_share">Share</string>
+	<string name="dialog_wallpaper">Ve ianao te-hametraka temotra an-trano?</string>
+	<string name="done_change_wall_paper">Mametraha temotra soa aman-tsara!</string>
+	<string name="dialog_message">Ve ianao antoka fa te-hamafa tanteraka io sary rakitra?</string>
+	<string name="delete_photo_success">Photo voafafa</string>
+	<string name="preview">Preview</string>
+	<string name="title">Character</string>
+</resources>

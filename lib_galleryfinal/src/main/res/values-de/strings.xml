@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galerie</string>
+	<string name="all_photo">Alle Foto</string>
+	<string name="photo_edit">Fotobearbeitung</string>
+	<string name="photo_crop">Foto-Ernte</string>
+	<string name="crop_suc">Foto Ernte Erfolg</string>
+	<string name="crop_fail">Fotoausfallversagen</string>
+	<string name="no_photo">Foto leer</string>
+	<string name="waiting">Warten Sie mal...</string>
+	<string name="select_max_tips">Hat die maximale Nummernauswahl erreicht!</string>
+	<string name="empty_sdcard">Keine SD-Karte</string>
+	<string name="open_gallery_fail">Galerie init Ausfall!</string>
+	<string name="take_photo_fail">Fotoausfall machen</string>
+	<string name="saving">Bild speichern ...</string>
+	<string name="please_reopen_gf">Bitte Galerie neu eröffnen</string>
+	<string name="edit_letoff_photo_format">Das Bildformat unterstützt diesen Vorgang nicht!</string>
+	<string name="photo_list_empty">Fehler beim Abrufen des Bildes!</string>
+	<string name="preview">Vorschau</string>
+	<string name="permissions_tips_gallery">Diese App fordert den Zugriff auf Ihre Galerie an</string>
+	<string name="permissions_denied_tips">Kann keine Bilder bekommen</string>
+	<string name="maxsize_zero_tip">Maximale Größe sollte größer als Null sein</string>
+</resources>

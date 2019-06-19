@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">ટેક્સ્ટ દાખલ કરો</string>
+	<string name="loading">લોડ કરી રહ્યું છે ...</string>
+	<string name="saving">સાચવી રહ્યું છે ...</string>
+</resources>

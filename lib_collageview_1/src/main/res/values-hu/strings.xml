@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Írja be a szöveget</string>
+	<string name="loading">Betöltés...</string>
+	<string name="saving">Megtakarítás...</string>
+</resources>

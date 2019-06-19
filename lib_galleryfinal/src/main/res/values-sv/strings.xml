@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galleri</string>
+	<string name="all_photo">Allt foto</string>
+	<string name="photo_edit">Fotoredigering</string>
+	<string name="photo_crop">Foto Crop</string>
+	<string name="crop_suc">Bildskörd framgång</string>
+	<string name="crop_fail">Bildfelfel</string>
+	<string name="no_photo">Foto tomt</string>
+	<string name="waiting">Vänta...</string>
+	<string name="select_max_tips">Har nått det maximala antalet val!</string>
+	<string name="empty_sdcard">Inget SD-kort</string>
+	<string name="open_gallery_fail">Gallery init-fel!</string>
+	<string name="take_photo_fail">Ta fotofel</string>
+	<string name="saving">Spara bild ...</string>
+	<string name="please_reopen_gf">Vänligen öppna Galleriet igen</string>
+	<string name="edit_letoff_photo_format">Bildformatet stöder inte denna operation!</string>
+	<string name="photo_list_empty">Misslyckades med att få bilden!</string>
+	<string name="preview">Förhandsvisning</string>
+	<string name="permissions_tips_gallery">Den här appen begär att du får tillgång till ditt galleri</string>
+	<string name="permissions_denied_tips">Det går inte att få bilder</string>
+	<string name="maxsize_zero_tip">Max storlek ska vara större än noll</string>
+</resources>

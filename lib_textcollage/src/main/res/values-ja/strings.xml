@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">クリア</string>
+	<string name="action_delete">削除</string>
+	<string name="action_share">シェア</string>
+	<string name="dialog_wallpaper">あなたは家の壁紙を設定しますか？</string>
+	<string name="done_change_wall_paper">壁紙を正常に設定してください！</string>
+	<string name="dialog_message">この写真ファイルを完全に削除してもよろしいですか？</string>
+	<string name="delete_photo_success">写真を削除しました</string>
+	<string name="preview">プレビュー</string>
+	<string name="title">キャラクター</string>
+</resources>

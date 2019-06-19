@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">галерея</string>
+	<string name="all_photo">Ҳамаи Аксҳо</string>
+	<string name="photo_edit">Аксҳо Edit</string>
+	<string name="photo_crop">Аксҳо зироат</string>
+	<string name="crop_suc">муваффақияти Аксҳо зироат</string>
+	<string name="crop_fail">Аксҳо нокомии зироат</string>
+	<string name="no_photo">Аксҳо холӣ</string>
+	<string name="waiting">Илтимос истед...</string>
+	<string name="select_max_tips">расидааст, ки ҳадди интихоби шумораи!</string>
+	<string name="empty_sdcard">Не корти SD</string>
+	<string name="open_gallery_fail">Намоиши скриптҳои нокомии!</string>
+	<string name="take_photo_fail">Андешидани нокомии акс</string>
+	<string name="saving">Сарфа расм ...</string>
+	<string name="please_reopen_gf">Лутфан, reopen Галерея</string>
+	<string name="edit_letoff_photo_format">Намунаи тасвири ин амалиёт пуштибонӣ намекунад!</string>
+	<string name="photo_list_empty">ба даст расм нашудааст!</string>
+	<string name="preview">саньиши пешакӣ</string>
+	<string name="permissions_tips_gallery">Ин барнома бо дархости дастрасӣ ба Галерея кунед</string>
+	<string name="permissions_denied_tips">Қодир ба даст тасвирҳо</string>
+	<string name="maxsize_zero_tip">Андозаи Max бояд аз ‧ калон бошанд</string>
+</resources>

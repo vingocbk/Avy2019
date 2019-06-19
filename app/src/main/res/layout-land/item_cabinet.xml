@@ -6,8 +6,8 @@
                 android:background="@drawable/ic_border"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/padding_12dp"
-                android:layout_marginTop="@dimen/padding_12dp">
+                android:layout_marginBottom="@dimen/padding_18dp"
+                android:layout_marginTop="@dimen/padding_18dp">
 
     <RelativeLayout
             android:layout_width="wrap_content"
@@ -41,21 +41,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAllCaps="true"
-            android:layout_centerInParent="true"
+            android:paddingStart="@dimen/padding_16dp"
             android:textColor="@color/md_grey_white"
+            android:layout_centerInParent="true"
             android:text="View"/>
 
-    <com.app.avy.ui.view.spinner.MaterialBetterSpinner
-            android:id="@+id/spinner_key"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:met_floatingLabel="none"
-            android:background="@null"
-            app:met_hideUnderline="true"
-            android:textColor="@android:color/transparent"
-            android:textColorHint="@android:color/transparent"
-            android:gravity="center"
-    />
 
 </RelativeLayout>
 

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Jelas</string>
+	<string name="action_delete">Padam</string>
+	<string name="action_share">Kongsi</string>
+	<string name="dialog_wallpaper">Adakah anda mahu menetapkan kertas dinding rumah?</string>
+	<string name="done_change_wall_paper">Tetapkan kertas dinding dengan jayanya!</string>
+	<string name="dialog_message">Adakah anda pasti mahu memadamkan fail foto ini secara kekal?</string>
+	<string name="delete_photo_success">Photo dipadam</string>
+	<string name="preview">Pratonton</string>
+	<string name="title">Watak</string>
+</resources>

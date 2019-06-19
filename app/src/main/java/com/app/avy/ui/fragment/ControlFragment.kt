@@ -1,7 +1,13 @@
 package com.app.avy.ui.fragment
 
+import android.content.Context
+import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.util.DisplayMetrics
+import android.util.Log
 import android.view.View
+import androidx.annotation.RawRes
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -14,11 +20,17 @@ import com.app.avy.module.LightRequest
 import com.app.avy.network.NetworkService
 import com.app.avy.network.RetrofitHelper
 import com.app.avy.ui.adapter.ControlAdapter
+import com.lib.collageview.CollageView
+import com.lib.collageview.helpers.Flog
+import com.lib.collageview.helpers.svg.SVGItem
+import com.lib.collageview.helpers.svg.SVGPathUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_control.*
+import org.xmlpull.v1.XmlPullParserException
 import top.defaults.colorpicker.ColorPickerView
+import java.io.IOException
 
 class ControlFragment : BaseFragment(), View.OnClickListener {
 
@@ -29,6 +41,7 @@ class ControlFragment : BaseFragment(), View.OnClickListener {
     var mColorPicker: ColorPickerView? = null
     var preIndex = 0
     var preOpacity = 0
+    lateinit var mCollageView: CollageView
 
     companion object {
         fun newInstance(listener: OnChildItemClickListener): ControlFragment {
@@ -86,7 +99,37 @@ class ControlFragment : BaseFragment(), View.OnClickListener {
     }
 
     fun init() {
+        mCollageView = collage_view
         mColorPicker = colorPicker
+        val d = ContextCompat.getDrawable(context!!, R.drawable.ic_13)
+        val h = d!!.intrinsicHeight
+        val w = d.intrinsicWidth
+
+        val icon = BitmapFactory.decodeResource(
+            context!!.resources,
+            R.drawable.eva_3
+        )
+
+        Log.e("ControlFragment", "------>" + icon.width + "---" + icon.height)
+
+        //mCollageView.setBackgroundResource(R.drawable.ic_13)
+
+
+        // mCollageView.setWidthAndHeigh(convertPixelsToDp(2332.0f).toInt(), convertPixelsToDp(1379.0f).toInt())
+        img_bg_kitchen.post {
+            Log.e(
+                "ControlFragment",
+                "------ ${convertPixelsToDp(img_bg_kitchen.width.toFloat())}  ${convertPixelsToDp(img_bg_kitchen.height.toFloat())}"
+            )
+        }
+        mCollageView.setLayoutStyle(parsePathFromXml("ic_svg_lady_01.xml"))
+        mCollageView.show()
+
+
+    }
+
+    fun convertPixelsToDp(px: Float): Float {
+        return px / (context!!.resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
     }
 
     fun pickColor() {
@@ -128,6 +171,18 @@ class ControlFragment : BaseFragment(), View.OnClickListener {
                 })
         }
         preIndex = b
+    }
 
+    fun loadSvg() {
+        parsePathFromXml("ic_square_1.xml")
+    }
+
+    @Throws(IOException::class, XmlPullParserException::class)
+    fun parsePathFromXml(filePath: String): SVGItem? {
+        val inputStream = context!!.assets.open(filePath)
+        Flog.d("FILEPATH $filePath")
+        var item = SVGPathUtils.getSVGItem(inputStream)
+        inputStream.close()
+        return item
     }
 }

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">ачык</string>
+	<string name="action_delete">жок кылуу</string>
+	<string name="action_share">Бөлүшүү</string>
+	<string name="dialog_wallpaper">Эгер үй обои келеби?</string>
+	<string name="done_change_wall_paper">ийгиликтүү обои!</string>
+	<string name="dialog_message">чын эле биротоло сурот билэни жок кыласызбы?</string>
+	<string name="delete_photo_success">Сүрөт жок кылынды</string>
+	<string name="preview">алдын ала кароо</string>
+	<string name="title">Character</string>
+</resources>

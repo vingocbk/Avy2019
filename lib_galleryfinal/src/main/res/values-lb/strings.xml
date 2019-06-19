@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Gallery</string>
+	<string name="all_photo">all Photo</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Photo Boun</string>
+	<string name="crop_suc">Photo Boun Succès</string>
+	<string name="crop_fail">Photo Boun Echec</string>
+	<string name="no_photo">Photo eidel</string>
+	<string name="waiting">Weg wait ...</string>
+	<string name="select_max_tips">Ass déi maximal Zuel Auswiel erreecht!</string>
+	<string name="empty_sdcard">Nee Fils Géigespiller</string>
+	<string name="open_gallery_fail">Gallery init Echec!</string>
+	<string name="take_photo_fail">Huelt photo Echec</string>
+	<string name="saving">Spueren Bild ...</string>
+	<string name="please_reopen_gf">Weg moere Gallery</string>
+	<string name="edit_letoff_photo_format">D\'Bild Format net dëser Operatioun Ënnerstëtzung!</string>
+	<string name="photo_list_empty">Dunn d\'Bild ze kréien!</string>
+	<string name="preview">Preview</string>
+	<string name="permissions_tips_gallery">Dëst App ugefrot Accès op Är Gallery</string>
+	<string name="permissions_denied_tips">Knapp Biller ze kréien</string>
+	<string name="maxsize_zero_tip">Max Gréisst soll grouss ginn wéi null</string>
+</resources>

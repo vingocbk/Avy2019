@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">גלריה</string>
+	<string name="all_photo">כל תמונה</string>
+	<string name="photo_edit">עריכת תמונה</string>
+	<string name="photo_crop">חיתוך תמונה</string>
+	<string name="crop_suc">הצילום יבול הצלחה</string>
+	<string name="crop_fail">תקלה בצילום תמונה</string>
+	<string name="no_photo">התמונה ריקה</string>
+	<string name="waiting">המתן בבקשה...</string>
+	<string name="select_max_tips">הגיע למספר הבחירה המרבי!</string>
+	<string name="empty_sdcard">אין כרטיס SD</string>
+	<string name="open_gallery_fail">כשל בגלריית init!</string>
+	<string name="take_photo_fail">קח כישלון תמונה</string>
+	<string name="saving">שומר תמונה ...</string>
+	<string name="please_reopen_gf">פתח מחדש את הגלריה</string>
+	<string name="edit_letoff_photo_format">פורמט התמונה אינו תומך בפעולה זו!</string>
+	<string name="photo_list_empty">התמונה נכשלה!</string>
+	<string name="preview">תצוגה מקדימה</string>
+	<string name="permissions_tips_gallery">האפליקציה הזו מבקשת גישה לגלריה שלך</string>
+	<string name="permissions_denied_tips">לא ניתן לקבל תמונות</string>
+	<string name="maxsize_zero_tip">הגודל המקסימלי צריך להיות גדול מאפס</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Opklearje</string>
+	<string name="action_delete">wiskje</string>
+	<string name="action_share">Diele</string>
+	<string name="dialog_wallpaper">Wolle jo ynstelle thús wallpaper?</string>
+	<string name="done_change_wall_paper">Set wallpaper sukses!</string>
+	<string name="dialog_message">Binne jo wis dat jo wol foar altyd wiskje dizze foto triem?</string>
+	<string name="delete_photo_success">Photo wiske</string>
+	<string name="preview">Foarbyld</string>
+	<string name="title">Personaazje</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">ברור</string>
+	<string name="action_delete">לִמְחוֹק</string>
+	<string name="action_share">לַחֲלוֹק</string>
+	<string name="dialog_wallpaper">האם ברצונך להגדיר טפט ביתי?</string>
+	<string name="done_change_wall_paper">הגדר טפט בהצלחה!</string>
+	<string name="dialog_message">האם אתה בטוח שברצונך למחוק לצמיתות את קובץ הצילום הזה?</string>
+	<string name="delete_photo_success">התמונה נמחקה</string>
+	<string name="preview">תצוגה מקדימה</string>
+	<string name="title">אופי</string>
+</resources>

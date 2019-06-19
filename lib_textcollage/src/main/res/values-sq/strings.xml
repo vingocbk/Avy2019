@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Qartë</string>
+	<string name="action_delete">fshij</string>
+	<string name="action_share">pjesë</string>
+	<string name="dialog_wallpaper">A doni të vendosni letër-muri në shtëpi?</string>
+	<string name="done_change_wall_paper">Vendosni me sukses sfondin!</string>
+	<string name="dialog_message">Je i sigurt që dëshiron ta fshish përgjithmonë këtë skedar foto?</string>
+	<string name="delete_photo_success">Foto u fshi</string>
+	<string name="preview">inspektim</string>
+	<string name="title">karakter</string>
+</resources>

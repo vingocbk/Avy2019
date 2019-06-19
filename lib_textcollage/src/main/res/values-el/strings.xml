@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Σαφή</string>
+	<string name="action_delete">Διαγράφω</string>
+	<string name="action_share">Μερίδιο</string>
+	<string name="dialog_wallpaper">Θέλετε να ορίσετε την ταπετσαρία στο σπίτι;</string>
+	<string name="done_change_wall_paper">Ορίστε την ταπετσαρία με επιτυχία</string>
+	<string name="dialog_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτό το αρχείο φωτογραφιών;</string>
+	<string name="delete_photo_success">Η φωτογραφία διαγράφηκε</string>
+	<string name="preview">Προεπισκόπηση</string>
+	<string name="title">Χαρακτήρας</string>
+</resources>

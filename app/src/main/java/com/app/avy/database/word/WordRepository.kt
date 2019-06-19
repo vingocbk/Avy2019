@@ -2,6 +2,7 @@ package com.app.avy.database.word
 
 import android.app.Application
 import android.os.AsyncTask
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.app.avy.database.AvyRoomDatabase
 import com.app.avy.database.cabinet.Cabinet
@@ -38,6 +39,9 @@ class WordRepository(application: Application) {
         UpdateWord(mWordDao).execute(word)
     }
 
+    fun updateWordWithType(word: String, type: String, select: Boolean) {
+        UpdateWordWithType(mWordDao, type, word, select).execute()
+    }
 
     class insertAsyncTask constructor(private val mAsyncTaskDao: WordDao) :
         AsyncTask<Word, Void, Int>() {
@@ -61,6 +65,19 @@ class WordRepository(application: Application) {
             params[0]!!.let {
                 wordDao.updateWord(it.id, it.type, it.select)
             }
+            return 1
+        }
+    }
+
+    class UpdateWordWithType constructor(
+        var wordDao: WordDao,
+        var type: String,
+        var word: String,
+        var select: Boolean
+    ) : AsyncTask<Void, Void, Int>() {
+        override fun doInBackground(vararg params: Void?): Int {
+            Log.e("UpdateWordWithType", "------> $word  $type  $select")
+            wordDao.updateWordWithType(word.trim(), type.trim(), select)
             return 1
         }
     }

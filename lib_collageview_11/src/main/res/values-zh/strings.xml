@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">输入文字</string>
+	<string name="loading">载入中...</string>
+	<string name="saving">保存...</string>
+</resources>

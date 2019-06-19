@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Gallery</string>
+	<string name="all_photo">All Photo</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Photo kekahi mea kanu</string>
+	<string name="crop_suc">Photo iʻohi i ka pomaikai</string>
+	<string name="crop_fail">Photo kekahi mea kanu ole</string>
+	<string name="no_photo">Photo nele</string>
+	<string name="waiting">Ālia mai ...</string>
+	<string name="select_max_tips">Ua hiki i ka i kā mākou helu koho!</string>
+	<string name="empty_sdcard">No SD kāleka</string>
+	<string name="open_gallery_fail">Gallery init ole!</string>
+	<string name="take_photo_fail">E Hawaii photo ole</string>
+	<string name="saving">E hoola i kiʻi ...</string>
+	<string name="please_reopen_gf">Eʻoluʻolu, e reopen Gallery</string>
+	<string name="edit_letoff_photo_format">Ke kiʻi waihona \'Aʻole i kākoʻo i kēia hana!</string>
+	<string name="photo_list_empty">Nele e kiʻi i ke kiʻi!</string>
+	<string name="preview">Preview</string>
+	<string name="permissions_tips_gallery">Keia mail app noi komo i kou Gallery</string>
+	<string name="permissions_denied_tips">Hikiʻole ke kiʻi slike</string>
+	<string name="maxsize_zero_tip">Max nui e kela aku kona nui ma mua o \'Aʻohe</string>
+</resources>

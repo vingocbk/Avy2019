@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galeri</string>
+	<string name="all_photo">Gjitha Foto</string>
+	<string name="photo_edit">Edit foto</string>
+	<string name="photo_crop">Foto Pri</string>
+	<string name="crop_suc">Foto sukses në kulture</string>
+	<string name="crop_fail">Dështimi i diktimit të fotove</string>
+	<string name="no_photo">Foto bosh</string>
+	<string name="waiting">Te lutem prit...</string>
+	<string name="select_max_tips">Ka arritur numrin maksimal të përzgjedhjes!</string>
+	<string name="empty_sdcard">Asnjë kartë SD</string>
+	<string name="open_gallery_fail">Galeria dështimi init!</string>
+	<string name="take_photo_fail">Merrni dështim të fotos</string>
+	<string name="saving">Duke ruajtur foton ...</string>
+	<string name="please_reopen_gf">Rihapni Galerinë</string>
+	<string name="edit_letoff_photo_format">Formati i imazhit nuk e mbështet këtë operacion!</string>
+	<string name="photo_list_empty">Dështoi në marrjen e figurës!</string>
+	<string name="preview">inspektim</string>
+	<string name="permissions_tips_gallery">Ky aplikacion kërkon qasje në Galerinë tënde</string>
+	<string name="permissions_denied_tips">Pamundësia për të marrë fotografi</string>
+	<string name="maxsize_zero_tip">Madhësia maksimale duhet të jetë më e madhe se zero</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Clear</string>
+	<string name="action_delete">Delete</string>
+	<string name="action_share">Share</string>
+	<string name="dialog_wallpaper">Vulete stabilisce u wallpaper di casa?</string>
+	<string name="done_change_wall_paper">Fondate wallpaper!</string>
+	<string name="dialog_message">Sè sicuru chì vulete sguassà permanentamente stu schedariu foto?</string>
+	<string name="delete_photo_success">Photo deleted</string>
+	<string name="preview">Preview</string>
+	<string name="title">Carattere</string>
+</resources>

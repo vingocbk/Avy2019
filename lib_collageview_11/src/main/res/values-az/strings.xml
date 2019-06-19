@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Mətn daxil edin</string>
+	<string name="loading">Yüklənir ...</string>
+	<string name="saving">Saving ...</string>
+</resources>

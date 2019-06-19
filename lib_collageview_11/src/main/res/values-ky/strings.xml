@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">текст киргизүү</string>
+	<string name="loading">Жүктөлүүдө ...</string>
+	<string name="saving">Сакталып жатат ...</string>
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Галерея</string>
+	<string name="all_photo">Все фото</string>
+	<string name="photo_edit">Фото редагування</string>
+	<string name="photo_crop">Фотографія</string>
+	<string name="crop_suc">Фото урожай успіху</string>
+	<string name="crop_fail">Невдача фотографії</string>
+	<string name="no_photo">Фото порожнє</string>
+	<string name="waiting">Будь ласка, зачекайте ...</string>
+	<string name="select_max_tips">Досягнув максимального вибору номера!</string>
+	<string name="empty_sdcard">Немає карти SD</string>
+	<string name="open_gallery_fail">Галерея init провал!</string>
+	<string name="take_photo_fail">Зніміть фотографію</string>
+	<string name="saving">Збереження картинки ...</string>
+	<string name="please_reopen_gf">Будь ласка, знову відкрийте Галерею</string>
+	<string name="edit_letoff_photo_format">Формат зображення не підтримує цю операцію!</string>
+	<string name="photo_list_empty">Не вдалося отримати зображення!</string>
+	<string name="preview">Попередній перегляд</string>
+	<string name="permissions_tips_gallery">Це додаток, що вимагає доступу до вашої галереї</string>
+	<string name="permissions_denied_tips">Не вдається отримати фотографії</string>
+	<string name="maxsize_zero_tip">Макс розмір повинен бути більшим за нуль</string>
+</resources>

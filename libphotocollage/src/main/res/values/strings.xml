@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LibPhotoCollage</string>
+    <string name="the_selected_files_are_not_supported_on_this_studio_select_other_files_and_try_again">The selected files are not supported on this studio. Select other files and try again.</string>
+    <string name="processing">Processing...</string>
+    <string name="share_via">Share via</string>
+    <string name="setas">Set as</string>
+</resources>

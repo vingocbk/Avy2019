@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Indtast tekst</string>
+	<string name="loading">Indlæser...</string>
+	<string name="saving">Gemmer ...</string>
+</resources>

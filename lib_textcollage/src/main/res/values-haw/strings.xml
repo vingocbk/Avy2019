@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Mea</string>
+	<string name="action_delete">e kāpae i</string>
+	<string name="action_share">Share</string>
+	<string name="dialog_wallpaper">Anei oe makemake e hoonoho i ka hale Wallpaper?</string>
+	<string name="done_change_wall_paper">E hoʻopaʻa i Wallpaper ana!</string>
+	<string name="dialog_message">Nei anei oeʻoiaʻiʻo oe makemake e paʻa kāpae i kēia Hawaii photo waihona?</string>
+	<string name="delete_photo_success">Photo holoiʻia</string>
+	<string name="preview">Preview</string>
+	<string name="title">pūʻulu</string>
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Gallery</string>
+	<string name="all_photo">Argazki guztia</string>
+	<string name="photo_edit">Argazki edizioa</string>
+	<string name="photo_crop">Argazki mozketa</string>
+	<string name="crop_suc">Argazki-laborantza arrakasta</string>
+	<string name="crop_fail">Argazki-laborantza porrota</string>
+	<string name="no_photo">Argazki hutsik dago</string>
+	<string name="waiting">Itxaron mesedez...</string>
+	<string name="select_max_tips">Gehienezko hautapenera iritsi da!</string>
+	<string name="empty_sdcard">SD txartelik ez</string>
+	<string name="open_gallery_fail">Gallery init failure!</string>
+	<string name="take_photo_fail">Hartu argazkiaren porrota</string>
+	<string name="saving">Irudia gordetzea ...</string>
+	<string name="please_reopen_gf">Berriro ireki Galeria</string>
+	<string name="edit_letoff_photo_format">Irudi formatuak ez du eragiketa hau onartzen!</string>
+	<string name="photo_list_empty">Ezin izan da argazkia atera!</string>
+	<string name="preview">Aurreikusi</string>
+	<string name="permissions_tips_gallery">Aplikazio honek zure Gallery-ra sartzeko eskatzen du</string>
+	<string name="permissions_denied_tips">Ezin dira argazkiak atera</string>
+	<string name="maxsize_zero_tip">Gehienezko tamaina zero baino handiagoa izan behar da</string>
+</resources>

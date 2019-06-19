@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Bộ sưu tập</string>
+	<string name="all_photo">Tất cả Ảnh</string>
+	<string name="photo_edit">Chỉnh sửa Ảnh</string>
+	<string name="photo_crop">Cắt ảnh</string>
+	<string name="crop_suc">Chụp ảnh thành công</string>
+	<string name="crop_fail">Ảnh cây trồng thất bại</string>
+	<string name="no_photo">Ảnh trống</string>
+	<string name="waiting">Vui lòng đợi ...</string>
+	<string name="select_max_tips">Đã đạt đến số lượng lựa chọn tối đa!</string>
+	<string name="empty_sdcard">Không có thẻ SD</string>
+	<string name="open_gallery_fail">Thư viện ảnh hỏng!</string>
+	<string name="take_photo_fail">Chụp ảnh không thành công</string>
+	<string name="saving">Đang lưu hình ảnh ...</string>
+	<string name="please_reopen_gf">Vui lòng mở lại Thư viện</string>
+	<string name="edit_letoff_photo_format">Định dạng hình ảnh không hỗ trợ thao tác này!</string>
+	<string name="photo_list_empty">Không thể có được hình ảnh!</string>
+	<string name="preview">Xem trước</string>
+	<string name="permissions_tips_gallery">Ứng dụng này yêu cầu truy cập Thư viện của bạn</string>
+	<string name="permissions_denied_tips">Không thể chụp ảnh</string>
+	<string name="maxsize_zero_tip">Kích thước tối đa phải lớn hơn 0</string>
+</resources>

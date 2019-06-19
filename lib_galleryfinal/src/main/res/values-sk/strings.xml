@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galéria</string>
+	<string name="all_photo">Všetky fotografie</string>
+	<string name="photo_edit">Upraviť fotografiu</string>
+	<string name="photo_crop">Photo Crop</string>
+	<string name="crop_suc">Úspech fotografie plodiny</string>
+	<string name="crop_fail">Zlyhanie rastlín fotografií</string>
+	<string name="no_photo">Fotografie je prázdna</string>
+	<string name="waiting">Prosím čakajte...</string>
+	<string name="select_max_tips">Dosiahla maximálny výber čísla!</string>
+	<string name="empty_sdcard">Žiadna SD karta</string>
+	<string name="open_gallery_fail">Galéria init zlyhania!</string>
+	<string name="take_photo_fail">Vykonajte zlyhanie fotografií</string>
+	<string name="saving">Ukladá sa obrázok ...</string>
+	<string name="please_reopen_gf">Znova otvorte Galériu</string>
+	<string name="edit_letoff_photo_format">Formát obrazu túto operáciu nepodporuje!</string>
+	<string name="photo_list_empty">Nepodarilo sa získať obrázok!</string>
+	<string name="preview">Náhľad</string>
+	<string name="permissions_tips_gallery">Táto aplikácia požaduje prístup do vašej galérie</string>
+	<string name="permissions_denied_tips">Nemožno získať obrázky</string>
+	<string name="maxsize_zero_tip">Maximálna veľkosť by mala byť väčšia ako nula</string>
+</resources>

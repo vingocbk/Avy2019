@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galeria</string>
+	<string name="all_photo">Toda a foto</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Colheita de fotos</string>
+	<string name="crop_suc">Sucesso de colheita de fotos</string>
+	<string name="crop_fail">Erro de colheita de fotos</string>
+	<string name="no_photo">Foto vazia</string>
+	<string name="waiting">Por favor, espere...</string>
+	<string name="select_max_tips">Alcançou a seleção máxima do número!</string>
+	<string name="empty_sdcard">Nenhum cartão SD</string>
+	<string name="open_gallery_fail">Iniciada no initório da galeria!</string>
+	<string name="take_photo_fail">Tome um fracasso na foto</string>
+	<string name="saving">Salvando imagem ...</string>
+	<string name="please_reopen_gf">Reabre o Galeria</string>
+	<string name="edit_letoff_photo_format">O formato da imagem não suporta esta operação!</string>
+	<string name="photo_list_empty">Falha ao tirar a foto!</string>
+	<string name="preview">Visualização</string>
+	<string name="permissions_tips_gallery">Este aplicativo solicitando acesso à sua Galeria</string>
+	<string name="permissions_denied_tips">Não foi possível tirar fotos</string>
+	<string name="maxsize_zero_tip">O tamanho máximo deve ser maior que zero</string>
+</resources>

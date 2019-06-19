@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Tozalash</string>
+	<string name="action_delete">O\'chir</string>
+	<string name="action_share">Ulashish</string>
+	<string name="dialog_wallpaper">Uy fon rasmi o\'rnatmoqchimisiz?</string>
+	<string name="done_change_wall_paper">Fon rasmi muvaffaqiyatli o\'rnatilsin!</string>
+	<string name="dialog_message">Ushbu rasm faylini butunlay o\'chirib tashlamoqchimisiz?</string>
+	<string name="delete_photo_success">Rasm o\'chirib tashlandi</string>
+	<string name="preview">Ko\'rib chiqish</string>
+	<string name="title">Belgilar</string>
+</resources>

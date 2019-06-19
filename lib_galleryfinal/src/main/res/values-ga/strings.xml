@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Gailearaí</string>
+	<string name="all_photo">Gach Grianghraf</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Photo Barraí</string>
+	<string name="crop_suc">rath barr Grianghraf</string>
+	<string name="crop_fail">teip barr Grianghraf</string>
+	<string name="no_photo">Photo folamh</string>
+	<string name="waiting">Fán le do thoil...</string>
+	<string name="select_max_tips">Bhfuil bainte amach an roghnú líon uasta!</string>
+	<string name="empty_sdcard">Gan cárta SD</string>
+	<string name="open_gallery_fail">init Gailearaí teip!</string>
+	<string name="take_photo_fail">Tóg teip grianghraf</string>
+	<string name="saving">Shábháil pictiúr ...</string>
+	<string name="please_reopen_gf">Le do thoil oscailt arís dánlann</string>
+	<string name="edit_letoff_photo_format">Ní dhéanann an fhormáid íomhá tacú leis an oibríocht!</string>
+	<string name="photo_list_empty">Theip ar a fháil ar an pictiúr!</string>
+	<string name="preview">réamhamharc</string>
+	<string name="permissions_tips_gallery">An feidhmchlár ag iarraidh rochtain a fháil ar do Ghailearaí</string>
+	<string name="permissions_denied_tips">Níféidir pictiúir a fháil</string>
+	<string name="maxsize_zero_tip">Ba chóir go mbeadh uas méid a bheith níos mó ná náid</string>
+</resources>

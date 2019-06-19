@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Iontráil téacs</string>
+	<string name="loading">Loading ...</string>
+	<string name="saving">Shábháil...</string>
+</resources>

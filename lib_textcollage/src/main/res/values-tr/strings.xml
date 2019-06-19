@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Açık</string>
+	<string name="action_delete">silmek</string>
+	<string name="action_share">Pay</string>
+	<string name="dialog_wallpaper">Ev duvar kağıdını ayarlamak istiyor musunuz?</string>
+	<string name="done_change_wall_paper">Duvar kağıdını başarıyla ayarlayın!</string>
+	<string name="dialog_message">Bu fotoğraf dosyasını kalıcı olarak silmek istediğinizden emin misiniz?</string>
+	<string name="delete_photo_success">Fotoğraf silindi</string>
+	<string name="preview">Önizleme</string>
+	<string name="title">Karakter</string>
+</resources>

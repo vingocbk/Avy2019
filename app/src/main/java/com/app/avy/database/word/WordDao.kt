@@ -21,7 +21,10 @@ interface WordDao {
     @Query("UPDATE word_table SET `select` = :select WHERE type = :type AND id = :id")
     fun updateWord(id: String, type: String, select: Boolean)
 
-    @Query("SELECT * from word_table WHERE type =:type")
+    @Query("SELECT * from word_table WHERE type =:type ORDER BY word ASC")
     fun getWordWithId(type: String): LiveData<List<Word>>
+
+    @Query("UPDATE word_table SET `select` = :select WHERE type = :type AND word = :word")
+    fun updateWordWithType(word: String, type: String, select: Boolean)
 
 }

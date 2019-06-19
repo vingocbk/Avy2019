@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><!--for tablet 7-inches-->
+<resources>
+    <dimen name="collage_select_line_width">14dp</dimen>
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">দরদালান</string>
+	<string name="all_photo">সমস্ত ফটো</string>
+	<string name="photo_edit">ছবি সম্পাদনা করুন</string>
+	<string name="photo_crop">ছবির ফসল</string>
+	<string name="crop_suc">ফটো ফসল সাফল্যের</string>
+	<string name="crop_fail">ছবি ফসল ব্যর্থতা</string>
+	<string name="no_photo">ছবি খালি</string>
+	<string name="waiting">অনুগ্রহপূর্বক অপেক্ষা করুন...</string>
+	<string name="select_max_tips">সর্বাধিক সংখ্যা নির্বাচনে পৌঁছেছেন!</string>
+	<string name="empty_sdcard">কোন SD কার্ড নেই</string>
+	<string name="open_gallery_fail">গ্যালারী নিষিদ্ধ ব্যর্থতা!</string>
+	<string name="take_photo_fail">ফটো ব্যর্থতা নিন</string>
+	<string name="saving">ছবি সংরক্ষণ করা হচ্ছে ...</string>
+	<string name="please_reopen_gf">গ্যালারি পুনরায় খুলুন দয়া করে</string>
+	<string name="edit_letoff_photo_format">ইমেজ বিন্যাস এই অপারেশন সমর্থন করে না!</string>
+	<string name="photo_list_empty">ছবি পেতে ব্যর্থ!</string>
+	<string name="preview">পূর্বরূপ</string>
+	<string name="permissions_tips_gallery">এই অ্যাপ্লিকেশন আপনার গ্যালারি অ্যাক্সেস অনুরোধ</string>
+	<string name="permissions_denied_tips">ছবি পেতে ব্যর্থ</string>
+	<string name="maxsize_zero_tip">সর্বোচ্চ আকার শূন্যের চেয়ে বেশি হওয়া উচিত</string>
+</resources>

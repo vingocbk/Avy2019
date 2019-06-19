@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Egyértelmű</string>
+	<string name="action_delete">Töröl</string>
+	<string name="action_share">Ossza meg</string>
+	<string name="dialog_wallpaper">Szeretné beállítani az otthoni háttérképet?</string>
+	<string name="done_change_wall_paper">Háttérkép beállítása sikeresen!</string>
+	<string name="dialog_message">Biztos benne, hogy véglegesen törli ezt a fényképfájlt?</string>
+	<string name="delete_photo_success">A fénykép törölve</string>
+	<string name="preview">Előnézet</string>
+	<string name="title">karakter</string>
+</resources>

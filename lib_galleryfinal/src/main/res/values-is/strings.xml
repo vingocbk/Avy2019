@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Gallerí</string>
+	<string name="all_photo">Öll mynd</string>
+	<string name="photo_edit">Myndbreyting</string>
+	<string name="photo_crop">Photo Crop</string>
+	<string name="crop_suc">Photo uppskeru velgengni</string>
+	<string name="crop_fail">Photo crop failure</string>
+	<string name="no_photo">Mynd tóm</string>
+	<string name="waiting">Vinsamlegast bíðið...</string>
+	<string name="select_max_tips">Hefur náð hámarksfjölda val!</string>
+	<string name="empty_sdcard">Ekkert SD kort</string>
+	<string name="open_gallery_fail">Gallerí byrjun bilun!</string>
+	<string name="take_photo_fail">Taktu myndarbilun</string>
+	<string name="saving">Vistar mynd ...</string>
+	<string name="please_reopen_gf">Vinsamlega endurræstu Gallerí</string>
+	<string name="edit_letoff_photo_format">Myndsniðið styður ekki þessa aðgerð!</string>
+	<string name="photo_list_empty">Mistókst að fá myndina!</string>
+	<string name="preview">Preview</string>
+	<string name="permissions_tips_gallery">Þessi app biður um aðgang að Galleríinu þínu</string>
+	<string name="permissions_denied_tips">Ekki tókst að fá myndir</string>
+	<string name="maxsize_zero_tip">Hámarksstærð ætti að vera meiri en núll</string>
+</resources>

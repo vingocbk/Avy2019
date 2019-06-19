@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/transparent_black</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="MyTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/small</item>
+        <item name="android:paddingTop">@dimen/small</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/font_size_large</item>
+    </style>
+
+    <style name="SelectableItemBackground">
+        <item name="colorControlHighlight">@color/color_accent</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="MyButton">
+        <item name="android:theme">@style/SelectableItemBackground</item>
+        <item name="android:layout_width">@dimen/icon_size_small</item>
+        <item name="android:layout_height">@dimen/icon_size_small</item>
+        <item name="android:padding">@dimen/xxx_small</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:background">@color/color_primary_dark</item>
+
+
+        <item name="colorControlNormal">@color/color_primary</item>
+        <item name="colorControlActivated">@color/color_primary</item>
+    </style>
+</resources>

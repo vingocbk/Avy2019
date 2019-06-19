@@ -22,6 +22,9 @@ import com.app.avy.database.word.WordViewModel
 import com.app.avy.module.FullItemModule
 import com.app.avy.ui.adapter.FullItemAdapter
 import kotlinx.android.synthetic.main.fragment_dialog_full_item.view.*
+import java.util.*
+import kotlin.Comparator
+import kotlin.collections.ArrayList
 
 class FullItemDialogFragment : DialogFragment() {
     val TAG = FullItemDialogFragment::class.java.simpleName
@@ -57,19 +60,15 @@ class FullItemDialogFragment : DialogFragment() {
             mType = it.getString(BUNDLE_TYPE)
             mWordViewModel.getWordsWithId(mType).observe(this, Observer { it ->
                 initRecyclerView(recyclerView, it)
-
             })
         }
         v.tv_update.setOnClickListener {
             for (i in mAdapter.getData().indices) {
                 var word = mAdapter.getData()[i]
-                if (word.select) {
-                    mWordViewModel.updateWord(Word(word.id, word.type, word.mWord, word.select))
-                }
+                mWordViewModel.updateWord(Word(word.id, word.type, word.mWord, word.select))
             }
             dismiss()
         }
-
         return v
     }
 

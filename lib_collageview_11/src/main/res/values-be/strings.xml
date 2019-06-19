@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">увядзіце тэкст</string>
+	<string name="loading">Loading ...</string>
+	<string name="saving">Захаванне ...</string>
+</resources>

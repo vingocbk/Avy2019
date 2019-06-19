@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galleri</string>
+	<string name="all_photo">Alt bilde</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Foto Crop</string>
+	<string name="crop_suc">Foto crop suksess</string>
+	<string name="crop_fail">Bildesnittfeil</string>
+	<string name="no_photo">Foto tomt</string>
+	<string name="waiting">Vennligst vent...</string>
+	<string name="select_max_tips">Har nådd maksimal antall valg!</string>
+	<string name="empty_sdcard">Ingen SD-kort</string>
+	<string name="open_gallery_fail">Gallery init-feil!</string>
+	<string name="take_photo_fail">Ta bildefeil</string>
+	<string name="saving">Lagrer bilde ...</string>
+	<string name="please_reopen_gf">Vennligst åpne Galleri igjen</string>
+	<string name="edit_letoff_photo_format">Bildformatet støtter ikke denne operasjonen!</string>
+	<string name="photo_list_empty">Kunne ikke få bildet!</string>
+	<string name="preview">Forhåndsvisning</string>
+	<string name="permissions_tips_gallery">Denne appen ber om tilgang til galleriet ditt</string>
+	<string name="permissions_denied_tips">Kunne ikke få bilder</string>
+	<string name="maxsize_zero_tip">Maks størrelse skal være større enn null</string>
+</resources>

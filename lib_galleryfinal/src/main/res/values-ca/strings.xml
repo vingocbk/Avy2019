@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galeria</string>
+	<string name="all_photo">Tota la fotografia</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Foto de cultiu</string>
+	<string name="crop_suc">Èxit de cultiu fotogràfic</string>
+	<string name="crop_fail">Falla de cultiu fotogràfica</string>
+	<string name="no_photo">Foto buida</string>
+	<string name="waiting">Espereu ...</string>
+	<string name="select_max_tips">Ha arribat a la selecció màxima de números.</string>
+	<string name="empty_sdcard">Cap targeta SD</string>
+	<string name="open_gallery_fail">Error de la falla de la galeria!</string>
+	<string name="take_photo_fail">Prengui fracassos fotogràfics</string>
+	<string name="saving">S\'està desant la imatge ...</string>
+	<string name="please_reopen_gf">Torneu a obrir la galeria</string>
+	<string name="edit_letoff_photo_format">El format d\'imatge no admet aquesta operació!</string>
+	<string name="photo_list_empty">No s\'ha pogut obtenir la imatge.</string>
+	<string name="preview">Vista prèvia</string>
+	<string name="permissions_tips_gallery">Aquesta aplicació que sol·licita accés a la vostra Galeria</string>
+	<string name="permissions_denied_tips">No es pot obtenir fotos</string>
+	<string name="maxsize_zero_tip">La mida màxima hauria de ser superior a zero</string>
+</resources>

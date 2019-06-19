@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">ชัดเจน</string>
+	<string name="action_delete">ลบ</string>
+	<string name="action_share">หุ้น</string>
+	<string name="dialog_wallpaper">คุณต้องการตั้งค่าวอลเปเปอร์ภายในบ้านหรือไม่?</string>
+	<string name="done_change_wall_paper">ตั้งวอลล์เปเปอร์สำเร็จ!</string>
+	<string name="dialog_message">คุณแน่ใจหรือไม่ว่าต้องการลบไฟล์รูปภาพนี้อย่างถาวร</string>
+	<string name="delete_photo_success">ลบรูปภาพแล้ว</string>
+	<string name="preview">ดูตัวอย่าง</string>
+	<string name="title">ตัวละคร</string>
+</resources>

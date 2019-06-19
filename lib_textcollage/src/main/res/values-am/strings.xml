@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">አጽዳ</string>
+	<string name="action_delete">ሰርዝ</string>
+	<string name="action_share">አጋራ</string>
+	<string name="dialog_wallpaper">የመነሻ ልጣፍ ማዘጋጀት ይፈልጋሉ?</string>
+	<string name="done_change_wall_paper">ልጣፍ በተሳካ ሁኔታ ያዘጋጁ!</string>
+	<string name="dialog_message">እርግጠኛ ነዎት ይህን ፎቶ ፋይሎች በቋሚነት ለመሰረዝ ይፈልጋሉ?</string>
+	<string name="delete_photo_success">ፎቶ ተሰርዟል</string>
+	<string name="preview">ቅድመ እይታ</string>
+	<string name="title">ቁምፊ</string>
+</resources>

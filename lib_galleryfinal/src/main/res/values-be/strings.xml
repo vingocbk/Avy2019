@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">галерэя</string>
+	<string name="all_photo">усе фотаздымкі</string>
+	<string name="photo_edit">рэдагаваць фота</string>
+	<string name="photo_crop">фота Crop</string>
+	<string name="crop_suc">Поспех Фота раслінаводства</string>
+	<string name="crop_fail">фота неўраджай</string>
+	<string name="no_photo">фота пустых</string>
+	<string name="waiting">Калі ласка пачакай...</string>
+	<string name="select_max_tips">Дасягнута максімальная колькасць выбар!</string>
+	<string name="empty_sdcard">Няма SD карты</string>
+	<string name="open_gallery_fail">Галерэя INIT правал!</string>
+	<string name="take_photo_fail">Прыняць адмову фота</string>
+	<string name="saving">Захаванне карцінкі ...</string>
+	<string name="please_reopen_gf">Калі ласка, аднаўляць Галерэю</string>
+	<string name="edit_letoff_photo_format">Фармат малюнка не падтрымлівае гэтую аперацыю!</string>
+	<string name="photo_list_empty">Не атрымалася атрымаць малюнак!</string>
+	<string name="preview">папярэдні прагляд</string>
+	<string name="permissions_tips_gallery">Гэта дадатак запытвае доступ да галерэі</string>
+	<string name="permissions_denied_tips">Не ўдалося ўзяць фатаграфіі</string>
+	<string name="maxsize_zero_tip">Максімальны памер павінен быць больш за нуль</string>
+</resources>

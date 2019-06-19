@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galeri</string>
+	<string name="all_photo">Semua foto</string>
+	<string name="photo_edit">Edit foto</string>
+	<string name="photo_crop">Tanaman foto</string>
+	<string name="crop_suc">Keberhasilan panen foto</string>
+	<string name="crop_fail">Kegagalan panen foto</string>
+	<string name="no_photo">Foto kosong</string>
+	<string name="waiting">Mohon tunggu...</string>
+	<string name="select_max_tips">Sudah mencapai jumlah maksimal seleksi!</string>
+	<string name="empty_sdcard">Tidak ada kartu SD</string>
+	<string name="open_gallery_fail">Kegagalan init galeri</string>
+	<string name="take_photo_fail">Ambillah foto kegagalan</string>
+	<string name="saving">Menyimpan gambar ...</string>
+	<string name="please_reopen_gf">Buka kembali Galeri</string>
+	<string name="edit_letoff_photo_format">Format gambar tidak mendukung operasi ini!</string>
+	<string name="photo_list_empty">Gagal mendapatkan fotonya!</string>
+	<string name="preview">Pratinjau</string>
+	<string name="permissions_tips_gallery">Aplikasi ini meminta akses ke Galeri Anda</string>
+	<string name="permissions_denied_tips">Tidak dapat memotret</string>
+	<string name="maxsize_zero_tip">Ukuran maks harus lebih besar dari nol</string>
+</resources>

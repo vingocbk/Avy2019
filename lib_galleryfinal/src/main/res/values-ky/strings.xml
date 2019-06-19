@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">галерея</string>
+	<string name="all_photo">Бардык Сүрөт</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Сүрөт кесип алуу</string>
+	<string name="crop_suc">Сүрөт кесүү ийгилик</string>
+	<string name="crop_fail">Сүрөт түшүм болбой калган</string>
+	<string name="no_photo">Сүрөт бош</string>
+	<string name="waiting">Сураныч, күтүп ...</string>
+	<string name="select_max_tips">максималдуу саны тандоо жетти!</string>
+	<string name="empty_sdcard">Эч бир SD-карта</string>
+	<string name="open_gallery_fail">Галерея ЖМТИ ката!</string>
+	<string name="take_photo_fail">Сүрөт ийгиликсиздик алып</string>
+	<string name="saving">Сүрөт сакталууда ...</string>
+	<string name="please_reopen_gf">Сураныч, Gallery кайрадан</string>
+	<string name="edit_letoff_photo_format">Сүрөт формат Бул иш-аракетти колдоого албайт!</string>
+	<string name="photo_list_empty">Сүрөттү алуу ишке ашкан жок!</string>
+	<string name="preview">алдын ала кароо</string>
+	<string name="permissions_tips_gallery">Сиздин Галерея пайдалануу мүмкүнчүлүгүн сурап Бул колдонмо</string>
+	<string name="permissions_denied_tips">сүрөттөрдү алуу мүмкүн болбой жатат</string>
+	<string name="maxsize_zero_tip">Max өлчөмү нөлгө барабар кыйла жогору болушу керек</string>
+</resources>

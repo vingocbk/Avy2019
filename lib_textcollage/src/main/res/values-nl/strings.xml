@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Duidelijk</string>
+	<string name="action_delete">Verwijder</string>
+	<string name="action_share">Delen</string>
+	<string name="dialog_wallpaper">Wilt u thuisbehang instellen?</string>
+	<string name="done_change_wall_paper">Stel behang succesvol!</string>
+	<string name="dialog_message">Weet u zeker dat u dit fotobestand permanent wilt verwijderen?</string>
+	<string name="delete_photo_success">Foto verwijderd</string>
+	<string name="preview">Voorbeeld</string>
+	<string name="title">Karakter</string>
+</resources>

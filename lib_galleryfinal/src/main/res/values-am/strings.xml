@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">ማዕከለ ስዕላት</string>
+	<string name="all_photo">ሁሉም ፎቶ</string>
+	<string name="photo_edit">ፎቶ አርትእ</string>
+	<string name="photo_crop">የፎቶ ሰብሳቢ</string>
+	<string name="crop_suc">የፎቶ እርሻ ስኬት</string>
+	<string name="crop_fail">የፎቶ ሰብል ውድቀት</string>
+	<string name="no_photo">ፎቶ ባዶ ነው</string>
+	<string name="waiting">ቆይ በናተህ...</string>
+	<string name="select_max_tips">ከፍተኛውን ቁጥር መምረጥ ላይ ደርሷል!</string>
+	<string name="empty_sdcard">ምንም SD ካርድ የለም</string>
+	<string name="open_gallery_fail">የሥነ ጥበብ ማዕከል ትርኢት አለመሳካት!</string>
+	<string name="take_photo_fail">ፎቶ አለመሳካት ይውሰዱ</string>
+	<string name="saving">ፎቶን በማስቀመጥ ላይ ...</string>
+	<string name="please_reopen_gf">እባክዎ ማዕከለ-ስዕላትን እንደገና ይጫኑ</string>
+	<string name="edit_letoff_photo_format">የምስል ቅርጸት ይህን ክወና አይደግፍም!</string>
+	<string name="photo_list_empty">ስዕሉን ማግኘት አልተቻለም!</string>
+	<string name="preview">ቅድመ እይታ</string>
+	<string name="permissions_tips_gallery">ወደ የእርስዎ ማዕከለ-ስዕላት መዳረሻ የሚጠይቅ ይህ መተግበሪያ</string>
+	<string name="permissions_denied_tips">ፎቶዎችን ማግኘት አልተቻለም</string>
+	<string name="maxsize_zero_tip">ከፍተኛ መጠን ከዜሮ መብለጥ አለበት</string>
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">გალერეა</string>
+	<string name="all_photo">ყველა ფოტო</string>
+	<string name="photo_edit">ფოტო რედაქტირება</string>
+	<string name="photo_crop">ფოტო მოსავალი</string>
+	<string name="crop_suc">ფოტო მოსავლის წარმატება</string>
+	<string name="crop_fail">ფოტო მოსავლის უკმარისობა</string>
+	<string name="no_photo">ფოტო ცარიელია</string>
+	<string name="waiting">გთხოვთ მოიცადოთ...</string>
+	<string name="select_max_tips">მიაღწია მაქსიმალურ რაოდენობას!</string>
+	<string name="empty_sdcard">SD ბარათი არ არის</string>
+	<string name="open_gallery_fail">გალერეა init მარცხი!</string>
+	<string name="take_photo_fail">მიიღეთ ფოტო მარცხი</string>
+	<string name="saving">სურათის შენახვა ...</string>
+	<string name="please_reopen_gf">გთხოვთ გაითვალისწინოთ გალერეა</string>
+	<string name="edit_letoff_photo_format">გამოსახულების ფორმატი არ ამუშავებს ამ ოპერაციას!</string>
+	<string name="photo_list_empty">სურათის მიღება ვერ მოხერხდა</string>
+	<string name="preview">Preview</string>
+	<string name="permissions_tips_gallery">ეს აპლიკაცია ითხოვს ხელმისაწვდომს თქვენს გალერეაში</string>
+	<string name="permissions_denied_tips">სურათების მიღება ვერ მოხერხდა</string>
+	<string name="maxsize_zero_tip">მაქსიმალური ზომა უნდა იყოს ნულის ტოლი</string>
+</resources>

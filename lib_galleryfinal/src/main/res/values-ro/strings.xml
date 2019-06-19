@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galerie</string>
+	<string name="all_photo">Toate fotografiile</string>
+	<string name="photo_edit">Editați fotografia</string>
+	<string name="photo_crop">Cropul fotografiei</string>
+	<string name="crop_suc">Rezultatele culturii foto</string>
+	<string name="crop_fail">Photo failure crop</string>
+	<string name="no_photo">Fotografia goală</string>
+	<string name="waiting">Te rog asteapta...</string>
+	<string name="select_max_tips">A ajuns la selecția numărului maxim!</string>
+	<string name="empty_sdcard">Nu există card SD</string>
+	<string name="open_gallery_fail">Galeria init a galeriei!</string>
+	<string name="take_photo_fail">Fotografiați</string>
+	<string name="saving">Salvează imaginea ...</string>
+	<string name="please_reopen_gf">Reveniți la Galerie</string>
+	<string name="edit_letoff_photo_format">Formatul imaginii nu acceptă această operație!</string>
+	<string name="photo_list_empty">Nu a reușit să obțină imaginea!</string>
+	<string name="preview">previzualizare</string>
+	<string name="permissions_tips_gallery">Această aplicație care solicită acces la Galerie</string>
+	<string name="permissions_denied_tips">Imposibil de obținut fotografii</string>
+	<string name="maxsize_zero_tip">Dimensiunea maximă ar trebui să fie mai mare decât zero</string>
+</resources>

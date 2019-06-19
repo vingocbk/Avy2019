@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galerij</string>
+	<string name="all_photo">Alle foto\'s</string>
+	<string name="photo_edit">Foto bewerken</string>
+	<string name="photo_crop">Foto Crop</string>
+	<string name="crop_suc">Photo crop succes</string>
+	<string name="crop_fail">Foto mislukking</string>
+	<string name="no_photo">Foto leeg</string>
+	<string name="waiting">Even geduld aub...</string>
+	<string name="select_max_tips">Heeft de maximale aantal selectie bereikt!</string>
+	<string name="empty_sdcard">Geen SD-kaart</string>
+	<string name="open_gallery_fail">Gallery init failure!</string>
+	<string name="take_photo_fail">Neem een ​​fotofout</string>
+	<string name="saving">Afbeelding opslaan ...</string>
+	<string name="please_reopen_gf">Galerij opnieuw openen</string>
+	<string name="edit_letoff_photo_format">Het beeldformaat ondersteunt deze operatie niet!</string>
+	<string name="photo_list_empty">Mislukt de foto te krijgen!</string>
+	<string name="preview">Voorbeeld</string>
+	<string name="permissions_tips_gallery">Deze app verzoekt toegang tot uw Gallery</string>
+	<string name="permissions_denied_tips">Kan geen foto\'s krijgen</string>
+	<string name="maxsize_zero_tip">Maximale grootte moet groter zijn dan nul</string>
+</resources>

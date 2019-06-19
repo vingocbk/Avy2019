@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Ange text</string>
+	<string name="loading">Läser in...</string>
+	<string name="saving">Sparande...</string>
+</resources>

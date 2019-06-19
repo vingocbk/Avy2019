@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">صالة عرض</string>
+	<string name="all_photo">جميع الصور</string>
+	<string name="photo_edit">تحرير الصورة</string>
+	<string name="photo_crop">صور المحاصيل</string>
+	<string name="crop_suc">الصورة نجاح المحاصيل</string>
+	<string name="crop_fail">فشل المحاصيل الصورة</string>
+	<string name="no_photo">صورة فارغة</string>
+	<string name="waiting">أرجو الإنتظار...</string>
+	<string name="select_max_tips">وصلت إلى الحد الأقصى لعدد التحديد!</string>
+	<string name="empty_sdcard">لا توجد بطاقة سد</string>
+	<string name="open_gallery_fail">معرض فشل إينيت!</string>
+	<string name="take_photo_fail">خذ فشل الصورة</string>
+	<string name="saving">جار حفظ الصورة ...</string>
+	<string name="please_reopen_gf">الرجاء إعادة فتح المعرض</string>
+	<string name="edit_letoff_photo_format">تنسيق الصورة لا يدعم هذه العملية!</string>
+	<string name="photo_list_empty">فشل الحصول على الصورة!</string>
+	<string name="preview">معاينة</string>
+	<string name="permissions_tips_gallery">هذا التطبيق يطلب الوصول إلى معرض الصور الخاص بك</string>
+	<string name="permissions_denied_tips">تعذر الحصول على الصور</string>
+	<string name="maxsize_zero_tip">يجب أن يكون الحجم الأقصى أكبر من الصفر</string>
+</resources>

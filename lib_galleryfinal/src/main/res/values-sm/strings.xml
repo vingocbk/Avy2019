@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">saofaga</string>
+	<string name="all_photo">uma Photo</string>
+	<string name="photo_edit">Photo faʻatonutonu</string>
+	<string name="photo_crop">Photo fua</string>
+	<string name="crop_suc">Photo manuia o laau toto</string>
+	<string name="crop_fail">Photo toilalo fua</string>
+	<string name="no_photo">Photo gaogao</string>
+	<string name="waiting">Faamolemole faatali ...</string>
+	<string name="select_max_tips">Ua taunuu atu i le filifilia aofaiga aupito maualuga!</string>
+	<string name="empty_sdcard">E leai se pepa SD</string>
+	<string name="open_gallery_fail">toilalo init toele!</string>
+	<string name="take_photo_fail">Ia toilalo ata</string>
+	<string name="saving">Faaola ata ...</string>
+	<string name="please_reopen_gf">Faamolemole toe tatala toele</string>
+	<string name="edit_letoff_photo_format">E le lagolagoina le faatulagaga faatusa lenei galuega!</string>
+	<string name="photo_list_empty">Ua le mafai ona maua ai le ata!</string>
+	<string name="preview">tofo</string>
+	<string name="permissions_tips_gallery">O lenei polokalama o lo o talosaga le avanoa i lou toele</string>
+	<string name="permissions_denied_tips">Le mafai ona maua ata</string>
+	<string name="maxsize_zero_tip">e tatau ona sili atu le tele nai lo o Max</string>
+</resources>

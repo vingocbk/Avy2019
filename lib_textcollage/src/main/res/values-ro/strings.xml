@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">clar</string>
+	<string name="action_delete">Șterge</string>
+	<string name="action_share">Acțiune</string>
+	<string name="dialog_wallpaper">Doriți să setați monitorul de acasă?</string>
+	<string name="done_change_wall_paper">Setați tapetul cu succes!</string>
+	<string name="dialog_message">Sigur doriți să ștergeți definitiv acest fișier foto?</string>
+	<string name="delete_photo_success">Foto șters</string>
+	<string name="preview">previzualizare</string>
+	<string name="title">Caracter</string>
+</resources>

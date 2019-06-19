@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Галерея</string>
+	<string name="all_photo">Все фото</string>
+	<string name="photo_edit">Обработка фото</string>
+	<string name="photo_crop">Фотографы</string>
+	<string name="crop_suc">Успех фотосъемки</string>
+	<string name="crop_fail">Снижение урожая фотографии</string>
+	<string name="no_photo">Фотография пустая</string>
+	<string name="waiting">Пожалуйста, подождите...</string>
+	<string name="select_max_tips">Достигнут максимального выбора номера!</string>
+	<string name="empty_sdcard">Нет SD-карты</string>
+	<string name="open_gallery_fail">Ошибка инициализации галереи!</string>
+	<string name="take_photo_fail">Сбой фотосъемки</string>
+	<string name="saving">Сохранение фотографии ...</string>
+	<string name="please_reopen_gf">Пожалуйста, откройте галерею</string>
+	<string name="edit_letoff_photo_format">Формат изображения не поддерживает эту операцию!</string>
+	<string name="photo_list_empty">Не удалось получить изображение!</string>
+	<string name="preview">предварительный просмотр</string>
+	<string name="permissions_tips_gallery">Это приложение, запрашивающее доступ к вашей галерее</string>
+	<string name="permissions_denied_tips">Не удалось получить фотографии</string>
+	<string name="maxsize_zero_tip">Максимальный размер должен быть больше нуля</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Idatzi testua</string>
+	<string name="loading">Lanean ...</string>
+	<string name="saving">Gordetzen ...</string>
+</resources>

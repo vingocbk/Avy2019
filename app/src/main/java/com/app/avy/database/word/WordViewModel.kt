@@ -33,5 +33,9 @@ class WordViewModel constructor(application: Application) : AndroidViewModel(app
         mRepository!!.updateWord(word)
     }
 
+    fun updateWordWithType(word: String, type: String, select: Boolean) {
+        mRepository!!.updateWordWithType(word, type, select)
+    }
+
 
 }

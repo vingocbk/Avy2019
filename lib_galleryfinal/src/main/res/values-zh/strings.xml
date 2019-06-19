@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">画廊</string>
+	<string name="all_photo">所有照片</string>
+	<string name="photo_edit">照片编辑</string>
+	<string name="photo_crop">照片作物</string>
+	<string name="crop_suc">照片裁剪成功</string>
+	<string name="crop_fail">照片裁剪失败</string>
+	<string name="no_photo">照片空</string>
+	<string name="waiting">请稍候...</string>
+	<string name="select_max_tips">已达到最大数量选择！</string>
+	<string name="empty_sdcard">没有SD卡</string>
+	<string name="open_gallery_fail">Gallery init失败！</string>
+	<string name="take_photo_fail">拍照失败</string>
+	<string name="saving">保存图片...</string>
+	<string name="please_reopen_gf">请重新打开画廊</string>
+	<string name="edit_letoff_photo_format">图像格式不支持此操作！</string>
+	<string name="photo_list_empty">无法获取图片！</string>
+	<string name="preview">预习</string>
+	<string name="permissions_tips_gallery">此应用程序请求访问您的画廊</string>
+	<string name="permissions_denied_tips">无法获取图片</string>
+	<string name="maxsize_zero_tip">最大大小应大于零</string>
+</resources>

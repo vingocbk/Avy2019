@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">أدخل النص</string>
+	<string name="loading">جار التحميل...</string>
+	<string name="saving">إنقاذ...</string>
+</resources>

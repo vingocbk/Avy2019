@@ -30,12 +30,12 @@ abstract class BaseActivity : AppCompatActivity() {
         handler.postDelayed({
             try {
                 if (newFragment.isAdded) {
-                    newFragment.dismiss()
+                    newFragment.dismissAllowingStateLoss()
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-        }, 1000)
+        }, 500)
     }
 
     fun showDialog() {

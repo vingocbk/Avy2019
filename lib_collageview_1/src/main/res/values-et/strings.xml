@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Sisestage tekst</string>
+	<string name="loading">Laadimine ...</string>
+	<string name="saving">Saving ...</string>
+</resources>

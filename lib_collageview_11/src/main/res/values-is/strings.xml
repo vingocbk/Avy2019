@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Sláðu inn texta</string>
+	<string name="loading">Hleð inn ...</string>
+	<string name="saving">Vistar ...</string>
+</resources>

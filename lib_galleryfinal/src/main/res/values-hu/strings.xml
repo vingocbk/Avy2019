@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Képtár</string>
+	<string name="all_photo">Minden fotó</string>
+	<string name="photo_edit">Fényképszerkesztés</string>
+	<string name="photo_crop">Photo Crop</string>
+	<string name="crop_suc">Photo crop siker</string>
+	<string name="crop_fail">Fotóhiba</string>
+	<string name="no_photo">Fotó üres</string>
+	<string name="waiting">Kérlek várj...</string>
+	<string name="select_max_tips">Elérte a maximális számkiválasztást!</string>
+	<string name="empty_sdcard">Nincs SD kártya</string>
+	<string name="open_gallery_fail">Gallery init hiba!</string>
+	<string name="take_photo_fail">Fotóhiba</string>
+	<string name="saving">Kép mentése ...</string>
+	<string name="please_reopen_gf">Kérem, nyisd meg újra a Galériát</string>
+	<string name="edit_letoff_photo_format">A képformátum nem támogatja ezt a műveletet!</string>
+	<string name="photo_list_empty">Nem sikerült elérni a képet!</string>
+	<string name="preview">Előnézet</string>
+	<string name="permissions_tips_gallery">Ez az alkalmazás hozzáférést kér a Galériához</string>
+	<string name="permissions_denied_tips">Nem sikerült képeket készíteni</string>
+	<string name="maxsize_zero_tip">A maximális méret nagyobb legyen, mint nulla</string>
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Галерей</string>
+	<string name="all_photo">Бүх зураг</string>
+	<string name="photo_edit">Фото засварлах</string>
+	<string name="photo_crop">Фото үр тариа</string>
+	<string name="crop_suc">Зургийн ургацын амжилт</string>
+	<string name="crop_fail">Фото зургийн ургацын алдаа</string>
+	<string name="no_photo">Фото зураг хоосон байна</string>
+	<string name="waiting">Түр хүлээнэ үү ...</string>
+	<string name="select_max_tips">Хамгийн олон тооны сонголтонд хүрсэн байна!</string>
+	<string name="empty_sdcard">SD карт байхгүй</string>
+	<string name="open_gallery_fail">Галерейн дулааны алдагдлаа!</string>
+	<string name="take_photo_fail">Фото зураг дутуу хийх</string>
+	<string name="saving">Зураг хадгалж байна ...</string>
+	<string name="please_reopen_gf">Галерейг дахин нээнэ үү</string>
+	<string name="edit_letoff_photo_format">Зургийн формат энэ үйлдлийг дэмждэггүй!</string>
+	<string name="photo_list_empty">Зураг авч чадсангүй!</string>
+	<string name="preview">Урьдчилан харах</string>
+	<string name="permissions_tips_gallery">Энэ аппликешн нь таны Галерейд хандах хүсэлт гаргасан</string>
+	<string name="permissions_denied_tips">Зураг авах боломжгүй</string>
+	<string name="maxsize_zero_tip">Хамгийн их хэмжээ нь тэгээс их байх ёстой</string>
+</resources>

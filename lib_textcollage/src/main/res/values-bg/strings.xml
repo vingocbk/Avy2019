@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">ясно</string>
+	<string name="action_delete">Изтрий</string>
+	<string name="action_share">Дял</string>
+	<string name="dialog_wallpaper">Искате ли да зададете домашен тапет?</string>
+	<string name="done_change_wall_paper">Задайте тапета успешно!</string>
+	<string name="dialog_message">Наистина ли искате да изтриете за постоянно този файл с снимки?</string>
+	<string name="delete_photo_success">Снимката бе изтрита</string>
+	<string name="preview">предварителен преглед</string>
+	<string name="title">характер</string>
+</resources>

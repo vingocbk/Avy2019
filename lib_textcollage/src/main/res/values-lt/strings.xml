@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Aiškus</string>
+	<string name="action_delete">Ištrinti</string>
+	<string name="action_share">Dalintis</string>
+	<string name="dialog_wallpaper">Ar norite nustatyti namų ekrano užsklandą?</string>
+	<string name="done_change_wall_paper">Užsklandos nustatymas sėkmingai!</string>
+	<string name="dialog_message">Ar tikrai norite visam laikui ištrinti šį nuotraukų failą?</string>
+	<string name="delete_photo_success">Nuotrauka ištrinta</string>
+	<string name="preview">Peržiūra</string>
+	<string name="title">Simbolis</string>
+</resources>

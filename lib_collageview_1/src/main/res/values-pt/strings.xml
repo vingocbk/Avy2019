@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Digite o texto</string>
+	<string name="loading">Carregando...</string>
+	<string name="saving">Salvando ...</string>
+</resources>

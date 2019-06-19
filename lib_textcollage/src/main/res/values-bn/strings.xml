@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">পরিষ্কার</string>
+	<string name="action_delete">মুছে ফেলা</string>
+	<string name="action_share">ভাগ</string>
+	<string name="dialog_wallpaper">আপনি হোম ওয়ালপেপার সেট করতে চান?</string>
+	<string name="done_change_wall_paper">সফলভাবে ওয়ালপেপার সেট করুন!</string>
+	<string name="dialog_message">আপনি কি নিশ্চিতভাবে এই ফটো ফাইলটি মুছে ফেলতে চান?</string>
+	<string name="delete_photo_success">ছবি মুছে ফেলা হয়েছে</string>
+	<string name="preview">পূর্বরূপ</string>
+	<string name="title">চরিত্র</string>
+</resources>

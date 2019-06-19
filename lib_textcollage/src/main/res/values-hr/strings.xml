@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Čisto</string>
+	<string name="action_delete">Izbrisati</string>
+	<string name="action_share">Podjeli</string>
+	<string name="dialog_wallpaper">Želite li postaviti kućnu pozadinu?</string>
+	<string name="done_change_wall_paper">Postavi pozadinu uspješno!</string>
+	<string name="dialog_message">Jeste li sigurni da želite trajno izbrisati ovu fotografsku datoteku?</string>
+	<string name="delete_photo_success">Fotografija je izbrisana</string>
+	<string name="preview">pregled</string>
+	<string name="title">Lik</string>
+</resources>

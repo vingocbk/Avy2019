@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">ギャラリー</string>
+	<string name="all_photo">すべての写真</string>
+	<string name="photo_edit">写真編集</string>
+	<string name="photo_crop">フォトクロップ</string>
+	<string name="crop_suc">写真作物の成功</string>
+	<string name="crop_fail">写真の欠損</string>
+	<string name="no_photo">空の写真</string>
+	<string name="waiting">お待ちください...</string>
+	<string name="select_max_tips">最大数の選択に達しました！</string>
+	<string name="empty_sdcard">SDカードなし</string>
+	<string name="open_gallery_fail">ギャラリーの初期化に失敗しました！</string>
+	<string name="take_photo_fail">写真を撮る</string>
+	<string name="saving">画像を保存中...</string>
+	<string name="please_reopen_gf">ギャラリーを再度開きます</string>
+	<string name="edit_letoff_photo_format">画像フォーマットはこの操作をサポートしていません！</string>
+	<string name="photo_list_empty">画像を取得できませんでした！</string>
+	<string name="preview">プレビュー</string>
+	<string name="permissions_tips_gallery">あなたのギャラリーへのアクセスをリクエストするこのアプリ</string>
+	<string name="permissions_denied_tips">写真を取得できません</string>
+	<string name="maxsize_zero_tip">最大サイズはゼロより大きくする必要があります</string>
+</resources>

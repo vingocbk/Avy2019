@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">ጽሁፍ አስገባ</string>
+	<string name="loading">በመጫን ላይ ...</string>
+	<string name="saving">በማስቀመጥ ላይ ...</string>
+</resources>

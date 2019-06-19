@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">ป้อนข้อความ</string>
+	<string name="loading">กำลังโหลด ...</string>
+	<string name="saving">ประหยัด...</string>
+</resources>

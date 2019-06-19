@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galereya</string>
+	<string name="all_photo">Barcha rasmlar</string>
+	<string name="photo_edit">Rasmni tahrirlash</string>
+	<string name="photo_crop">Fotosintez</string>
+	<string name="crop_suc">Fotosuratlardagi muvaffaqiyat</string>
+	<string name="crop_fail">Fotosurat etishmasligi</string>
+	<string name="no_photo">Rasm bo\'sh</string>
+	<string name="waiting">Iltimos kuting...</string>
+	<string name="select_max_tips">Maksimal raqam tanlashga yetdi!</string>
+	<string name="empty_sdcard">SD karta yo\'q</string>
+	<string name="open_gallery_fail">Galereya initsializatsiyasiz!</string>
+	<string name="take_photo_fail">Rasmda xatolik yuz berdi</string>
+	<string name="saving">Rasm saqlanmoqda ...</string>
+	<string name="please_reopen_gf">Galereya-ni qayta oching</string>
+	<string name="edit_letoff_photo_format">Rasm formati ushbu amalni qo\'llab-quvvatlamaydi!</string>
+	<string name="photo_list_empty">Rasmni olib bo\'lmadi!</string>
+	<string name="preview">Ko\'rib chiqish</string>
+	<string name="permissions_tips_gallery">Galereya xizmatiga kirishni so\'rab ushbu ilova</string>
+	<string name="permissions_denied_tips">Suratga olish imkoni yo\'q</string>
+	<string name="maxsize_zero_tip">Maksimal hajmi noldan katta bo\'lishi kerak</string>
+</resources>

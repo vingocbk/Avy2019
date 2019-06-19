@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Jasno</string>
+	<string name="action_delete">Izbriši</string>
+	<string name="action_share">Deliti</string>
+	<string name="dialog_wallpaper">Ali želite nastaviti domače ozadje?</string>
+	<string name="done_change_wall_paper">Uspešno postavite ozadje!</string>
+	<string name="dialog_message">Ali ste prepričani, da želite trajno izbrisati to fotografijo?</string>
+	<string name="delete_photo_success">Fotografija je izbrisana</string>
+	<string name="preview">Predogled</string>
+	<string name="title">Znak</string>
+</resources>

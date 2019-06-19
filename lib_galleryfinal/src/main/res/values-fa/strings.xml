@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">آلبوم عکس</string>
+	<string name="all_photo">همه عکس</string>
+	<string name="photo_edit">عکس ویرایش</string>
+	<string name="photo_crop">عکس محصول</string>
+	<string name="crop_suc">موفقیت محصول عکس</string>
+	<string name="crop_fail">خرابی عکس</string>
+	<string name="no_photo">عکس خالی است</string>
+	<string name="waiting">لطفا صبر کنید...</string>
+	<string name="select_max_tips">به حداکثر تعداد انتخاب رسیده است!</string>
+	<string name="empty_sdcard">کارت SD ندارد</string>
+	<string name="open_gallery_fail">افتخار گالری</string>
+	<string name="take_photo_fail">گرفتن عکس شکست</string>
+	<string name="saving">ذخیره تصویر ...</string>
+	<string name="please_reopen_gf">لطفا مجددا گالری را باز کنید</string>
+	<string name="edit_letoff_photo_format">فرمت تصویر این عملیات را پشتیبانی نمی کند!</string>
+	<string name="photo_list_empty">دریافت تصویر موفق نشد</string>
+	<string name="preview">پیش نمایش</string>
+	<string name="permissions_tips_gallery">این برنامه درخواست دسترسی به گالری شما را دارد</string>
+	<string name="permissions_denied_tips">قادر به گرفتن تصاویر نیست</string>
+	<string name="maxsize_zero_tip">حداکثر اندازه باید از صفر باشد</string>
+</resources>

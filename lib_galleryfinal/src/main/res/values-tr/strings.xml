@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">galeri</string>
+	<string name="all_photo">Tüm Fotoğraf</string>
+	<string name="photo_edit">Fotoğraf Düzenleme</string>
+	<string name="photo_crop">Fotoğraf Mahsulü</string>
+	<string name="crop_suc">Fotoğraf bitkisi başarısı</string>
+	<string name="crop_fail">Fotoğraf kırpma arızası</string>
+	<string name="no_photo">Fotoğraf boş</string>
+	<string name="waiting">Lütfen bekle...</string>
+	<string name="select_max_tips">Maksimum sayı seçimine ulaştı!</string>
+	<string name="empty_sdcard">SD kartı yok</string>
+	<string name="open_gallery_fail">Galeri init başarısızlığı!</string>
+	<string name="take_photo_fail">Fotoğraf başarısız ol</string>
+	<string name="saving">Resim kaydediliyor ...</string>
+	<string name="please_reopen_gf">Lütfen Galeri\'yi tekrar aç</string>
+	<string name="edit_letoff_photo_format">Görüntü biçimi bu işlemi desteklemez!</string>
+	<string name="photo_list_empty">Resim çekilemedi!</string>
+	<string name="preview">Önizleme</string>
+	<string name="permissions_tips_gallery">Galeri\'ye erişim isteğinde bulunan bu uygulama</string>
+	<string name="permissions_denied_tips">Resim alınamadı</string>
+	<string name="maxsize_zero_tip">Maksimum boyut sıfırdan büyük olmalıdır</string>
+</resources>

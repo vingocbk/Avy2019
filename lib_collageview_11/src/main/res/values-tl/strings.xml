@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Magpasok ng teksto</string>
+	<string name="loading">Naglo-load ...</string>
+	<string name="saving">Nagse-save ...</string>
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galleri</string>
+	<string name="all_photo">Alt Foto</string>
+	<string name="photo_edit">Foto Rediger</string>
+	<string name="photo_crop">Foto Beskæring</string>
+	<string name="crop_suc">Foto afgrøde succes</string>
+	<string name="crop_fail">Fotoafgrødefejl</string>
+	<string name="no_photo">Foto tomt</string>
+	<string name="waiting">Vent venligst...</string>
+	<string name="select_max_tips">Har nået det maksimale antal valg!</string>
+	<string name="empty_sdcard">Intet SD-kort</string>
+	<string name="open_gallery_fail">Gallery init failure!</string>
+	<string name="take_photo_fail">Tag fotosvigt</string>
+	<string name="saving">Gem billede ...</string>
+	<string name="please_reopen_gf">Genåb venligst Galleri igen</string>
+	<string name="edit_letoff_photo_format">Billedformatet understøtter ikke denne operation!</string>
+	<string name="photo_list_empty">Kunne ikke få billedet!</string>
+	<string name="preview">Eksempel</string>
+	<string name="permissions_tips_gallery">Denne app anmoder om adgang til dit Galleri</string>
+	<string name="permissions_denied_tips">Kunne ikke få billeder</string>
+	<string name="maxsize_zero_tip">Maks størrelse skal være større end nul</string>
+</resources>

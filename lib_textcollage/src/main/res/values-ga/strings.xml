@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Clear</string>
+	<string name="action_delete">Scrios</string>
+	<string name="action_share">Comhroinn</string>
+	<string name="dialog_wallpaper">Ar mhaith leat a shocrú ballapháipéir bhaile?</string>
+	<string name="done_change_wall_paper">Socraigh ballapháipéir go rathúil!</string>
+	<string name="dialog_message">An bhfuil tú cinnte go bhfuil tú ag iarraidh a scrios go buan comhad grianghraf?</string>
+	<string name="delete_photo_success">Photo scriosadh</string>
+	<string name="preview">réamhamharc</string>
+	<string name="title">Carachtair</string>
+</resources>

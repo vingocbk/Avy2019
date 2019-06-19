@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Галерија</string>
+	<string name="all_photo">Сите фотографии</string>
+	<string name="photo_edit">Фото уредување</string>
+	<string name="photo_crop">Фото култура</string>
+	<string name="crop_suc">Успех на фото култура</string>
+	<string name="crop_fail">Фото неуспех</string>
+	<string name="no_photo">Фото празна</string>
+	<string name="waiting">Ве молам почекајте...</string>
+	<string name="select_max_tips">Достигна максимален избор на броеви!</string>
+	<string name="empty_sdcard">Нема SD картичка</string>
+	<string name="open_gallery_fail">Слики од init неуспех!</string>
+	<string name="take_photo_fail">Земете фото неуспех</string>
+	<string name="saving">Зачувувањето на сликата ...</string>
+	<string name="please_reopen_gf">Ве молиме повторно отворете Галерија</string>
+	<string name="edit_letoff_photo_format">Форматот на сликата не ја поддржува оваа операција!</string>
+	<string name="photo_list_empty">Не успеа да ја добие сликата!</string>
+	<string name="preview">Преглед</string>
+	<string name="permissions_tips_gallery">Оваа апликација бара пристап до Вашата Галерија</string>
+	<string name="permissions_denied_tips">Не може да се добијат слики</string>
+	<string name="maxsize_zero_tip">Максималната големина треба да биде поголема од нула</string>
+</resources>

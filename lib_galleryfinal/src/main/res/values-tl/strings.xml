@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Gallery</string>
+	<string name="all_photo">Lahat ng Larawan</string>
+	<string name="photo_edit">I-edit ang Larawan</string>
+	<string name="photo_crop">I-crop ang Larawan</string>
+	<string name="crop_suc">Tagumpay sa pag-crop ng larawan</string>
+	<string name="crop_fail">Nabigo ang pag-crop ng larawan</string>
+	<string name="no_photo">Walang laman ang larawan</string>
+	<string name="waiting">Mangyaring maghintay ...</string>
+	<string name="select_max_tips">Naabot na ang maximum na seleksyon ng numero!</string>
+	<string name="empty_sdcard">Walang SD card</string>
+	<string name="open_gallery_fail">Gallery init failure!</string>
+	<string name="take_photo_fail">Kumuha ng pagkabigo sa larawan</string>
+	<string name="saving">Nagse-save ng larawan ...</string>
+	<string name="please_reopen_gf">Mangyaring muling buksan ang Gallery</string>
+	<string name="edit_letoff_photo_format">Hindi sinusuportahan ng format ng imahe ang operasyong ito!</string>
+	<string name="photo_list_empty">Nabigong makuha ang larawan!</string>
+	<string name="preview">Preview</string>
+	<string name="permissions_tips_gallery">Ang app na ito na humihiling ng pag-access sa iyong Gallery</string>
+	<string name="permissions_denied_tips">Hindi nakakakuha ng mga larawan</string>
+	<string name="maxsize_zero_tip">Dapat mas malaki kaysa sa zero ang sukat ng Max</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">명확한</string>
+	<string name="action_delete">지우다</string>
+	<string name="action_share">몫</string>
+	<string name="dialog_wallpaper">집의 배경 화면을 설정 하시겠습니까?</string>
+	<string name="done_change_wall_paper">배경 화면을 성공적으로 설정하십시오!</string>
+	<string name="dialog_message">이 사진 파일을 영구적으로 삭제 하시겠습니까?</string>
+	<string name="delete_photo_success">사진이 삭제되었습니다.</string>
+	<string name="preview">시사</string>
+	<string name="title">캐릭터</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Metin gir</string>
+	<string name="loading">Yükleniyor...</string>
+	<string name="saving">Tasarruf ...</string>
+</resources>

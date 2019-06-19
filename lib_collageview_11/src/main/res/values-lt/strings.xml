@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Įveskite tekstą</string>
+	<string name="loading">Kraunasi ...</string>
+	<string name="saving">Taupymas ...</string>
+</resources>

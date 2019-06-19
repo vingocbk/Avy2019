@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Aydındır</string>
+	<string name="action_delete">Sil</string>
+	<string name="action_share">Paylaş</string>
+	<string name="dialog_wallpaper">Ev divar kağızı qurmaq istəyirsinizmi?</string>
+	<string name="done_change_wall_paper">Düyməsini uğurla qurun!</string>
+	<string name="dialog_message">Bu foto faylını daimi silmək istədiyinizə əminsiniz?</string>
+	<string name="delete_photo_success">Şəkil silindi</string>
+	<string name="preview">Ön görünüş</string>
+	<string name="title">Xarakter</string>
+</resources>

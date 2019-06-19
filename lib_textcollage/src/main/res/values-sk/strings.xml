@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">jasný</string>
+	<string name="action_delete">vymazať</string>
+	<string name="action_share">zdieľam</string>
+	<string name="dialog_wallpaper">Chcete nastaviť domácu tapetu?</string>
+	<string name="done_change_wall_paper">Nastaviť tapetu úspešne!</string>
+	<string name="dialog_message">Naozaj chcete súbor natrvalo odstrániť?</string>
+	<string name="delete_photo_success">Fotografia bola odstránená</string>
+	<string name="preview">Náhľad</string>
+	<string name="title">Charakter</string>
+</resources>

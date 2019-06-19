@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">წმინდა</string>
+	<string name="action_delete">წაშლა</string>
+	<string name="action_share">გაზიარება</string>
+	<string name="dialog_wallpaper">გსურთ სახლის ფონი დაყენებული?</string>
+	<string name="done_change_wall_paper">დააყენეთ ფონი წარმატებით!</string>
+	<string name="dialog_message">დარწმუნებული ხართ, რომ გსურთ ამ ფოტო ფაილის მუდმივად წაშლა?</string>
+	<string name="delete_photo_success">ფოტო წაიშალა</string>
+	<string name="preview">Preview</string>
+	<string name="title">სიმბოლო</string>
+</resources>

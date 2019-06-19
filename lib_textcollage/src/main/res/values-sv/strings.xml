@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Klar</string>
+	<string name="action_delete">Radera</string>
+	<string name="action_share">Dela med sig</string>
+	<string name="dialog_wallpaper">Vill du ställa in bakgrundsbild?</string>
+	<string name="done_change_wall_paper">Ställ in tapet framgångsrikt!</string>
+	<string name="dialog_message">Är du säker på att du vill radera denna bildfil permanent?</string>
+	<string name="delete_photo_success">Foto raderat</string>
+	<string name="preview">Förhandsvisning</string>
+	<string name="title">Karaktär</string>
+</resources>

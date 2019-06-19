@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Մուտքագրեք տեքստը</string>
+	<string name="loading">Բեռնվում է ...</string>
+	<string name="saving">Խնայողական ...</string>
+</resources>

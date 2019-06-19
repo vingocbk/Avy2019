@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Ясно</string>
+	<string name="action_delete">Видалити</string>
+	<string name="action_share">Поділитися</string>
+	<string name="dialog_wallpaper">Ви хочете встановити домашні шпалери?</string>
+	<string name="done_change_wall_paper">Встановити шпалери успішно!</string>
+	<string name="dialog_message">Ви впевнені, що хочете остаточно видалити цей файл фотографій?</string>
+	<string name="delete_photo_success">Фотографія видалена</string>
+	<string name="preview">Попередній перегляд</string>
+	<string name="title">Характер</string>
+</resources>

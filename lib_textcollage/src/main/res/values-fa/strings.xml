@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">پاک کردن</string>
+	<string name="action_delete">حذف</string>
+	<string name="action_share">اشتراک گذاری</string>
+	<string name="dialog_wallpaper">آیا می خواهید تصویر زمینه خانه را تنظیم کنید؟</string>
+	<string name="done_change_wall_paper">تصویر زمینه را با موفقیت تنظیم کنید</string>
+	<string name="dialog_message">آیا مطمئن هستید که می خواهید این فایل عکس را به طور دائمی حذف کنید؟</string>
+	<string name="delete_photo_success">عکس حذف شد</string>
+	<string name="preview">پیش نمایش</string>
+	<string name="title">شخصیت</string>
+</resources>

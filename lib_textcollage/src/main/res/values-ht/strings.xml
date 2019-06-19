@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Klè</string>
+	<string name="action_delete">Debarase m de</string>
+	<string name="action_share">pataje</string>
+	<string name="dialog_wallpaper">ou vle yo mete lakay photo?</string>
+	<string name="done_change_wall_paper">Mete photo avèk siksè!</string>
+	<string name="dialog_message">Èske ou sèten ou vle efase nèt sa a ranpli foto?</string>
+	<string name="delete_photo_success">Photo efase</string>
+	<string name="preview">Preview</string>
+	<string name="title">karaktè</string>
+</resources>

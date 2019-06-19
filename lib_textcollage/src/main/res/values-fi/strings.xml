@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Asia selvä</string>
+	<string name="action_delete">Poistaa</string>
+	<string name="action_share">Jaa</string>
+	<string name="dialog_wallpaper">Haluatko asettaa koti-taustakuvan?</string>
+	<string name="done_change_wall_paper">Aseta taustakuva onnistuneesti!</string>
+	<string name="dialog_message">Haluatko varmasti poistaa tämän valokuvatiedoston pysyvästi?</string>
+	<string name="delete_photo_success">Kuva poistettiin</string>
+	<string name="preview">esikatselu</string>
+	<string name="title">Merkki</string>
+</resources>

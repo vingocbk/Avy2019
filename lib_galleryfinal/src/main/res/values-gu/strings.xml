@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">ગેલેરી</string>
+	<string name="all_photo">બધા ફોટો</string>
+	<string name="photo_edit">ફોટો સંપાદિત કરો</string>
+	<string name="photo_crop">ફોટો ક્રોપ</string>
+	<string name="crop_suc">ફોટો પાક સફળતા</string>
+	<string name="crop_fail">ફોટો પાક નિષ્ફળતા</string>
+	<string name="no_photo">ફોટો ખાલી</string>
+	<string name="waiting">મહેરબાની કરી રાહ જુવો...</string>
+	<string name="select_max_tips">મહત્તમ સંખ્યા પસંદગી પર પહોંચી ગયું છે!</string>
+	<string name="empty_sdcard">કોઈ SD કાર્ડ નથી</string>
+	<string name="open_gallery_fail">ગેલેરી init નિષ્ફળતા!</string>
+	<string name="take_photo_fail">ફોટો નિષ્ફળતા લો</string>
+	<string name="saving">ચિત્ર સાચવી રહ્યું છે ...</string>
+	<string name="please_reopen_gf">કૃપા કરીને ગેલેરી ફરીથી ખોલો</string>
+	<string name="edit_letoff_photo_format">છબી ફોર્મેટ આ ઑપરેશનને સપોર્ટ કરતું નથી!</string>
+	<string name="photo_list_empty">ચિત્ર મેળવવામાં નિષ્ફળ!</string>
+	<string name="preview">પૂર્વાવલોકન</string>
+	<string name="permissions_tips_gallery">આ એપ્લિકેશન તમારા ગેલેરીની ઍક્સેસની વિનંતી કરે છે</string>
+	<string name="permissions_denied_tips">ચિત્રો મેળવવા માટે અસમર્થ</string>
+	<string name="maxsize_zero_tip">મહત્તમ કદ શૂન્ય કરતા વધુ હોવો જોઈએ</string>
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galerija</string>
+	<string name="all_photo">Visa Foto</string>
+	<string name="photo_edit">Foto rediģēšana</string>
+	<string name="photo_crop">Fotoattēlu apgriešana</string>
+	<string name="crop_suc">Fotoattēla panākumi</string>
+	<string name="crop_fail">Fotoattēla neveiksme</string>
+	<string name="no_photo">Foto tukšs</string>
+	<string name="waiting">Lūdzu uzgaidiet...</string>
+	<string name="select_max_tips">Ir sasniedzis maksimālo skaita izvēli!</string>
+	<string name="empty_sdcard">Nav SD kartes</string>
+	<string name="open_gallery_fail">Galerija init kļūme!</string>
+	<string name="take_photo_fail">Uzņemiet fotoattēla bojājumu</string>
+	<string name="saving">Notiek attēla saglabāšana ...</string>
+	<string name="please_reopen_gf">Lūdzu atkārtoti atveriet Galeriju</string>
+	<string name="edit_letoff_photo_format">Attēla formāts neatbalsta šo darbību!</string>
+	<string name="photo_list_empty">Neizdevās iegūt attēlu!</string>
+	<string name="preview">Priekšskatījums</string>
+	<string name="permissions_tips_gallery">Šī lietotne pieprasa piekļuvi savai galerijai</string>
+	<string name="permissions_denied_tips">Nevar iegūt attēlus</string>
+	<string name="maxsize_zero_tip">Maksimālais izmērs ir lielāks par nulli</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Chiaro</string>
+	<string name="action_delete">Elimina</string>
+	<string name="action_share">Condividere</string>
+	<string name="dialog_wallpaper">Vuoi impostare la carta da parati per la casa?</string>
+	<string name="done_change_wall_paper">Imposta la carta da parati con successo!</string>
+	<string name="dialog_message">Sei sicuro di voler eliminare definitivamente questo file di foto?</string>
+	<string name="delete_photo_success">Foto cancellata</string>
+	<string name="preview">Anteprima</string>
+	<string name="title">Carattere</string>
+</resources>

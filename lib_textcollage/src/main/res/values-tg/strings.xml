@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Clear</string>
+	<string name="action_delete">Нобуд</string>
+	<string name="action_share">саҳм</string>
+	<string name="dialog_wallpaper">Оё шумо мехоҳед, ки ба танзим обои хона?</string>
+	<string name="done_change_wall_paper">Танзими обои бомуваффақият!</string>
+	<string name="dialog_message">Оё мутмаинед, ки мехоҳед ин файлро акс ба таври доимӣ ҳузф кунед?</string>
+	<string name="delete_photo_success">Аксҳо нест</string>
+	<string name="preview">саньиши пешакӣ</string>
+	<string name="title">характер</string>
+</resources>

@@ -33,4 +33,6 @@
     <dimen name="icon_with_130dp">185dp</dimen>
     <dimen name="icon_with_120dp">171dp</dimen>
 
+    <dimen name="with_150dp">213dp</dimen>
+
 </resources>

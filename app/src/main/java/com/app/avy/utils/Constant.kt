@@ -3,6 +3,7 @@ package com.app.avy.utils
 import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -10,10 +11,8 @@ import com.app.avy.module.AppList
 import java.util.*
 import java.util.regex.Pattern
 import kotlin.collections.ArrayList
-import android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.FragmentActivity
+import com.app.avy.BaseActivity
 
 
 object Constant {
@@ -32,6 +31,47 @@ object Constant {
     val REDUCTION_VOLUME = 23
 
 
+    var itemDefault: ArrayList<String> = arrayListOf(
+        "Hạt nêm",
+        "Dao",
+        "Kéo",
+        "Muối",
+        "Mỳ chính",
+        "Nước mắm",
+        "Dầu ăn",
+        "Đũa bát",
+        "Riệu",
+        "Mật ong",
+        "Tương",
+        "Tương ớt",
+        "Mù tạt",
+        "Nước dừa",
+        "Nghệ",
+        "sả",
+        "riềng",
+        "gừng",
+        "tỏi",
+        "hành tây",
+        "củ niễng",
+        "hành củ",
+        "nghệ",
+        "củ kiệu",
+        "bột đao",
+        "mắm tôm",
+        "mắm tép",
+        "mắm tôm chua",
+        "mắm rươi",
+        "mắm cáy",
+        "mắm cua đồng",
+        "mắm bò hóc",
+        "mắm ba khía",
+        "mắm nêm",
+        "nguyệt quế",
+        "hành hoa",
+        "rau răm",
+        "hẹ"
+    )
+
     fun getInstalledApps(context: Context): List<AppList> {
         val res = ArrayList<AppList>()
         val packs = context.packageManager.getInstalledPackages(0)
@@ -46,7 +86,6 @@ object Constant {
         }
         return res
     }
-
 
     fun isSystemPackage(pkgInfo: PackageInfo): Boolean {
         return pkgInfo.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM !== 0
@@ -118,5 +157,17 @@ object Constant {
             val inputManager = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputManager.hideSoftInputFromWindow(view.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
         }
+    }
+
+    fun getScreenInch(context: FragmentActivity): Double {
+        val dm = DisplayMetrics()
+        context.windowManager.defaultDisplay.getMetrics(dm)
+        val width = dm.widthPixels
+        val height = dm.heightPixels
+        val wi = width.toDouble() / dm.xdpi
+        val hi = height.toDouble() / dm.ydpi
+        val x = Math.pow(wi, 2.0)
+        val y = Math.pow(hi, 2.0)
+        return Math.sqrt(x + y)
     }
 }

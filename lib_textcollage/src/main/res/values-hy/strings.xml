@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Մաքրել</string>
+	<string name="action_delete">Ջնջել</string>
+	<string name="action_share">Բաժնետոմս</string>
+	<string name="dialog_wallpaper">Ցանկանում եք տեղադրել տան պաստառ:</string>
+	<string name="done_change_wall_paper">Ստեղծեք պաստառ հաջողությամբ:</string>
+	<string name="dialog_message">Վստահ եք, որ ցանկանում եք մշտապես ջնջել այս լուսանկարը ֆայլը:</string>
+	<string name="delete_photo_success">Լուսանկարը ջնջված է</string>
+	<string name="preview">Նախադիտում</string>
+	<string name="title">Նիշերը</string>
+</resources>

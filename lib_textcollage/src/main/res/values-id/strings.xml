@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Bersih</string>
+	<string name="action_delete">Menghapus</string>
+	<string name="action_share">Bagikan</string>
+	<string name="dialog_wallpaper">Apakah Anda ingin mengatur wallpaper rumah?</string>
+	<string name="done_change_wall_paper">Setel wallpaper berhasil!</string>
+	<string name="dialog_message">Yakin ingin menghapus file foto ini secara permanen?</string>
+	<string name="delete_photo_success">Foto dihapus</string>
+	<string name="preview">Pratinjau</string>
+	<string name="title">Karakter</string>
+</resources>

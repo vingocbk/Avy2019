@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Введіть текст</string>
+	<string name="loading">Завантаження ...</string>
+	<string name="saving">Збереження ...</string>
+</resources>

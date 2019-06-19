@@ -8,7 +8,7 @@ apply plugin: 'kotlin-kapt'
 
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion=28
     defaultConfig {
         applicationId "com.app.avy"
         minSdkVersion 21
@@ -16,6 +16,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    androidExtensions {
+        experimental = true
     }
 
     compileOptions {
@@ -40,6 +44,7 @@ dependencies {
     implementation project(':snowboy')
     implementation project(':colorpicker')
     implementation project(':vectoranalogclock')
+    implementation project(':lib_collageview_11')
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
@@ -52,7 +57,7 @@ dependencies {
     implementation 'com.github.arbelkilani:Clock-view:1.0'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation "androidx.media:media:$androidx_media_version"
-
+    implementation"com.google.android.gms:play-services-gcm:17.0.0"
 
 
     // Room components

@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">galleria</string>
+	<string name="all_photo">Kaikki valokuva</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Valokuvan rajaus</string>
+	<string name="crop_suc">Valokuvakasvatus</string>
+	<string name="crop_fail">Valokuvien rikkoutuminen</string>
+	<string name="no_photo">Kuva on tyhjä</string>
+	<string name="waiting">Odota...</string>
+	<string name="select_max_tips">On saavuttanut enimmäismäärän valinnan!</string>
+	<string name="empty_sdcard">Ei SD-korttia</string>
+	<string name="open_gallery_fail">Gallery init epäonnistuminen!</string>
+	<string name="take_photo_fail">Ota kuvahäiriö</string>
+	<string name="saving">Kuvan tallentaminen ...</string>
+	<string name="please_reopen_gf">Avaa Galleria uudelleen</string>
+	<string name="edit_letoff_photo_format">Kuvamuoto ei tue tätä toimintoa!</string>
+	<string name="photo_list_empty">Kuvan saaminen epäonnistui!</string>
+	<string name="preview">esikatselu</string>
+	<string name="permissions_tips_gallery">Tämä sovellus pyytää pääsyä Galleriaasi</string>
+	<string name="permissions_denied_tips">Kuvia ei voitu saada</string>
+	<string name="maxsize_zero_tip">Suurimman koon pitäisi olla suurempi kuin nolla</string>
+</resources>

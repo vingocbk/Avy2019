@@ -91,7 +91,7 @@ class WeatherFragment : BaseFragment(), LocationListener {
             .toObservable()
             .subscribe { `object` ->
                 if (`object` is WeatherData) {
-                    Log.e(TAG, " ok  ")
+
                     var input = ""
                     if (currentAddress != "Hà Nội") {
                         val a = currentAddress.split("\\,".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()

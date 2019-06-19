@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Εισαγάγετε κείμενο</string>
+	<string name="loading">Φόρτωση...</string>
+	<string name="saving">Οικονομία...</string>
+</resources>

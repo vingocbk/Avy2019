@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Текст оруулах</string>
+	<string name="loading">Ачаалж байна ...</string>
+	<string name="saving">Хадгалж байна ...</string>
+</resources>

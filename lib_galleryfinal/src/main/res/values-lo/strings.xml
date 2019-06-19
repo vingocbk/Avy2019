@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">ວາງສະແດງຮູບ</string>
+	<string name="all_photo">ຮູບພາບທັງຫມົດ</string>
+	<string name="photo_edit">Photo ແກ້ໄຂ</string>
+	<string name="photo_crop">ການປູກພືດ Photo</string>
+	<string name="crop_suc">ຜົນສໍາເລັດການປູກພືດ Photo</string>
+	<string name="crop_fail">ຄວາມລົ້ມເຫຼວຂອງການປູກພືດ Photo</string>
+	<string name="no_photo">Photo ເປົ່າ</string>
+	<string name="waiting">ກະ​ລຸ​ນາ​ລໍ​ຖ້າ...</string>
+	<string name="select_max_tips">ໄດ້ບັນລຸໄດ້ໃນການຄັດເລືອກຈໍານວນສູງສຸດ!</string>
+	<string name="empty_sdcard">No ບັດ SD</string>
+	<string name="open_gallery_fail">Gallery ລົ້ມເຫຼວ init!</string>
+	<string name="take_photo_fail">ເອົາຄວາມລົ້ມເຫຼວຂອງຮູບພາບ</string>
+	<string name="saving">ກໍາລັງບັນທຶກພາບ ...</string>
+	<string name="please_reopen_gf">ກະລຸນາເປີດ Gallery</string>
+	<string name="edit_letoff_photo_format">ຮູບແບບຮູບພາບບໍ່ສະຫນັບສະຫນູນການດໍາເນີນງານນີ້!</string>
+	<string name="photo_list_empty">ສົບຜົນສໍາເລັດເພື່ອໃຫ້ໄດ້ຮັບຮູບພາບ!</string>
+	<string name="preview">Preview</string>
+	<string name="permissions_tips_gallery">app ນີ້ຂໍການເຂົ້າເຖິງ Gallery ຂອງທ່ານ</string>
+	<string name="permissions_denied_tips">ບໍ່ສາມາດເພື່ອໃຫ້ໄດ້ຮັບຮູບພາບ</string>
+	<string name="maxsize_zero_tip">ຂະຫນາດສູງສຸດຄວນຈະມີຫຼາຍຂຶ້ນກ່ວາສູນ</string>
+</resources>

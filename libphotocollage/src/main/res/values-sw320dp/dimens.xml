@@ -1,0 +1,5 @@
+<resources>
+    <!-- Default screen margins for smallest width = 320dp -->
+
+    <dimen name="collage_select_line_width">7dp</dimen>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Matnni kiriting</string>
+	<string name="loading">Yuklanmoqda ...</string>
+	<string name="saving">Saqlanmoqda ...</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Clair</string>
+	<string name="action_delete">Effacer</string>
+	<string name="action_share">Partager</string>
+	<string name="dialog_wallpaper">Voulez-vous créer un fond d\'écran à la maison?</string>
+	<string name="done_change_wall_paper">Réglez le fond d\'écran avec succès!</string>
+	<string name="dialog_message">Êtes-vous sûr de vouloir supprimer définitivement ce fichier photo?</string>
+	<string name="delete_photo_success">Photo supprimée</string>
+	<string name="preview">Aperçu</string>
+	<string name="title">Personnage</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Kirjoita teksti</string>
+	<string name="loading">Ladataan...</string>
+	<string name="saving">Tallentaa...</string>
+</resources>

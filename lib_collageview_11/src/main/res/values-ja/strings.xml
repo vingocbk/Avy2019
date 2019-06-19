@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">テキストを入力</string>
+	<string name="loading">読み込んでいます...</string>
+	<string name="saving">保存中...</string>
+</resources>

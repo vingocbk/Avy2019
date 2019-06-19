@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">갱도</string>
+	<string name="all_photo">모든 사진</string>
+	<string name="photo_edit">사진 편집</string>
+	<string name="photo_crop">사진 자르기</string>
+	<string name="crop_suc">사진 작물 성공</string>
+	<string name="crop_fail">사진 자르기 실패</string>
+	<string name="no_photo">사진이 비어있다.</string>
+	<string name="waiting">잠시만 기다려주십시오 ...</string>
+	<string name="select_max_tips">최대 숫자 선택에 도달했습니다!</string>
+	<string name="empty_sdcard">SD 카드 없음</string>
+	<string name="open_gallery_fail">갤러리 초기화 실패!</string>
+	<string name="take_photo_fail">사진 문제 해결</string>
+	<string name="saving">사진 저장 중 ...</string>
+	<string name="please_reopen_gf">갤러리를 다시 열어주세요.</string>
+	<string name="edit_letoff_photo_format">이미지 형식은이 작업을 지원하지 않습니다!</string>
+	<string name="photo_list_empty">그림을 얻지 못했다!</string>
+	<string name="preview">시사</string>
+	<string name="permissions_tips_gallery">내 갤러리에 대한 액세스를 요청하는이 앱</string>
+	<string name="permissions_denied_tips">사진을 얻을 수 없습니다.</string>
+	<string name="maxsize_zero_tip">최대 크기는 0보다 커야합니다.</string>
+</resources>

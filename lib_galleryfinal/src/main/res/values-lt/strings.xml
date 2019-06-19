@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galerija</string>
+	<string name="all_photo">Visa nuotrauka</string>
+	<string name="photo_edit">Nuotraukos redagavimas</string>
+	<string name="photo_crop">Nuotraukų apkarpymas</string>
+	<string name="crop_suc">Nuotraukų derliaus sėkmė</string>
+	<string name="crop_fail">Foto sunaikinimas</string>
+	<string name="no_photo">Nuotrauka tuščia</string>
+	<string name="waiting">Prašau palauk...</string>
+	<string name="select_max_tips">Pasirodė maksimalaus numerio pasirinkimo!</string>
+	<string name="empty_sdcard">Nėra SD kortelės</string>
+	<string name="open_gallery_fail">Galerija init nepakankamumas!</string>
+	<string name="take_photo_fail">Fotografuoti</string>
+	<string name="saving">Išsaugoma nuotrauka ...</string>
+	<string name="please_reopen_gf">Prašome dar kartą atidaryti Galeriją</string>
+	<string name="edit_letoff_photo_format">Vaizdo formatas nepalaiko šios operacijos!</string>
+	<string name="photo_list_empty">Nepavyko gauti nuotraukos!</string>
+	<string name="preview">Peržiūra</string>
+	<string name="permissions_tips_gallery">Ši programa prašo prieigos prie jūsų Galerijos</string>
+	<string name="permissions_denied_tips">Nepavyko gauti nuotraukų</string>
+	<string name="maxsize_zero_tip">Maksimalus dydis turi būti didesnis už nulį</string>
+</resources>

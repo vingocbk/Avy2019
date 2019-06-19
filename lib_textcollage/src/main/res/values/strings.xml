@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TextCollageLib</string>
+    <string name="clear">Clear</string>
+    <string name="no_space_left_on_device">Memory is less than %d MB. No space left on device, can\'t save image.</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_share">Share</string>
+    <string name="dialog_wallpaper">Do you want to set home wallpaper?</string>
+    <string name="done_change_wall_paper">Set wallpaper successfully!</string>
+    <string name="dialog_message">Are you sure you want to permanently delete this photo file?</string>
+    <string name="delete_photo_success">Photo deleted</string>
+    <string name="preview">Preview</string>
+    <string name="title">Character</string>
+</resources>

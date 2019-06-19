@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Selge</string>
+	<string name="action_delete">Kustutama</string>
+	<string name="action_share">Jaga</string>
+	<string name="dialog_wallpaper">Kas soovite kodust tapeet määrata?</string>
+	<string name="done_change_wall_paper">Määra taustaks edukalt!</string>
+	<string name="dialog_message">Kas soovite kindlasti selle fotofaili jäädavalt kustutada?</string>
+	<string name="delete_photo_success">Foto on kustutatud</string>
+	<string name="preview">Eelvaade</string>
+	<string name="title">Iseloom</string>
+</resources>

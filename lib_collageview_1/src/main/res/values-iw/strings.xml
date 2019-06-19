@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">הזן טקסט</string>
+	<string name="loading">טוען...</string>
+	<string name="saving">חִסָכוֹן...</string>
+</resources>

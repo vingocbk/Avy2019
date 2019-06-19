@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Qalereya</string>
+	<string name="all_photo">Bütün Şəkil</string>
+	<string name="photo_edit">Şəkil Düzenleme</string>
+	<string name="photo_crop">Şəkil Crop</string>
+	<string name="crop_suc">Şəkil məhsuldarlığı</string>
+	<string name="crop_fail">Şəkil çatışmazlığı</string>
+	<string name="no_photo">Şəkil boş</string>
+	<string name="waiting">Zəhmət olmasa, gözləyin...</string>
+	<string name="select_max_tips">Maksimum sayda seçimə çatdı!</string>
+	<string name="empty_sdcard">SD kartı yoxdur</string>
+	<string name="open_gallery_fail">Qalereya init qüsuru!</string>
+	<string name="take_photo_fail">Fotoşəkil çatışmazlığı edin</string>
+	<string name="saving">Şəkil qənaət ...</string>
+	<string name="please_reopen_gf">Qalereya yenidən açın</string>
+	<string name="edit_letoff_photo_format">Şəkil formatı bu əməliyyatı dəstəkləmir!</string>
+	<string name="photo_list_empty">Şəkil çəkilmədi!</string>
+	<string name="preview">Ön görünüş</string>
+	<string name="permissions_tips_gallery">Qalereya daxil olmaq istəyən bu proqramlar</string>
+	<string name="permissions_denied_tips">Şəkil çəkə bilmir</string>
+	<string name="maxsize_zero_tip">Max ölçüsü sıfırdan böyük olmalıdır</string>
+</resources>

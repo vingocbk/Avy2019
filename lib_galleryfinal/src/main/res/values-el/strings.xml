@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Εκθεσιακός χώρος</string>
+	<string name="all_photo">Όλες οι φωτογραφίες</string>
+	<string name="photo_edit">ΕΠΕΞΕΡΓΑΣΙΑ ΦΩΤΟΓΡΑΦΙΑΣ</string>
+	<string name="photo_crop">Φωτογραφία Περικοπή</string>
+	<string name="crop_suc">Η επιτυχία της καλλιέργειας φωτογραφιών</string>
+	<string name="crop_fail">Αποτυχία καλλιέργειας φωτογραφιών</string>
+	<string name="no_photo">Η φωτογραφία είναι άδειο</string>
+	<string name="waiting">Παρακαλώ περιμένετε...</string>
+	<string name="select_max_tips">Έχει φτάσει στην επιλογή του μέγιστου αριθμού!</string>
+	<string name="empty_sdcard">Δεν υπάρχει κάρτα SD</string>
+	<string name="open_gallery_fail">Gallery αποτυχία!</string>
+	<string name="take_photo_fail">Λάβετε αποτυχία φωτογραφιών</string>
+	<string name="saving">Αποθήκευση εικόνας ...</string>
+	<string name="please_reopen_gf">Ανοίξτε ξανά τη Γκαλερί</string>
+	<string name="edit_letoff_photo_format">Η μορφή εικόνας δεν υποστηρίζει αυτή τη λειτουργία!</string>
+	<string name="photo_list_empty">Αποτυχία λήψης της εικόνας!</string>
+	<string name="preview">Προεπισκόπηση</string>
+	<string name="permissions_tips_gallery">Αυτή η εφαρμογή ζητά πρόσβαση στην Gallery σας</string>
+	<string name="permissions_denied_tips">Δεν είναι δυνατή η λήψη φωτογραφιών</string>
+	<string name="maxsize_zero_tip">Το μέγιστο μέγεθος πρέπει να είναι μεγαλύτερο από το μηδέν</string>
+</resources>

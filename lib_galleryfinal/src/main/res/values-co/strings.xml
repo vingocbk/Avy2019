@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galleria</string>
+	<string name="all_photo">Tutti i fotografi</string>
+	<string name="photo_edit">Photo Edit</string>
+	<string name="photo_crop">Foto Crop</string>
+	<string name="crop_suc">Foto successu di cultivà</string>
+	<string name="crop_fail">Foto fallimentu di cultivazioni</string>
+	<string name="no_photo">Photo vacante</string>
+	<string name="waiting">Per sceglie ...</string>
+	<string name="select_max_tips">Hà cumminatu a scelta massima!</string>
+	<string name="empty_sdcard">Nisun carta SD</string>
+	<string name="open_gallery_fail">Gallery init failure!</string>
+	<string name="take_photo_fail">Pigliate a fallimentu di photo</string>
+	<string name="saving">Saving picture ...</string>
+	<string name="please_reopen_gf">Ammintazione per a reopen Gallery</string>
+	<string name="edit_letoff_photo_format">U format image ùn sustene micca sta operazione!</string>
+	<string name="photo_list_empty">Ùn pudia piglià a foto!</string>
+	<string name="preview">Preview</string>
+	<string name="permissions_tips_gallery">Questa app requesthe accessu à a vostra Galeria</string>
+	<string name="permissions_denied_tips">Ùn puderà riceve ritratti</string>
+	<string name="maxsize_zero_tip">U massimu di tene ùn deve esse più grande ca cero</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Тодорхой</string>
+	<string name="action_delete">Устгах</string>
+	<string name="action_share">Хуваалцах</string>
+	<string name="dialog_wallpaper">Та гэрийн ханын цаас тавихыг хүсч байна уу?</string>
+	<string name="done_change_wall_paper">Дэлгэцийн зургийг амжилттай болгох!</string>
+	<string name="dialog_message">Та энэ файлын файлыг бүрмөсөн устгахыг хүсч байна уу?</string>
+	<string name="delete_photo_success">Фото зураг устгагдсан</string>
+	<string name="preview">Урьдчилан харах</string>
+	<string name="title">Тэмдэгтэн</string>
+</resources>

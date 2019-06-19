@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Malinaw</string>
+	<string name="action_delete">Tanggalin</string>
+	<string name="action_share">Ibahagi</string>
+	<string name="dialog_wallpaper">Gusto mo bang mag-set ng home wallpaper?</string>
+	<string name="done_change_wall_paper">Magtakda ng wallpaper matagumpay!</string>
+	<string name="dialog_message">Sigurado ka ba na gusto mong permanenteng tanggalin ang larawang ito ng file?</string>
+	<string name="delete_photo_success">Tinanggal ang larawan</string>
+	<string name="preview">Preview</string>
+	<string name="title">Character</string>
+</resources>

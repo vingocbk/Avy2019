@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Պատկերասրահ</string>
+	<string name="all_photo">Բոլոր լուսանկարները</string>
+	<string name="photo_edit">Լուսանկարը խմբագրել</string>
+	<string name="photo_crop">Լուսանկարը բուսաբուծություն</string>
+	<string name="crop_suc">Լուսանկարը բերքի հաջողությունը</string>
+	<string name="crop_fail">Լուսանկարը բերքի ձախողում</string>
+	<string name="no_photo">Լուսանկարը դատարկ է</string>
+	<string name="waiting">Խնդրում ենք սպասել...</string>
+	<string name="select_max_tips">Հասել է առավելագույն թվով ընտրություն:</string>
+	<string name="empty_sdcard">SD քարտ չկա</string>
+	<string name="open_gallery_fail">Պատկերասրահի նախաձեռնողական ձախողում</string>
+	<string name="take_photo_fail">Լուսանկարեք ձախողումը</string>
+	<string name="saving">Խնայողական պատկերը ...</string>
+	<string name="please_reopen_gf">Խնդրում ենք վերաբեռնել Պատկերասրահ</string>
+	<string name="edit_letoff_photo_format">Պատկերի ձեւաչափը չի աջակցում այս գործողությանը:</string>
+	<string name="photo_list_empty">Չհաջողվեց ստանալ պատկերը:</string>
+	<string name="preview">Նախադիտում</string>
+	<string name="permissions_tips_gallery">Այս ծրագիրը թույլ է տալիս մուտք գործել ձեր Պատկերասրահ</string>
+	<string name="permissions_denied_tips">Չհաջողվեց նկարներ ստանալ</string>
+	<string name="maxsize_zero_tip">Առավելագույն չափը պետք է լինի զրոյից մեծ</string>
+</resources>

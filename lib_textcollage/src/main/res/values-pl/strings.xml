@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Jasny</string>
+	<string name="action_delete">Kasować</string>
+	<string name="action_share">Dzielić</string>
+	<string name="dialog_wallpaper">Czy chcesz ustawić tapetę domową?</string>
+	<string name="done_change_wall_paper">Ustaw tapetę!</string>
+	<string name="dialog_message">Czy na pewno chcesz usunąć ten plik z fotografią?</string>
+	<string name="delete_photo_success">Zdjęcie zostało usunięte</string>
+	<string name="preview">Zapowiedź</string>
+	<string name="title">Postać</string>
+</resources>

@@ -227,7 +227,7 @@
             android:orientation="vertical"
             android:layout_weight="8">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="@color/color_black"
@@ -235,12 +235,23 @@
 
 
             <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_bg_kitchen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/eva_3"/>
+
+
+            <com.lib.collageview.CollageView
+                    android:id="@+id/collage_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="@dimen/padding_8dp"
-                    android:src="@drawable/bg_test"/>
+                    android:layout_centerInParent="true"
+            />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"

@@ -62,7 +62,7 @@ public class MaterialBetterSpinner extends MaterialAutoCompleteTextView implemen
 
     }
 
-    /*@Override
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
 
         switch (event.getAction()) {
@@ -77,8 +77,8 @@ public class MaterialBetterSpinner extends MaterialAutoCompleteTextView implemen
                         dismissDropDown();
                         isPopup = false;
                     } else {
-                         requestFocus();
-                        // showDropDown();
+                        requestFocus();
+                        showDropDown();
                         isPopup = true;
                     }
                 }
@@ -86,7 +86,7 @@ public class MaterialBetterSpinner extends MaterialAutoCompleteTextView implemen
         }
 
         return super.onTouchEvent(event);
-    }*/
+    }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

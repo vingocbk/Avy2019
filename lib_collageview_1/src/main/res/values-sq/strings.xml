@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Shkruani tekstin</string>
+	<string name="loading">Loading ...</string>
+	<string name="saving">Ruajtja e ...</string>
+</resources>

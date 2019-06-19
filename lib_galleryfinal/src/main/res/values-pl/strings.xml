@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Galeria</string>
+	<string name="all_photo">Wszystkie zdjęcia</string>
+	<string name="photo_edit">Edytuj zdjęcie</string>
+	<string name="photo_crop">Przycinanie zdjęć</string>
+	<string name="crop_suc">Sukces zbioru zdjęć</string>
+	<string name="crop_fail">Upadek zbiorów fotografii</string>
+	<string name="no_photo">Zdjęcie puste</string>
+	<string name="waiting">Proszę czekać...</string>
+	<string name="select_max_tips">Osiągnął maksymalny wybór!</string>
+	<string name="empty_sdcard">Brak karty SD</string>
+	<string name="open_gallery_fail">Inwentaryzacja galerii nie działa!</string>
+	<string name="take_photo_fail">Zrób zdjęcie</string>
+	<string name="saving">Zapisuj obraz ...</string>
+	<string name="please_reopen_gf">Proszę ponownie otworzyć galerię</string>
+	<string name="edit_letoff_photo_format">Format obrazu nie obsługuje tej operacji!</string>
+	<string name="photo_list_empty">Nie udało się uzyskać obrazu!</string>
+	<string name="preview">Zapowiedź</string>
+	<string name="permissions_tips_gallery">Ta aplikacja zażąda dostępu do Galerii</string>
+	<string name="permissions_denied_tips">Nie można uzyskać zdjęć</string>
+	<string name="maxsize_zero_tip">Maksymalny rozmiar powinien być większy od zera</string>
+</resources>

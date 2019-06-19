@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">duidelik</string>
+	<string name="action_delete">verwyder</string>
+	<string name="action_share">Deel</string>
+	<string name="dialog_wallpaper">Wil jy huispapier instel?</string>
+	<string name="done_change_wall_paper">Stel plakpapier suksesvol!</string>
+	<string name="dialog_message">Is jy seker jy wil hierdie foto lêer permanent uitvee?</string>
+	<string name="delete_photo_success">Foto verwyder</string>
+	<string name="preview">voorskou</string>
+	<string name="title">Karakter</string>
+</resources>

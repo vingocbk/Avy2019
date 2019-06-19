@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Wprowadź tekst</string>
+	<string name="loading">Ładuję...</string>
+	<string name="saving">Oszczędność...</string>
+</resources>

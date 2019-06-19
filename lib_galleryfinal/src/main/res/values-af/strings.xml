@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">Gallery</string>
+	<string name="all_photo">Alle foto\'s</string>
+	<string name="photo_edit">Foto wysig</string>
+	<string name="photo_crop">Foto Gewas</string>
+	<string name="crop_suc">Foto-oes sukses</string>
+	<string name="crop_fail">Foto mislukking</string>
+	<string name="no_photo">Foto leeg</string>
+	<string name="waiting">Wag asseblief...</string>
+	<string name="select_max_tips">Het die maksimum aantal seleksie bereik!</string>
+	<string name="empty_sdcard">Geen SD kaart nie</string>
+	<string name="open_gallery_fail">Gallery init mislukking!</string>
+	<string name="take_photo_fail">Neem foto mislukking</string>
+	<string name="saving">Stoor prentjie ...</string>
+	<string name="please_reopen_gf">Gaan asseblief die galery weer oop</string>
+	<string name="edit_letoff_photo_format">Die prentformaat ondersteun nie hierdie operasie nie!</string>
+	<string name="photo_list_empty">Kon nie die prentjie kry nie!</string>
+	<string name="preview">voorskou</string>
+	<string name="permissions_tips_gallery">Hierdie program vra toegang tot jou galery</string>
+	<string name="permissions_denied_tips">Kan nie prente kry nie</string>
+	<string name="maxsize_zero_tip">Maksimum grootte moet groter as nul wees</string>
+</resources>

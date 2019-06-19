@@ -1,0 +1,5 @@
+<resources>
+    <string name="input_text">Nhập văn bản</string>
+    <string name="loading">Đang tải...</string>
+    <string name="saving">Đang lưu...</string>
+</resources>

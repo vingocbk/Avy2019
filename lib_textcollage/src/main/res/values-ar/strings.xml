@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">واضح</string>
+	<string name="action_delete">حذف</string>
+	<string name="action_share">شارك</string>
+	<string name="dialog_wallpaper">هل تريد تعيين خلفية المنزل؟</string>
+	<string name="done_change_wall_paper">تعيين خلفية بنجاح!</string>
+	<string name="dialog_message">هل تريد بالتأكيد حذف ملف الصورة هذا نهائيا؟</string>
+	<string name="delete_photo_success">تم حذف الصورة</string>
+	<string name="preview">معاينة</string>
+	<string name="title">حرف</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">kloer</string>
+	<string name="action_delete">läschen</string>
+	<string name="action_share">Share</string>
+	<string name="dialog_wallpaper">Wëllt dir doheem Zeen ze setzen?</string>
+	<string name="done_change_wall_paper">Set Zeen erfollegräich!</string>
+	<string name="dialog_message">Sidd Dir sécher, dass Dir wëllt permanent dëser Foto Fichier läschen?</string>
+	<string name="delete_photo_success">Photo geläscht</string>
+	<string name="preview">Preview</string>
+	<string name="title">Charakter</string>
+</resources>

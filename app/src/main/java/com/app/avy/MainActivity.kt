@@ -21,6 +21,7 @@ import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.util.DisplayMetrics
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import com.app.avy.snowboysupport.ConvertSpeechToText
 import com.app.avy.snowboysupport.SnowboySupport
+import com.app.avy.utils.SharedPreferencesManager
 import java.util.*
 
 
@@ -40,14 +42,16 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
     var mTvCount: AppCompatTextView? = null
 
     private var mPermissions = arrayOf(
-        android.Manifest.permission.READ_EXTERNAL_STORAGE,
-        android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.RECORD_AUDIO
     )
 
     override fun getId() = R.layout.activity_main
     override fun onViewReady() {
         mTvCount = tv_count
+        count =
+            SharedPreferencesManager.getInstance(this).getIntFromSharePreferen(SharedPreferencesManager.CABINET_NUMBER_DEFAULT)!!
         if (ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.READ_EXTERNAL_STORAGE
@@ -63,6 +67,8 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
                 arrayOf(
                     Manifest.permission.READ_EXTERNAL_STORAGE,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
                     Manifest.permission.RECORD_AUDIO
                 ),
                 1
@@ -73,17 +79,19 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
             .addToBackStack(HomeFragment::class.java.simpleName)
             .commit()
         onEvenClick()
+
+
     }
 
     private var mSnownoySupport: SnowboySupport? = null
     private var speechRecognizer: SpeechRecognizer? = null
 
     override fun onActive() {
-        count++
+        count
         mSnownoySupport?.stopRecording()
         showDialog()
         listen()
-        mTvCount?.text = count.toString()
+        //mTvCount?.text = count.toString()
     }
 
     override fun onReadyForSpeech(params: Bundle?) {
@@ -131,14 +139,13 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
         mSnownoySupport?.startRecording()
         Log.e(TAG, "onResults ")
         if (str.trim().isNotEmpty()) {
-            ConvertSpeechToText((application as MyApplication), str).convertText()
+            ConvertSpeechToText(this, str, count).convertText()
         }
     }
 
     fun onEvenClick() {
         img_back!!.setOnClickListener(this)
         img_speech!!.setOnClickListener(this)
-
     }
 
     override fun onClick(v: View?) {
@@ -217,7 +224,7 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
                 if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
                     allSuccess = false
                     val requestAgain =
-                        Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+                        SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
                             permissions[i]
                         )
                 }

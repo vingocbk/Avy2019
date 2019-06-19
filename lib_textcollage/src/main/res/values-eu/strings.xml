@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Garbitu</string>
+	<string name="action_delete">ezabatu</string>
+	<string name="action_share">Share</string>
+	<string name="dialog_wallpaper">Etxeko horma-papera ezarri nahi al duzu?</string>
+	<string name="done_change_wall_paper">Ezarri horma-papera ondo!</string>
+	<string name="dialog_message">Ziur argazki hau behin betiko ezabatu nahi duzula?</string>
+	<string name="delete_photo_success">Argazkia ezabatu da</string>
+	<string name="preview">Aurreikusi</string>
+	<string name="title">Character</string>
+</resources>

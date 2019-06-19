@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">明确</string>
+	<string name="action_delete">删除</string>
+	<string name="action_share">分享</string>
+	<string name="dialog_wallpaper">你想要设置家庭壁纸吗？</string>
+	<string name="done_change_wall_paper">设置壁纸成功！</string>
+	<string name="dialog_message">您确定要永久删除此照片文件吗？</string>
+	<string name="delete_photo_success">照片已删除</string>
+	<string name="preview">预习</string>
+	<string name="title">字符</string>
+</resources>

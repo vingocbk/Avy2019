@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Hreinsa</string>
+	<string name="action_delete">Eyða</string>
+	<string name="action_share">Deila</string>
+	<string name="dialog_wallpaper">Viltu setja heima veggfóður?</string>
+	<string name="done_change_wall_paper">Stilltu veggfóður með góðum árangri!</string>
+	<string name="dialog_message">Ertu viss um að þú viljir eyða þessari myndaskrá fyrir fullt og allt?</string>
+	<string name="delete_photo_success">Mynd eytt</string>
+	<string name="preview">Preview</string>
+	<string name="title">Eðli</string>
+</resources>

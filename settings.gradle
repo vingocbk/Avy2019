@@ -1,1 +1,1 @@
-include ':app', ':snowboy', ':colorpicker', ':vectoranalogclock'
+include ':app', ':snowboy', ':colorpicker', ':vectoranalogclock', ':lib_collageview', ':lib_collageview_11'

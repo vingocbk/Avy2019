@@ -1,0 +1,5 @@
+<resources>
+	<string name="input_text">Zadejte text</string>
+	<string name="loading">Načítání...</string>
+	<string name="saving">Ukládání ...</string>
+</resources>

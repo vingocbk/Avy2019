@@ -1,0 +1,22 @@
+<resources>
+	<string name="gallery">เฉลียง</string>
+	<string name="all_photo">รูปภาพทั้งหมด</string>
+	<string name="photo_edit">แก้ไขรูปถ่าย</string>
+	<string name="photo_crop">ครอบตัดภาพ</string>
+	<string name="crop_suc">ความสำเร็จของการเพาะปลูกภาพถ่าย</string>
+	<string name="crop_fail">ภาพตัดปะล้มเหลว</string>
+	<string name="no_photo">รูปภาพว่างเปล่า</string>
+	<string name="waiting">โปรดรอ...</string>
+	<string name="select_max_tips">ได้มาถึงการเลือกจำนวนสูงสุด!</string>
+	<string name="empty_sdcard">ไม่มีการ์ด SD</string>
+	<string name="open_gallery_fail">ความล้มเหลวของ Gallery init!</string>
+	<string name="take_photo_fail">ถ่ายภาพล้มเหลว</string>
+	<string name="saving">กำลังบันทึกภาพ ...</string>
+	<string name="please_reopen_gf">โปรดเปิดแกลเลอรีอีกครั้ง</string>
+	<string name="edit_letoff_photo_format">รูปแบบภาพไม่รองรับการทำงานนี้!</string>
+	<string name="photo_list_empty">ไม่สามารถรับภาพ!</string>
+	<string name="preview">ดูตัวอย่าง</string>
+	<string name="permissions_tips_gallery">แอปนี้ขอเข้าถึงแกลเลอรีของคุณ</string>
+	<string name="permissions_denied_tips">ไม่สามารถรับรูปภาพ</string>
+	<string name="maxsize_zero_tip">ขนาดสูงสุดควรมากกว่าศูนย์</string>
+</resources>

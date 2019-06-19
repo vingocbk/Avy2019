@@ -1,0 +1,11 @@
+<resources>
+	<string name="clear">Skaidrs</string>
+	<string name="action_delete">Dzēst</string>
+	<string name="action_share">Dalieties</string>
+	<string name="dialog_wallpaper">Vai vēlaties iestatīt mājas tapetes?</string>
+	<string name="done_change_wall_paper">Veidot fona attēlu veiksmīgi!</string>
+	<string name="dialog_message">Vai tiešām vēlaties neatgriezeniski dzēst šo fotoattēlu failu?</string>
+	<string name="delete_photo_success">Fotoattēls ir dzēsts</string>
+	<string name="preview">Priekšskatījums</string>
+	<string name="title">Raksturs</string>
+</resources>

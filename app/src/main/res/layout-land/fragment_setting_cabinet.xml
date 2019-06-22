@@ -180,7 +180,6 @@
             android:gravity="center"
             android:orientation="vertical">
 
-
         <SeekBar
                 android:id="@+id/seek_bar_volume"
                 android:layout_width="@dimen/with_170dp"

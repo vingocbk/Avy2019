@@ -1,672 +1,739 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/color_black"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8">
+
+        <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:background="@color/color_black"
+                android:fitsSystemWindows="false"
                 android:gravity="center"
-                android:layout_height="match_parent">
-
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:background="@color/color_black"
-            android:fitsSystemWindows="false"
-            android:gravity="center"
-            android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Regular_H4"
-                    android:layout_width="match_parent"
-                    android:textAllCaps="true"
-                    android:textColor="@color/md_grey_white"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Fin to control"/>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Regular_H4"
-                    android:layout_width="match_parent"
-                    android:textAllCaps="true"
-                    android:textColor="@color/md_grey_white"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Model speed"/>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Regular_H4"
-                    android:layout_width="match_parent"
-                    android:textAllCaps="true"
-                    android:textColor="@color/md_grey_white"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Percent slow"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Regular_H4"
-                    android:layout_width="match_parent"
-                    android:textAllCaps="true"
-                    android:textColor="@color/md_grey_white"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Reset distant"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Regular_H4"
-                    android:layout_width="match_parent"
-                    android:textAllCaps="true"
-                    android:textColor="@color/md_grey_white"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Time return"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_weight="1">
-
-                <View
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:gravity="center"
-                        android:layout_height="0dp">
-                </View>
-
-                <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:gravity="center"
-                        android:layout_height="0dp">
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_border">
-
-                        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                                android:id="@+id/spinner_speed"
-                                android:layout_width="@dimen/icon_with_64dp"
-                                android:layout_height="wrap_content"
-                                app:met_floatingLabel="none"
-                                android:background="@null"
-                                app:met_hideUnderline="true"
-                                android:textColor="@android:color/transparent"
-                                android:textColorHint="@android:color/transparent"
-                                android:gravity="center"
-                        />
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:gravity="center"
-                        android:layout_height="0dp">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:layout_alignParentStart="true"
-                            android:background="@drawable/bg_border">
-
-                        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                                android:id="@+id/spinner_slow"
-                                android:layout_width="@dimen/icon_with_64dp"
-                                android:layout_height="wrap_content"
-                                app:met_floatingLabel="none"
-                                android:background="@null"
-                                app:met_hideUnderline="true"
-                                android:textColor="@android:color/transparent"
-                                android:textColorHint="@android:color/transparent"
-                                android:gravity="center"
-                        />
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:gravity="center"
-                        android:layout_height="0dp">
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:layout_alignParentStart="true"
-                            android:background="@drawable/bg_border">
-
-                        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                                android:id="@+id/spinner_distant"
-                                android:layout_width="@dimen/icon_with_64dp"
-                                android:layout_height="wrap_content"
-                                app:met_floatingLabel="none"
-                                android:background="@null"
-                                android:textColor="@android:color/transparent"
-                                android:textColorHint="@android:color/transparent"
-                                app:met_hideUnderline="true"
-                                android:gravity="center"
-                        />
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:gravity="center"
-                        android:layout_height="0dp">
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:layout_alignParentStart="true"
-                            android:background="@drawable/bg_border">
-
-                        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                                android:id="@+id/spinner_return"
-                                android:layout_width="@dimen/icon_with_64dp"
-                                android:layout_height="wrap_content"
-                                app:met_floatingLabel="none"
-                                android:background="@null"
-                                android:textColor="@android:color/transparent"
-                                android:textColorHint="@android:color/transparent"
-                                android:gravity="center"
-                                app:met_hideUnderline="true"
-                        />
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                </LinearLayout>
-
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.6"
                     android:orientation="vertical"
                     android:layout_height="match_parent">
 
-                <View android:layout_width="match_parent"
-                      android:layout_weight="1" android:layout_height="0dp"/>
-
-                <View android:layout_width="match_parent"
-                      android:layout_weight="1" android:layout_height="0dp"/>
-
-                <LinearLayout
-                        android:layout_weight="1"
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
                         android:layout_width="match_parent"
-                        android:gravity="center"
-                        android:layout_height="0dp">
-
-                    <androidx.appcompat.widget.AppCompatEditText
-                            style="@style/Regular_H6"
-                            android:layout_width="@dimen/icon_with_64dp"
-                            android:layout_height="48dp"
-                            app:met_floatingLabel="none"
-                            android:hint="in"
-                            android:layout_margin="@dimen/padding_8dp"
-                            android:paddingStart="@dimen/padding_8dp"
-                            android:gravity="center|start"
-                            android:background="@drawable/bg_border"
-                            android:layout_centerInParent="true"
-                    />
-
-                </LinearLayout>
-
-                <View android:layout_width="match_parent"
-                      android:layout_weight="1" android:layout_height="0dp"/>
-
-                <LinearLayout
-                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
                         android:layout_height="0dp"
+                        android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_weight="1">
+                        android:text="Fin to control"/>
 
-                    <androidx.appcompat.widget.AppCompatEditText
-                            style="@style/Regular_H6"
-                            android:layout_width="@dimen/icon_with_64dp"
-                            android:layout_height="48dp"
-                            app:met_floatingLabel="none"
-                            android:hint="Time"
-                            android:layout_margin="@dimen/padding_8dp"
-                            android:paddingStart="@dimen/padding_8dp"
-                            android:gravity="center"
-                            android:background="@drawable/bg_border"
-                            android:layout_centerInParent="true"
-                    />
 
-                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
+                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Model speed"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
+                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Percent slow"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
+                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Reset distant"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
+                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Time return"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-
             <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
 
-                <View android:layout_width="match_parent"
-                      android:layout_weight="1" android:layout_height="0dp"/>
-
-
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
                         android:gravity="center"
                         android:layout_weight="1">
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_border">
 
-                        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                                android:id="@+id/spinner_speed_1"
-                                android:layout_width="@dimen/icon_with_64dp"
+                    <View
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+                    </View>
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:met_floatingLabel="none"
-                                android:background="@null"
-                                app:met_hideUnderline="true"
-                                android:textColor="@android:color/transparent"
-                                android:textColorHint="@android:color/transparent"
-                                android:gravity="center"
-                        />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
+                                android:background="@drawable/bg_border">
+
+                            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                                    android:id="@+id/spinner_speed"
+                                    android:layout_width="@dimen/icon_with_64dp"
+                                    android:layout_height="wrap_content"
+                                    app:met_floatingLabel="none"
+                                    android:background="@null"
+                                    app:met_hideUnderline="true"
+                                    android:textColor="@android:color/transparent"
+                                    android:textColorHint="@android:color/transparent"
+                                    android:gravity="center"
+                            />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </LinearLayout>
 
 
-                </LinearLayout>
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
 
-                <LinearLayout
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:background="@drawable/bg_border">
+
+                            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                                    android:id="@+id/spinner_slow"
+                                    android:layout_width="@dimen/icon_with_64dp"
+                                    android:layout_height="wrap_content"
+                                    app:met_floatingLabel="none"
+                                    android:background="@null"
+                                    app:met_hideUnderline="true"
+                                    android:textColor="@android:color/transparent"
+                                    android:textColorHint="@android:color/transparent"
+                                    android:gravity="center"
+                            />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:background="@drawable/bg_border">
+
+                            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                                    android:id="@+id/spinner_distant"
+                                    android:layout_width="@dimen/icon_with_64dp"
+                                    android:layout_height="wrap_content"
+                                    app:met_floatingLabel="none"
+                                    android:background="@null"
+                                    android:textColor="@android:color/transparent"
+                                    android:textColorHint="@android:color/transparent"
+                                    app:met_hideUnderline="true"
+                                    android:gravity="center"
+                            />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:background="@drawable/bg_border">
+
+                            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                                    android:id="@+id/spinner_return"
+                                    android:layout_width="@dimen/icon_with_64dp"
+                                    android:layout_height="wrap_content"
+                                    app:met_floatingLabel="none"
+                                    android:background="@null"
+                                    android:textColor="@android:color/transparent"
+                                    android:textColorHint="@android:color/transparent"
+                                    android:gravity="center"
+                                    app:met_hideUnderline="true"
+                            />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </LinearLayout>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:gravity="center"
-                        android:layout_height="0dp">
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
 
+                    <View android:layout_width="match_parent"
+                          android:layout_weight="1" android:layout_height="0dp"/>
+
+                    <View android:layout_width="match_parent"
+                          android:layout_weight="1" android:layout_height="0dp"/>
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                                style="@style/Regular_H6"
+                                android:layout_width="@dimen/icon_with_64dp"
+                                android:layout_height="48dp"
+                                app:met_floatingLabel="none"
+                                android:hint="in"
+                                android:layout_margin="@dimen/padding_8dp"
+                                android:paddingStart="@dimen/padding_8dp"
+                                android:gravity="center|start"
+                                android:background="@drawable/bg_border"
+                                android:layout_centerInParent="true"
+                        />
+
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent"
+                          android:layout_weight="1" android:layout_height="0dp"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                                style="@style/Regular_H6"
+                                android:layout_width="@dimen/icon_with_64dp"
+                                android:layout_height="48dp"
+                                app:met_floatingLabel="none"
+                                android:hint="Time"
+                                android:layout_margin="@dimen/padding_8dp"
+                                android:paddingStart="@dimen/padding_8dp"
+                                android:gravity="center"
+                                android:background="@drawable/bg_border"
+                                android:layout_centerInParent="true"
+                        />
+
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                    <View android:layout_width="match_parent"
+                          android:layout_weight="1" android:layout_height="0dp"/>
+
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:layout_weight="1">
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_border">
+
+                            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                                    android:id="@+id/spinner_speed_1"
+                                    android:layout_width="@dimen/icon_with_64dp"
+                                    android:layout_height="wrap_content"
+                                    app:met_floatingLabel="none"
+                                    android:background="@null"
+                                    app:met_hideUnderline="true"
+                                    android:textColor="@android:color/transparent"
+                                    android:textColorHint="@android:color/transparent"
+                                    android:gravity="center"
+                            />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                                style="@style/Regular_H6"
+                                android:layout_width="@dimen/icon_with_64dp"
+                                android:layout_height="48dp"
+                                app:met_floatingLabel="none"
+                                android:hint="out"
+                                android:layout_margin="@dimen/padding_8dp"
+                                android:paddingStart="@dimen/padding_8dp"
+                                android:gravity="center|start"
+                                android:background="@drawable/bg_border"
+                                android:layout_centerInParent="true"
+                        />
+
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent"
+                          android:layout_weight="1" android:layout_height="0dp"/>
+
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Regular_H6"
+                                android:layout_width="@dimen/icon_with_72dp"
+                                android:layout_height="48dp"
+                                app:met_floatingLabel="none"
+                                android:layout_margin="@dimen/padding_8dp"
+                                android:gravity="center"
+                                android:textColor="@color/md_grey_white"
+                                android:text="x10(ms)"
+                                android:layout_centerInParent="true"
+                        />
+
+
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+                        <com.suke.widget.SwitchButton
+                                android:id="@+id/switch_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                app:sb_button_color="@color/color_control"
+                                android:layout_marginEnd="@dimen/padding_16dp"
+                                app:sb_checked_color="@android:color/transparent"
+                                app:sb_show_indicator="false"
+                                app:sb_checked="true"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+
+                        <TextView
+                                android:id="@+id/tv_save_model_speed"
+                                style="@style/Regular_H4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"
+                                android:background="@drawable/ic_border_press"
+                                android:paddingStart="@dimen/padding_16dp"
+                                android:paddingEnd="@dimen/padding_16dp"
+                                android:textColor="@color/color_control"
+                                android:textAllCaps="true"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:text="Send"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+
+
+                        <TextView
+                                android:id="@+id/tv_send_percent_slow"
+                                style="@style/Regular_H4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"
+                                android:background="@drawable/ic_border_press"
+                                android:paddingStart="@dimen/padding_16dp"
+                                android:paddingEnd="@dimen/padding_16dp"
+                                android:textColor="@color/color_control"
+                                android:textAllCaps="true"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:text="Send"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+
+                        <TextView
+                                android:id="@+id/tv_send_reset_distant"
+                                style="@style/Regular_H4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"
+                                android:background="@drawable/ic_border_press"
+                                android:paddingStart="@dimen/padding_16dp"
+                                android:paddingEnd="@dimen/padding_16dp"
+                                android:textColor="@color/color_control"
+                                android:textAllCaps="true"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:text="Send"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="0dp">
+
+
+                        <TextView
+                                android:id="@+id/tv_send_time_return"
+                                style="@style/Regular_H4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"
+                                android:background="@drawable/ic_border_press"
+                                android:paddingStart="@dimen/padding_16dp"
+                                android:paddingEnd="@dimen/padding_16dp"
+                                android:textColor="@color/color_control"
+                                android:textAllCaps="true"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:text="Send"/>
+
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3">
+
+            </View>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
+                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:text="Local ip"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
+                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:text="ssid"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
+                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:text="pasword"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
+                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:text="ip"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
+                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:text="ip send"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H4"
+                        android:layout_width="match_parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/md_grey_white"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:text="Sencity"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_weight="0.8"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/padding_16dp"
+                        android:layout_marginEnd="@dimen/padding_16dp"
+                        android:layout_weight="1">
                     <androidx.appcompat.widget.AppCompatEditText
                             style="@style/Regular_H6"
-                            android:layout_width="@dimen/icon_with_64dp"
+                            android:layout_width="match_parent"
                             android:layout_height="48dp"
                             app:met_floatingLabel="none"
-                            android:hint="out"
                             android:layout_margin="@dimen/padding_8dp"
                             android:paddingStart="@dimen/padding_8dp"
                             android:gravity="center|start"
                             android:background="@drawable/bg_border"
                             android:layout_centerInParent="true"
                     />
-
-                </LinearLayout>
-
-                <View android:layout_width="match_parent"
-                      android:layout_weight="1" android:layout_height="0dp"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                <LinearLayout
-                        android:layout_weight="1"
+                <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:gravity="center"
-                        android:layout_height="0dp">
-
-                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_marginStart="@dimen/padding_16dp"
+                        android:layout_marginEnd="@dimen/padding_16dp"
+                        android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatEditText
                             style="@style/Regular_H6"
-                            android:layout_width="@dimen/icon_with_72dp"
+                            android:layout_width="match_parent"
                             android:layout_height="48dp"
                             app:met_floatingLabel="none"
                             android:layout_margin="@dimen/padding_8dp"
-                            android:gravity="center"
-                            android:textColor="@color/md_grey_white"
-                            android:text="x10(ms)"
+                            android:paddingStart="@dimen/padding_8dp"
+                            android:gravity="center|start"
+                            android:background="@drawable/bg_border"
                             android:layout_centerInParent="true"
                     />
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                </LinearLayout>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                <LinearLayout
-                        android:layout_weight="1"
+                <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:gravity="center"
-                        android:layout_height="0dp">
-                    <com.suke.widget.SwitchButton
-                            android:id="@+id/switch_button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerInParent="true"
-                            app:sb_button_color="@color/color_control"
-                            android:layout_marginEnd="@dimen/padding_16dp"
-                            app:sb_checked_color="@android:color/transparent"
-                            app:sb_show_indicator="false"
-                            app:sb_checked="true"/>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:gravity="center"
-                        android:layout_height="0dp">
-
-                    <TextView
-                            android:id="@+id/tv_save_model_speed"
-                            style="@style/Regular_H4"
-                            android:layout_width="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16dp"
+                        android:layout_marginEnd="@dimen/padding_16dp"
+                        android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatEditText
+                            style="@style/Regular_H6"
+                            android:layout_width="match_parent"
                             android:layout_height="48dp"
-                            android:background="@drawable/ic_border_press"
-                            android:paddingStart="@dimen/padding_16dp"
-                            android:paddingEnd="@dimen/padding_16dp"
-                            android:textColor="@color/color_control"
-                            android:textAllCaps="true"
+                            app:met_floatingLabel="none"
+                            android:hint="......"
+                            android:layout_margin="@dimen/padding_8dp"
+                            android:paddingStart="@dimen/padding_8dp"
+                            android:gravity="center|start"
+                            android:background="@drawable/bg_border"
                             android:layout_centerInParent="true"
-                            android:layout_alignParentEnd="true"
-                            android:gravity="center"
-                            android:text="Send"/>
-
-                </LinearLayout>
+                    />
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                <LinearLayout
-                        android:layout_weight="1"
+                <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:gravity="center"
-                        android:layout_height="0dp">
-
-
-                    <TextView
-                            android:id="@+id/tv_send_percent_slow"
-                            style="@style/Regular_H4"
-                            android:layout_width="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16dp"
+                        android:layout_marginEnd="@dimen/padding_16dp"
+                        android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatEditText
+                            style="@style/Regular_H6"
+                            android:layout_width="match_parent"
                             android:layout_height="48dp"
-                            android:background="@drawable/ic_border_press"
-                            android:paddingStart="@dimen/padding_16dp"
-                            android:paddingEnd="@dimen/padding_16dp"
-                            android:textColor="@color/color_control"
-                            android:textAllCaps="true"
+                            app:met_floatingLabel="none"
+                            android:layout_margin="@dimen/padding_8dp"
+                            android:paddingStart="@dimen/padding_8dp"
+                            android:gravity="center|start"
+                            android:background="@drawable/bg_border"
                             android:layout_centerInParent="true"
-                            android:layout_alignParentEnd="true"
-                            android:gravity="center"
-                            android:text="Send"/>
-
-                </LinearLayout>
+                    />
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                <LinearLayout
-                        android:layout_weight="1"
+                <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:gravity="center"
-                        android:layout_height="0dp">
-
-                    <TextView
-                            android:id="@+id/tv_send_reset_distant"
-                            style="@style/Regular_H4"
-                            android:layout_width="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16dp"
+                        android:layout_marginEnd="@dimen/padding_16dp"
+                        android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatEditText
+                            style="@style/Regular_H6"
+                            android:layout_width="match_parent"
                             android:layout_height="48dp"
-                            android:background="@drawable/ic_border_press"
-                            android:paddingStart="@dimen/padding_16dp"
-                            android:paddingEnd="@dimen/padding_16dp"
-                            android:textColor="@color/color_control"
-                            android:textAllCaps="true"
+                            app:met_floatingLabel="none"
+                            android:layout_margin="@dimen/padding_8dp"
+                            android:paddingStart="@dimen/padding_8dp"
+                            android:gravity="center|start"
+                            android:background="@drawable/bg_border"
                             android:layout_centerInParent="true"
-                            android:layout_alignParentEnd="true"
-                            android:gravity="center"
-                            android:text="Send"/>
-
-                </LinearLayout>
+                    />
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                <LinearLayout
-                        android:layout_weight="1"
+                <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:gravity="center"
-                        android:layout_height="0dp">
-
-
-                    <TextView
-                            android:id="@+id/tv_send_time_return"
-                            style="@style/Regular_H4"
-                            android:layout_width="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16dp"
+                        android:layout_marginEnd="@dimen/padding_16dp"
+                        android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_sensity"
+                            style="@style/Regular_H6"
+                            android:layout_width="match_parent"
                             android:layout_height="48dp"
-                            android:background="@drawable/ic_border_press"
-                            android:paddingStart="@dimen/padding_16dp"
-                            android:paddingEnd="@dimen/padding_16dp"
-                            android:textColor="@color/color_control"
-                            android:textAllCaps="true"
+                            app:met_floatingLabel="none"
+                            android:layout_margin="@dimen/padding_8dp"
+                            android:paddingStart="@dimen/padding_8dp"
+                            android:gravity="center|start"
+                            android:background="@drawable/bg_border"
+                            android:hint="Sencity :0.28,0.28,0.28"
+                            android:textColorHint="@color/md_grey_600_dark"
                             android:layout_centerInParent="true"
-                            android:layout_alignParentEnd="true"
-                            android:gravity="center"
-                            android:text="Send"/>
+                    />
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
-                </LinearLayout>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.3">
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_weight="1">
 
-        </View>
+        <TextView
+                android:id="@+id/tv_update"
+                style="@style/Regular_H4"
+                android:layout_width="@dimen/with_150dp"
+                android:layout_height="48dp"
+                android:background="@drawable/ic_border_press"
+                android:paddingStart="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp"
+                android:textColor="@color/color_control"
+                android:textAllCaps="true"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:text="Done"/>
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="0dp"
-                android:layout_weight="0.3"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Regular_H4"
-                    android:layout_width="match_parent"
-                    android:textAllCaps="true"
-                    android:textColor="@color/md_grey_white"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center|start"
-                    android:text="Local ip"/>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Regular_H4"
-                    android:layout_width="match_parent"
-                    android:textAllCaps="true"
-                    android:textColor="@color/md_grey_white"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center|start"
-                    android:text="ssid"/>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Regular_H4"
-                    android:layout_width="match_parent"
-                    android:textAllCaps="true"
-                    android:textColor="@color/md_grey_white"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center|start"
-                    android:text="pasword"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Regular_H4"
-                    android:layout_width="match_parent"
-                    android:textAllCaps="true"
-                    android:textColor="@color/md_grey_white"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center|start"
-                    android:text="ip"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Regular_H4"
-                    android:layout_width="match_parent"
-                    android:textAllCaps="true"
-                    android:textColor="@color/md_grey_white"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center|start"
-                    android:text="ip send"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="0dp"
-                android:layout_weight="0.8"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_marginStart="@dimen/padding_16dp"
-                    android:layout_marginEnd="@dimen/padding_16dp"
-                    android:layout_weight="1">
-                <androidx.appcompat.widget.AppCompatEditText
-                        style="@style/Regular_H6"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        app:met_floatingLabel="none"
-                        android:layout_margin="@dimen/padding_8dp"
-                        android:paddingStart="@dimen/padding_8dp"
-                        android:gravity="center|start"
-                        android:background="@drawable/bg_border"
-                        android:layout_centerInParent="true"
-                />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_marginStart="@dimen/padding_16dp"
-                    android:layout_marginEnd="@dimen/padding_16dp"
-                    android:layout_weight="1">
-                <androidx.appcompat.widget.AppCompatEditText
-                        style="@style/Regular_H6"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        app:met_floatingLabel="none"
-                        android:layout_margin="@dimen/padding_8dp"
-                        android:paddingStart="@dimen/padding_8dp"
-                        android:gravity="center|start"
-                        android:background="@drawable/bg_border"
-                        android:layout_centerInParent="true"
-                />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_marginStart="@dimen/padding_16dp"
-                    android:layout_marginEnd="@dimen/padding_16dp"
-                    android:layout_weight="1">
-                <androidx.appcompat.widget.AppCompatEditText
-                        style="@style/Regular_H6"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        app:met_floatingLabel="none"
-                        android:hint="......"
-                        android:layout_margin="@dimen/padding_8dp"
-                        android:paddingStart="@dimen/padding_8dp"
-                        android:gravity="center|start"
-                        android:background="@drawable/bg_border"
-                        android:layout_centerInParent="true"
-                />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_marginStart="@dimen/padding_16dp"
-                    android:layout_marginEnd="@dimen/padding_16dp"
-                    android:layout_weight="1">
-                <androidx.appcompat.widget.AppCompatEditText
-                        style="@style/Regular_H6"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        app:met_floatingLabel="none"
-                        android:layout_margin="@dimen/padding_8dp"
-                        android:paddingStart="@dimen/padding_8dp"
-                        android:gravity="center|start"
-                        android:background="@drawable/bg_border"
-                        android:layout_centerInParent="true"
-                />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_marginStart="@dimen/padding_16dp"
-                    android:layout_marginEnd="@dimen/padding_16dp"
-                    android:layout_weight="1">
-                <androidx.appcompat.widget.AppCompatEditText
-                        style="@style/Regular_H6"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        app:met_floatingLabel="none"
-                        android:layout_margin="@dimen/padding_8dp"
-                        android:paddingStart="@dimen/padding_8dp"
-                        android:gravity="center|start"
-                        android:background="@drawable/bg_border"
-                        android:layout_centerInParent="true"
-                />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </LinearLayout>
-
-</RelativeLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
 

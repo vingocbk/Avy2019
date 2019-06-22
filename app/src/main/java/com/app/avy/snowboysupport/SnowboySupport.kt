@@ -11,6 +11,7 @@ import android.media.AudioManager
 import android.os.Handler
 import android.os.Message
 import android.speech.SpeechRecognizer
+import com.app.avy.utils.SharedPreferencesManager
 import java.io.*
 
 class SnowboySupport(var context: Context, listenner: OnSpeechListenner) {
@@ -20,6 +21,7 @@ class SnowboySupport(var context: Context, listenner: OnSpeechListenner) {
     private var preVolume = -1
     private var mListener: OnSpeechListenner? = null
     var message: String = " "
+    var sencity = "0.3,0.3,0.3"
 
     init {
         @SuppressLint("HandlerLeak")
@@ -53,7 +55,20 @@ class SnowboySupport(var context: Context, listenner: OnSpeechListenner) {
         mListener = listenner
         restoreVolume()
         AppResCopy.copyResFromAssetsToSD(mContext)
-        recordingThread = RecordingThread(handle, AudioDataSaver())
+
+        SharedPreferencesManager.getInstance(mContext).getStringFromSharePreferen(SharedPreferencesManager.SENCITY)
+            ?.let {
+                if (it.isNotEmpty()) {
+                    sencity = it
+                }
+            }
+
+
+        recordingThread = RecordingThread(
+            handle,
+            AudioDataSaver(),
+            sencity
+        )
         playbackThread = PlaybackThread()
         startRecording()
     }

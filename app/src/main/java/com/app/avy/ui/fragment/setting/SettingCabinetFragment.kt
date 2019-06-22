@@ -36,10 +36,11 @@ class SettingCabinetFragment : BaseFragment(), View.OnClickListener, SeekBar.OnS
     override fun onViewReady() {
         tv_setting_advanced.setOnClickListener(this)
         setDataSpinner()
-        audioManager = context!!.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+
+        /*audioManager = context!!.getSystemService(Context.AUDIO_SERVICE) as AudioManager
         seek_bar_volume.setOnSeekBarChangeListener(this)
         seek_bar_volume.max = audioManager!!.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
-        seek_bar_volume.progress = audioManager!!.getStreamVolume(AudioManager.STREAM_MUSIC)
+        seek_bar_volume.progress = audioManager!!.getStreamVolume(AudioManager.STREAM_MUSIC)*/
 
     }
 

@@ -122,7 +122,6 @@ public class PhotoView extends BaseView {
     }
 
     private void init() {
-
         mPath = new Path();
         mOriginPath = new Path();
         mMatrix = new Matrix();

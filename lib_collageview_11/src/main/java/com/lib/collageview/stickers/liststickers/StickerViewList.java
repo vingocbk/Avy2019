@@ -35,7 +35,6 @@ public class StickerViewList extends ArrayList<BaseStickerView> {
 
     public void onDraw(Canvas canvas) {
         if (mCollageView != null && mCollageView.getCollageViewRect() != null)
-            canvas.clipRect(mCollageView.getCollageViewRect(), Region.Op.REPLACE);
         Flog.d(TAG, "size arr=" + this.size());
         for (BaseStickerView item : this) {
             if (item != null) {

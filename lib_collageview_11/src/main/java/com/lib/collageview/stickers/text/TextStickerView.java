@@ -222,25 +222,14 @@ public class TextStickerView extends BaseStickerView {
         }
 
         Paint.FontMetrics fontMetrics = mTextFont.getFontMetrics();
-        /* ref: http://wikiwiki.jp/android/?%A5%C6%A5%AD%A5%B9%A5%C8%A4%CE%C9%C1%B2%E8(FontMetrics) */
-//        Flog.d(TAG, "fontMetrics: ascent=" + fontMetrics.ascent + "_descent=" + fontMetrics.descent);
-//        Flog.d(TAG, "mTextLines=" + mTextLines.length + "_leading=" + mTextFont.getFontMetrics().leading);
 
         float distance = (fontMetrics.descent - fontMetrics.ascent) + mTextPadding;
-//        Flog.d(TAG, "distance="+distance+"_x="+mTextFont.measureText(mText)/2);
         float paddingTop = 0;
         for (int i = 0; i < mLines.size(); i++) {
             String text = mLines.get(i);
             if (text == null)
                 text = "";
-//            Flog.d(TAG, "text=" + text);
-            if (TextUtils.isEmpty(text)) {
-//                continue;
-            }
-//            Flog.d(TAG, "paddingTop=" + paddingTop);
-//            float centerX = mTextFont.measureText(text) / 2;
             float centerY = (fontMetrics.descent + fontMetrics.ascent) / 2 + distance * (mLines.size() - 1) / 2;
-//                mTextCanvas.drawText(text, (mBitmap.getWidth() >> 1) - centerX, (mBitmap.getHeight() >> 1) - centerY + paddingTop, mTextFont);
             float startX = getStartXAlign(text);
             Flog.d(TAG, "startX=" + startX);
             if (startX < 0) {

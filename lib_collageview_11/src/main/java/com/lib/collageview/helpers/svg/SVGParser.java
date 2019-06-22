@@ -704,7 +704,7 @@ public class SVGParser {
 
         // draw
         arcMatrix.reset();
-        arcMatrix.postRotate(theta);
+       // arcMatrix.postRotate(theta);
         arcMatrix.postTranslate(cx, cy);
 
         arcRectf.set(-rx, -ry, rx, ry);

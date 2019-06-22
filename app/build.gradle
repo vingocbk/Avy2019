@@ -45,6 +45,7 @@ dependencies {
     implementation project(':colorpicker')
     implementation project(':vectoranalogclock')
     implementation project(':lib_collageview_11')
+    implementation project(':engine')
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
@@ -58,7 +59,6 @@ dependencies {
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation "androidx.media:media:$androidx_media_version"
     implementation"com.google.android.gms:play-services-gcm:17.0.0"
-
 
     // Room components
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"

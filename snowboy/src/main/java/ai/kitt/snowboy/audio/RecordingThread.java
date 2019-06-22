@@ -38,11 +38,12 @@ public class RecordingThread {
     private SnowboyDetect detector = new SnowboyDetect(commonRes, activeModel);
     private MediaPlayer player = new MediaPlayer();
 
-    public RecordingThread(Handler handler, AudioDataReceivedListener listener) {
+    public RecordingThread(Handler handler, AudioDataReceivedListener listener, String sencity) {
         this.handler = handler;
         this.listener = listener;
 
-        detector.SetSensitivity("0.28,0.28,0.28");
+        Log.e("RecordingThread", "---->" + sencity);
+        detector.SetSensitivity(sencity);
         detector.SetAudioGain(1);
         detector.ApplyFrontend(true);
         try {

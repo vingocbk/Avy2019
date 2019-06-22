@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 
 class SharedPreferencesManager(context: Context) {
     val SHARE_PREFEREN_KEY = "com.app.avy"
+
     var sharedPreferences: SharedPreferences
 
     init {
@@ -17,6 +18,7 @@ class SharedPreferencesManager(context: Context) {
         val CABINET_NUMBER_DEFAULT = "CABINET_NUMBER_DEFAULT"
         val USER_INFO_KEY = "USER_INFO_KEY"
         val ADVANCED_PASS = "ADVANCED_PASS"
+        val SENCITY = "SENCITY"
 
 
         var instance: SharedPreferencesManager? = null

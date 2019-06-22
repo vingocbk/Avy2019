@@ -1,10 +1,7 @@
 package com.lib.collageview.customviews.listviews;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Region;
+import android.graphics.*;
 import android.view.MotionEvent;
 
 import com.lib.collageview.CollageView;
@@ -49,9 +46,13 @@ public class PhotoViewList extends ArrayList<PhotoView> {
                  * First: Clip rect entire layout parent
                  * Second: Clip path for each photo
                  * */
-                canvas.clipRect(mCollageView.getCollageViewRect(), Region.Op.REPLACE);
-                Flog.d(TAG, "coolageview rect="+mCollageView.getCollageViewRect());
+
+
+                canvas.save();
+                canvas.clipRect( mCollageView.getCollageViewRect(), Region.Op.INTERSECT);
+                Flog.d(TAG, "coolageview rect=" + mCollageView.getCollageViewRect());
                 item.onDraw(canvas);
+                canvas.restore();
             } else {
                 Flog.d(TAG, "item " + i + " is null");
             }
@@ -60,8 +61,9 @@ public class PhotoViewList extends ArrayList<PhotoView> {
 
     /**
      * Set margin distance between photos.
+     *
      * @param marginValue the value of margin.
-     * */
+     */
     public void setItemMargin(float marginValue) {
         for (PhotoView item : this) {
             item.setPathAfterMargin(SVGPathUtils.zoomPath(new Path(item.getPath()), marginValue));
@@ -209,30 +211,30 @@ public class PhotoViewList extends ArrayList<PhotoView> {
     public void setParentView(CollageView collageView) {
         mCollageView = collageView;
         mContext = collageView.getContext();
-        for (PhotoView item:this) {
+        for (PhotoView item : this) {
             item.setParentView(collageView);
         }
     }
 
     public void setStrokeWidthLinePaint(float widthStroke) {
-        for (PhotoView photoView:this) {
+        for (PhotoView photoView : this) {
             photoView.setStrokeWidthLinePaint(widthStroke);
         }
     }
 
     public void setWidthSignAddition(float widthSignAddition) {
-        for (PhotoView photoView:this) {
+        for (PhotoView photoView : this) {
             photoView.setWidthSignAddition(widthSignAddition);
         }
     }
 
     public float getWidthSignAddition() {
-        if (this==null || this.isEmpty()) return 0f;
+        if (this == null || this.isEmpty()) return 0f;
         return this.get(0).getWidthSignAddition();
     }
 
     public float getStrokeWidthLinePaint() {
-        if (this==null || this.isEmpty()) return 0f;
+        if (this == null || this.isEmpty()) return 0f;
         return this.get(0).getStrokeWidthLinePaint();
     }
 

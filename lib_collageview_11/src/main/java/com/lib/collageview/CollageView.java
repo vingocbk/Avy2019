@@ -16,7 +16,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -29,7 +28,6 @@ import com.lib.collageview.customviews.listviews.PhotoViewList;
 import com.lib.collageview.customviews.views.DragPhotoView;
 import com.lib.collageview.customviews.views.PhotoView;
 import com.lib.collageview.helpers.ConstValues;
-import com.lib.collageview.helpers.FileUtils;
 import com.lib.collageview.helpers.Flog;
 import com.lib.collageview.helpers.MathUtil;
 import com.lib.collageview.helpers.bitmap.BitmapHelper;
@@ -41,9 +39,7 @@ import com.lib.collageview.interfaces.CollageViewListener;
 import com.lib.collageview.interfaces.PhotoViewListener;
 import com.lib.collageview.interfaces.StickerViewListener;
 import com.lib.collageview.stickers.BaseStickerView;
-import com.lib.collageview.stickers.icon.IconStickerView;
 import com.lib.collageview.stickers.liststickers.StickerViewList;
-import com.lib.collageview.stickers.text.TextStickerView;
 import com.lib.collageview.tasks.LoadPhotoAsync;
 import com.lib.collageview.tasks.SaveAsync;
 
@@ -51,7 +47,6 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 
 /**
@@ -171,9 +166,9 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
     private int mCntThreadDone;
     private int mTotalThreads;
     /*
-    * The resolution for saving collageview.
-    * Default: RESOLUTION_GOOD.
-    * */
+     * The resolution for saving collageview.
+     * Default: RESOLUTION_GOOD.
+     * */
     private int mSaveResolution = RESOLUTION_GOOD;
     /**
      * The bitmap for drawing frame/background of collageview.
@@ -259,7 +254,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
     @Override
     protected void onDraw(Canvas canvas) {
 
-        Log.d("CALL ONDRAW", "11111aaaa");
         if (mTypeCollage != ConstValues.COLLAGE_TEXT_TYPE) {
 
             if (mSvgItem == null) return;
@@ -268,58 +262,10 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
 
             if (mPhotoViewList != null)
                 mPhotoViewList.onDraw(canvas);
+
             if (mIsMagazineType) {
                 drawMagazine(canvas);
             }
-
-            if (!mIsMagazineType) {
-                drawFrame(canvas, mFrameColor);
-            }
-
-            if (mStickerViewList != null) {
-                mStickerViewList.onDraw(canvas);
-            }
-
-            if (mIsDragging && mStickerViewList.getCurrentIndex() == -1 && mDragPhotoview != null && mCollageViewRect != null) {
-                canvas.clipRect(mCollageViewRect, Region.Op.REPLACE);
-                mDragPhotoview.onDraw(canvas);
-            }
-
-
-        } else {    // draw text collage
-
-            Flog.d(TAG, "draw text collage");
-
-//            if (false)
-            if (mBgGalleryBmp != null) {
-//                int remainH = mBgGalleryBmp.getHeight() - this.getHeight();
-//                int remainW = mBgGalleryBmp.getWidth() - this.getWidth();
-                int remainH = mBgGalleryBmp.getHeight() - mCollageViewRect.height();
-                int remainW = mBgGalleryBmp.getWidth() - mCollageViewRect.width();
-                Flog.d(TAG, "remain: w=" + remainW + "_h=" + remainH);
-                int halfH = (remainH >> 1);
-                int halfW = (remainW >> 1);
-                int top = mCollageViewRect.top;
-                Flog.d(TAG, "half123=" + halfH + "_top=" + top);
-
-                if (true) {
-                    Flog.d(TAG, "old rect=" + mCollageViewRect);
-                    Rect desRect = new Rect(mCollageViewRect.left - halfW,
-                            mCollageViewRect.top - halfH,
-                            mCollageViewRect.right + halfW,
-                            mCollageViewRect.bottom + halfH);
-                    Flog.d(TAG, "new rect=" + desRect);
-                    canvas.drawBitmap(mBgGalleryBmp, null, desRect, mCollageViewPaint);
-                } else {
-                    canvas.drawBitmap(mBgGalleryBmp, 0, top - halfH, mCollageViewPaint);
-                }
-            } else {
-                drawBackground(canvas, mBackgroundColor);
-            }
-
-
-//            if (false)
-            drawFrame(canvas, mFrameColor);
         }
     }
 
@@ -456,9 +402,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
     }
 
 
-
-
-
     /**
      * Initialize the instance variables for:
      * - Paint
@@ -516,9 +459,9 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
     }
 
     public void setLayoutStyle(SVGItem svgItem) {
-//        mTypeCollage = mIsMagazineType ? ConstValues.TYPE_COLLAGE_MAGAZINE : ConstValues.TYPE_COLLAGE_PHOTO;
         mSvgItem = svgItem;
     }
+
 
     public void setTypeCollage(int typeCollage) {
         mTypeCollage = typeCollage;
@@ -533,10 +476,14 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
      * @param heightView The height of collageview used to fitting vectordrawable.
      */
     private void initItems(int widthView, int heightView) {
-
         mNumOfPhotos = mSvgItem.numImgs;
         Matrix doubleMatrix = new Matrix();
+
         doubleMatrix.setScale(widthView / mSvgItem.viewportWidth, heightView / mSvgItem.viewportHeight);
+
+
+        Log.e("initItems", "w------->" + widthView / mSvgItem.viewportWidth + "-----" + heightView / mSvgItem.viewportHeight);
+        Log.e("initItems", "h------->" + heightView + "-----" + widthView);
 
         setCollageViewRect(0, 0, widthView, heightView);
         if (mPhotoViewList == null)
@@ -545,6 +492,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
 
         float maxWidth = 0F;
         for (int i = 0; i < mNumOfPhotos; i++) {
+
             PhotoView photoView = new PhotoView(this, i).setPhotoViewListener(this);
             Path path = new Path(SVGParser.parsePath(mSvgItem.pathData.get(i)));
             // Save the inital path for changing ratio of collageview
@@ -552,6 +500,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
             Path temp = new Path(path);
             temp.transform(doubleMatrix);
             photoView.setPath(temp);
+
             mPhotoViewList.add(photoView);
             if (maxWidth < photoView.getRectF().width()) {
                 maxWidth = photoView.getRectF().width();
@@ -570,7 +519,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
      * @param ratio The ratio value of collageview
      */
     public void setChangedRatioLayout(float ratio) {
-
         if (Float.compare(mCollageViewRatio, ratio) == 0) {
             Flog.d(TAG, "setChangedRatioLayout method is not fulfilled");
             return;
@@ -606,6 +554,8 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
          * Invoke onMeasure() method first. After that, call onDraw() method
          * */
         requestLayout();
+        invalidate();
+
     }
 
     /**
@@ -696,7 +646,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
             Path temp = new Path(path);
             temp.transform(doubleMatrix);
             photoView.setPath(temp);
-//            photoView.fitPhotoToLayout();
         }
         if (mBeforeMarginValue < 1F) {
             mPhotoViewList.setItemMargin(mBeforeMarginValue);
@@ -716,12 +665,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
      * @param svgItem The item SVG model.
      */
     public void setChangedLayout(SVGItem svgItem) {
-
-        // Change "layout"
         mSvgItem = svgItem;
-//        Flog.d("setChangedLayout= ratio" + mCollageViewRatio);
-//        int widthView = this.getWidth();
-//        int heightView = (int) (widthView / mCollageViewRatio);
         int widthView, heightView;
         if (mCollageViewRatio >= 1) {
             widthView = Math.max(getWidth(), getHeight());
@@ -739,11 +683,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         setCollageViewRect(0, 0, widthView, heightView);
 
         updatePhotoViewList();
-//        Flog.d(TAG, "sppp mNumOfPhotos=" + mNumOfPhotos + "_size=" + mPhotoViewList.size());
-//        for (int i = 0; i < mPhotoViewList.size(); i++) {
-//            Flog.d(TAG, "sppp " + i + "=" + mPhotoViewList.get(i).getBitmap());
-//        }
-//        if (true) return;
 
         for (int i = 0; i < mPhotoViewList.size(); i++) {
             PhotoView photoView = mPhotoViewList.get(i);
@@ -774,7 +713,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
      * WARNING: uncondition to test this method.
      */
     private void updatePhotoViewList() {
-
         int numOfPhotos = mPhotoViewList.size();
         int numOfRects = mNumOfPhotos;
         if (numOfPhotos > numOfRects) {
@@ -792,7 +730,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
                     mPhotoViewList.remove(lastIdx);
                 }
             } else {
-                // del from reverse array avoiding confuse:
                 for (int i = noContentIdx.length - 1; i > (noContentIdx.length - 1 - diff); i--) {
                     mPhotoViewList.remove(noContentIdx[i]);
                 }
@@ -806,8 +743,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
                     PhotoView photoModel = new PhotoView(this, priority).setPhotoViewListener(this);
                     photoModel.setPath(cachedItem.getPath());
                     photoModel.setBitmap(cachedItem.getBitmap());
-//                    photoModel.setIndex(priority);
-//                    photoModel.setRoundSize(mRoundSize);
                     mPhotoViewList.add(photoModel);
                 }
 
@@ -815,7 +750,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
                     PhotoView photoModel = new PhotoView(this, i).setPhotoViewListener(this);
                     photoModel.setPath(SVGParser.parsePath(mSvgItem.pathData.get(i)));
                     photoModel.setIndex(i);
-//                    photoModel.setRoundSize(mRoundSize);
                     mPhotoViewList.add(photoModel);
                 }
             } else {
@@ -825,21 +759,12 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
                     PhotoView photoModel = new PhotoView(this, priority).setPhotoViewListener(this);
                     photoModel.setPath(cachedItem.getPath());
                     photoModel.setBitmap(cachedItem.getBitmap());
-//                    photoModel.setIndex(priority);
-//                    photoModel.setRoundSize(mRoundSize);
                     mPhotoViewList.add(photoModel);
                 }
             }
             mCachedPhotoViewList.clear();
         }
 
-        // Update of item-photo
-//        for (int i = 0; i < model.imgCount; i++) {
-//            PhotoView photoModel = mPhotoViewList.get(i);
-//            photoModel.setRegionPath(clipLayoutPaths.get(i));
-//            photoModel.fitPhotoToLayout();
-//            photoModel.setPriority(i);
-//        }
     }
 
     /**
@@ -889,8 +814,8 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
             h = resolveSizeAndState(minw, widthMeasureSpec, 1);
             w = (int) (h * mCollageViewRatio);
         }
-        Flog.d(TAG, "resolveSizeAndState w=" + w + "_h=" + h);
-        setMeasuredDimension(1124, 810);
+        Flog.e(TAG, "resolveSizeAndState w=" + mWidthScreen + "_h=" + mHeightScreen);
+        setMeasuredDimension((int) (mWidthScreen), (int) (mHeightScreen));
     }
 
     /**
@@ -969,7 +894,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
      *               otherwise frame is color.
      */
     private void drawFrameLine(Canvas canvas, int x, int y, int w, int h, int color) {
-
         CanvasUtils.clipRect(canvas, x, y, w, h);
         if (color == ConstValues.NO_COLOR_VALUE) canvas.drawPaint(mFramePaint);
         else canvas.drawColor(color);
@@ -999,41 +923,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         mFrameColor = ConstValues.NO_COLOR_VALUE;
     }
 
-    /**
-     * Set margin between photos in collageview.
-     *
-     * @param progressValue The current value of progress bar.
-     *                      The margin value in [0,5..1]. With "1": the initial margin value
-     *                      and "0,5": min value of margin size.
-     * @param minValue      The minimum value of progress bar.
-     * @param maxValue      The maximum value of progress bar.
-     */
-    public void setPhotoMargin(float progressValue, int minValue, int maxValue) {
-        Flog.d(TAG, "setPhotoMargin progressValue=" + progressValue + "_minValue=" + minValue + "_maxValue=" + maxValue);
-        if (minValue >= maxValue)
-            return;
-        if (minValue <= 0)
-            minValue = 1;
-        if (maxValue > Integer.MAX_VALUE)
-            maxValue = Integer.MAX_VALUE;
-        if (progressValue <= 0)
-            progressValue = 1;
-        else if (progressValue > Integer.MAX_VALUE)
-            progressValue = Integer.MAX_VALUE;
-        if (progressValue < minValue * 1F || progressValue > maxValue * 1F)
-            return;
-        float curMarginValue = (progressValue - minValue)
-                * (ConstValues.MARGIN_MAX_VALUE - ConstValues.MARGIN_MIN_VALUE) / (maxValue - minValue)
-                + ConstValues.MARGIN_MIN_VALUE;
-        Flog.d(TAG, "setPhotoMargin curMarginValue=" + curMarginValue);
-//        if (curMarginValue < ConstValues.MARGIN_MIN_VALUE || curMarginValue > ConstValues.MARGIN_MAX_VALUE)
-//            return;
-        float zoomPathValue = curMarginValue / mBeforeMarginValue;
-        Flog.d(TAG, "setPhotoMargin zoomPathValue=" + zoomPathValue);
-        mPhotoViewList.setItemMargin(zoomPathValue);
-        mBeforeMarginValue = curMarginValue;
-        invalidate();
-    }
 
     /**
      * Set round for each photo in collageview.
@@ -1071,16 +960,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         invalidate();
     }
 
-    /**
-     * Set bitmap image for each photo in collageview at specific position.
-     *
-     * @param index  The position that set bitmap changed.
-     * @param bitmap The bitmap of picked image from gallery.
-     */
-    public void setPhotoBitmapAt(int index, Bitmap bitmap) {
-        mPhotoViewList.get(index).setBitmap(bitmap);
-        mPhotoViewList.get(index).fitPhotoToLayout();
-    }
 
     /**
      * Initialize on long press event of photoview on collageview.
@@ -1147,84 +1026,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         mGestureDetector = new GestureDetector(getContext(), gestureListener);
     }
 
-    /**
-     * Rotate photoview by a angle.
-     *
-     * @param degree the value of angle that photoview rotate.
-     */
-    public void postRotate(float degree) {
-        if ((mPhotoViewList == null) || (mPhotoViewList.getCurrentIndex() == -1)
-                || (mPhotoViewList.get(mPhotoViewList.getCurrentIndex()) == null)) return;
-        mPhotoViewList.get(mPhotoViewList.getCurrentIndex()).postRotate(degree);
-    }
-
-    /**
-     * Translate photoview to new position on collageview.
-     *
-     * @param x the translated value based-on horizontal axis.
-     * @param y the translated value based-on vertical axis.
-     */
-    public void postTranslate(float x, float y) {
-        Flog.d(TAG, "mPhotoViewList has curIdx1=" + mPhotoViewList.getCurrentIndex()
-                + "_sizeAll=" + mPhotoViewList.size()
-                + "mPhotoViewList has curIdx2=" + mPhotoViewList.getCurrentIndex());
-//        + "_value=" + mPhotoViewList.get(mPhotoViewList.getCurrentIndex())
-        if ((mPhotoViewList == null) || (mPhotoViewList.getCurrentIndex() == -1)
-                || (mPhotoViewList.get(mPhotoViewList.getCurrentIndex()) == null)) return;
-        mPhotoViewList.get(mPhotoViewList.getCurrentIndex()).postTranslate(x, y);
-    }
-
-    /**
-     * Zoom in/out photoview.
-     *
-     * @param ratio the value of zoomed ratio.
-     */
-    public void postScale(float ratio) {
-        if ((mPhotoViewList == null) || (mPhotoViewList.getCurrentIndex() == -1)
-                || (mPhotoViewList.get(mPhotoViewList.getCurrentIndex()) == null)) return;
-        mPhotoViewList.get(mPhotoViewList.getCurrentIndex()).postScale(ratio);
-    }
-
-    public void rotate90() {
-        postRotate(90);
-    }
-
-    public void mirror90() {
-        postRotate(-90);
-    }
-
-    public void zoomIn() {
-        postScale(ConstValues.ZOOM_IN_RATIO);
-    }
-
-    public void zoomOut() {
-        postScale(ConstValues.ZOOM_OUT_RATIO);
-    }
-
-    /**
-     * Correct photoview to removing skew angle. Make it horizontally/vertically.
-     */
-    public void correctSkew() {
-        if ((mPhotoViewList == null) || (mPhotoViewList.getCurrentIndex() == -1)
-                || (mPhotoViewList.get(mPhotoViewList.getCurrentIndex()) == null)) return;
-        mPhotoViewList.get(mPhotoViewList.getCurrentIndex()).correctSkew();
-    }
-
-    public void moveUp() {
-        postTranslate(0, -ConstValues.TRANSLATING_THRESHOLD);
-    }
-
-    public void moveDown() {
-        postTranslate(0, ConstValues.TRANSLATING_THRESHOLD);
-    }
-
-    public void moveLeft() {
-        postTranslate(-ConstValues.TRANSLATING_THRESHOLD, 0);
-    }
-
-    public void moveRight() {
-        postTranslate(ConstValues.TRANSLATING_THRESHOLD, 0);
-    }
 
     /**
      * Callback when action down on collageview.
@@ -1269,13 +1070,11 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         if (mPhotoViewList != null && !mPhotoViewList.isEmpty() && mPhotoViewList.getCurrentIndex() != -1
                 && mPhotoViewList.size() > mPhotoViewList.getCurrentIndex()) {
             mPhotoViewList.get(mPhotoViewList.getCurrentIndex()).setIsSelected(false);
-//            mPhotoViewList.setCurIndex(-1);
             return true;
         }
         if (mStickerViewList != null && !mStickerViewList.isEmpty() && mStickerViewList.getCurrentIndex() != -1
                 && mStickerViewList.size() > mStickerViewList.getCurrentIndex()) {
             mStickerViewList.get(mStickerViewList.getCurrentIndex()).setInEdit(false);
-//            mStickerViewList.setCurrentIndex(-1);
             return true;
         }
         return false;
@@ -1287,10 +1086,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
     public void release() {
         if (mCollageViewListener != null)
             mCollageViewListener = null;
-//        if (mSvgItem != null) {
-//            mSvgItem.clear();
-//            mSvgItem = null;
-//        }
+//
         if (mPhotoViewList != null) {
             mPhotoViewList.release();
             mPhotoViewList.clear();
@@ -1372,30 +1168,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         mOldDimens[1] = getHeight();
     }
 
-    /**
-     * Add sticker view (Icon/Text) to collageview.
-     *
-     * @param stickerView a stickerview: icon or text.
-     */
-    public void addStickerView(BaseStickerView stickerView) {
-        Flog.d("stickerView: " + stickerView);
-        stickerView.setStickerViewListener(this);
-        // TODO:
-        Flog.d(TAG, "size=" + mStickerViewList.size());
-        stickerView.setIndex(mStickerViewList.size());
-        mStickerViewList.add(stickerView);
-//        if (stickerView instanceof TextStickerView) {
-//            mStickerViewList.requestKeyboard((TextStickerView) stickerView, true);
-//        }
-        mStickerViewList.setCurrentIndex(mStickerViewList.size() - 1);
-        mStickerViewList.updateIndices();
-
-        if (stickerView instanceof IconStickerView) mFocusedViewtype = FOCUS_ON_ICON_STICKER;
-        else if (stickerView instanceof TextStickerView) mFocusedViewtype = FOCUS_ON_TEXT_STICKER;
-
-        if (mPhotoViewList != null)
-            mPhotoViewList.unselected();
-    }
 
     public PhotoViewList getPhotoViewList() {
         return mPhotoViewList;
@@ -1439,10 +1211,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         mStickerViewList.setCurrentIndex(-1);
         mStickerViewList.remove(stickerIndex);
         mStickerViewList.updateIndices();
-//        Flog.d(TAG, "bbb size=" + mStickerViewList.size());
-//        for (int i = 0; i < mStickerViewList.size(); i++) {
-//            Flog.d(TAG, i+" bbb="+ mStickerViewList.get(i));
-//        }
+
     }
 
     @Override
@@ -1515,14 +1284,11 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
                 BitmapFactory.decodeFile(path, options);
                 Flog.d(TAG, "real bitmap decoded: w=" + options.outWidth + "_h=" + options.outHeight);
 
-
                 int reqWidth;
                 if (mPhotoViewList.get(0).isOutOfMemory()) {
-
                     reqWidth = MathUtil.getFitCenterImgSize(mWidthScreen, mHeightScreen,
                             options.outWidth, options.outHeight)[1];
                 } else {
-
                     reqWidth = (options.outWidth > options.outHeight ? options.outHeight : options.outWidth);
                 }
                 Flog.d(TAG, "2 reqWidth=" + reqWidth);
@@ -1574,275 +1340,10 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         mFocusedViewtype = focusedViewtype;
     }
 
-    /**
-     * Save the final collaged photo.
-     * Can change resolution for saving by calling setResolution(int).
-     */
-    public void save() {
-
-//        int maxTextureSize = EGL14Util.getMaxTextureSize();
-//        Flog.d(TAG, "maxTextureSize=" + maxTextureSize);
-//        if (maxTextureSize <= 0) return;
-//        int widthSave, heightSave;
-//        Flog.d(TAG, "mSaveResolution=" + mSaveResolution);
-//        heightSave = mSaveResolution;
-//        widthSave = (int) (heightSave * mCollageViewRatio);
-//
-//        Flog.d(TAG, "save: w=" + widthSave + "_h=" + heightSave);
-//        Flog.d(TAG, "save: maxTextureSize=" + maxTextureSize);
-//
-//        if (widthSave >= maxTextureSize || heightSave >= maxTextureSize) {
-//            Flog.d(TAG, "createSaveBitmap 1");
-//            if (mCollageViewRatio >= 1) {
-//                createSaveBitmap((int) (maxTextureSize * mCollageViewRatio), maxTextureSize);
-//            } else {
-//                createSaveBitmap(maxTextureSize, (int) (maxTextureSize * mCollageViewRatio));
-//            }
-//        } else {
-//            Flog.d(TAG, "createSaveBitmap 2");
-//            createSaveBitmap(widthSave, heightSave);
-//        }
-    }
-
-    /**
-     * Create bitmap for saving image.
-     *
-     * @param widthSave  the width of this bitmap.
-     * @param heightSave the height of this bitmap.
-     */
-    private void createSaveBitmap(int widthSave, int heightSave) {
-
-        Flog.d(TAG, "0 createSaveBitmap: w=" + widthSave + "_h=" + heightSave);
-        /**
-         * The scale ratio between collageview and the final saved-collageview.
-         * */
-        float savedScaleRatio = widthSave * 1.f / this.getWidth();
-        Flog.d(TAG, "savedScaleRatio=" + savedScaleRatio);
-        /**
-         * Update the attributes of child views in collageview.
-         * */
-        savedCollageView = new CollageView(getContext());
-        Flog.d(TAG, "mRatioView=" + mCollageViewRatio);
-        Flog.d(TAG, "this.getWidth()=" + this.getWidth() + "_getHeight()=" + this.getHeight());
-        savedCollageView.setTypeCollage(mTypeCollage);
-
-        if (mTypeCollage != ConstValues.COLLAGE_TEXT_TYPE) {
-            /**
-             * Initialize the condition for drawing collageview.
-             * */
-            savedCollageView.setMagazine(getMagazineBmp());
-            savedCollageView.setCollageViewRatio(mCollageViewRatio);
-            savedCollageView.setCollageViewRect(0, 0, widthSave, heightSave);
-            savedCollageView.setSvgItem(mSvgItem);
-
-            /**
-             * Initialize the photo list.
-             * */
-            PhotoViewList savedPhotoList = new PhotoViewList(savedCollageView);
-            Matrix doubleMatrix = new Matrix();
-            doubleMatrix.setScale(widthSave / mSvgItem.viewportWidth, heightSave / mSvgItem.viewportHeight);
-            for (int i = 0; i < mPhotoViewList.size(); i++) {
-                PhotoView photoView = mPhotoViewList.get(i);
-                PhotoView savedPhotoView = new PhotoView(savedCollageView, i);
-                savedPhotoView.setSavedState(true);
-                Path temp = new Path(photoView.getOriginPath());
-                temp.transform(doubleMatrix);
-                savedPhotoView.setPath(temp);
-                savedPhotoView.setWidthSignAddition(photoView.getWidthSignAddition() * savedScaleRatio);
-                savedPhotoView.setStrokeWidthLinePaint(photoView.getStrokeWidthLinePaint() * savedScaleRatio);
-                savedPhotoView.setIsSelected(false);
-
-                // TODO:
-                savedPhotoView.setBitmap(photoView.getBitmap());
-
-                savedPhotoView.setMatrix(fitRatioMatrix(photoView.getMatrix(), savedScaleRatio));
-                savedPhotoView.setRoundValue(photoView.getRoundValue() * savedScaleRatio);
-                savedPhotoView.setBorderPaint(photoView.getBorderPaint());
-                savedPhotoView.setStrokeWidth(photoView.getStrokeWidth() * savedScaleRatio);
-                if (photoView.getBorderPaint().getShader() != null) {
-                    Flog.d(TAG, "set change pattern at " + i);
-                    Bitmap oldBmp = photoView.getPatternPathBorderBmp();
-                    Flog.d(TAG, "the value of old bitmap: w=" + oldBmp.getWidth() + "_h=" + oldBmp.getHeight());
-                    Bitmap newBmp = Bitmap.createScaledBitmap(
-                            oldBmp,
-                            (int) (oldBmp.getWidth() * savedScaleRatio),
-                            (int) (oldBmp.getHeight() * savedScaleRatio),
-                            false);
-                    Flog.d(TAG, "the value of new bitmap: w=" + newBmp.getWidth() + "_h=" + newBmp.getHeight());
-                    savedPhotoView.setPatternPathBorderBmp(newBmp);
-                }
-                savedPhotoList.add(savedPhotoView);
-            }
-            Flog.d(TAG, "saveaaaa  mBeforeMarginValue=" + mBeforeMarginValue);
-            if (mBeforeMarginValue < 1F) {
-                Flog.d(TAG, "marginnnnnnnnnnnnnnn");
-                savedPhotoList.setItemMargin(mBeforeMarginValue);
-            }
-            savedCollageView.setPhotoViewList(savedPhotoList);
-
-            /**
-             * Initialize the sticker list.
-             * */
-            StickerViewList savedStickerList = new StickerViewList(savedCollageView);
-            for (int i = 0; i < mStickerViewList.size(); i++) {
-                BaseStickerView stickerView = mStickerViewList.get(i);
-                BaseStickerView savedStickerView;
-                if (stickerView instanceof IconStickerView) {
-                    savedStickerView = new IconStickerView(savedCollageView, i);
-                } else {
-                    savedStickerView = new TextStickerView(savedCollageView, i);
-//                ((TextStickerView) savedStickerView).setText(((TextStickerView) stickerView).getText());
-                    TextPaint textPaint = ((TextStickerView) stickerView).getTextFont();
-                    ((TextStickerView) savedStickerView).setTextFont(textPaint.getTypeface());
-                    if (textPaint.getShader() == null)
-                        ((TextStickerView) savedStickerView).getTextFont().setColor(textPaint.getColor());
-                    else
-                        ((TextStickerView) savedStickerView).getTextFont().setShader(textPaint.getShader());
-                    ((TextStickerView) savedStickerView).getTextFont().setTextSize((textPaint.getTextSize()));
-                    ((TextStickerView) savedStickerView).setTextPadding((((TextStickerView) stickerView).getTextPadding()));
-                }
-                savedStickerView.setBitmap(stickerView.getBitmap());
-                savedStickerView.setMatrix(fitRatioMatrix(stickerView.getMatrix(), savedScaleRatio));
-                savedStickerView.setInEdit(false);
-                savedStickerView.setOpacity(stickerView.getOpacity());
-                savedStickerList.add(savedStickerView);
-            }
-            savedCollageView.setStickerViewList(savedStickerList);
-
-
-            /**
-             * Initialize the background.
-             * */
-            if (mBackgroundColor == ConstValues.NO_COLOR_VALUE) {
-
-                Bitmap backgroundBmp = Bitmap.createScaledBitmap(mBgBmp,
-                        (int) (mBgBmp.getWidth() * savedScaleRatio),
-                        (int) (mBgBmp.getHeight() * savedScaleRatio),
-                        false);
-
-                savedCollageView.setBackgroundPattern(backgroundBmp);
-            } else {
-                savedCollageView.setBackgroundColor(mBackgroundColor);
-            }
-
-        } else {
-
-        }
-
-        /**
-         * Initialize the frame.
-         * */
-        savedCollageView.setFrameWidth((int) (mFrameWidth * savedScaleRatio));
-        if (mFrameColor == ConstValues.NO_COLOR_VALUE) {
-
-            Bitmap frameBmp = Bitmap.createScaledBitmap(mFrameBmp,
-                    (int) (mFrameBmp.getWidth() * savedScaleRatio),
-                    (int) (mFrameBmp.getHeight() * savedScaleRatio),
-                    false);
-
-            savedCollageView.setFramePattern(frameBmp);
-        } else {
-            savedCollageView.setFrameColor(mFrameColor);
-        }
-
-        boolean canSave = false;
-        Bitmap saveBitmap = null;
-        try {
-            /**
-             * Redraw the saved collageview.
-             * */
-//            int reqSize = (widthSave >= heightSave) ? widthSave : heightSave;
-//            Bitmap newBitmap = BitmapUtil.sampeZoomFromBitmap(getBitmapFromView(this), reqSize);
-
-            saveBitmap = Bitmap.createBitmap(widthSave, heightSave, Bitmap.Config.ARGB_8888);
-            Canvas saveCanvas = new Canvas(saveBitmap);
-
-//            Canvas saveCanvas = new Canvas(newBitmap);
-            savedCollageView.draw(saveCanvas);
-            canSave = true;
-        } catch (OutOfMemoryError ex) {
-            ex.printStackTrace();
-            canSave = false;
-            if (mCollageViewListener != null)
-                mCollageViewListener.outOfMemoryErrorSave();
-            Flog.d(TAG, "OutOfMemoryError... w=" + widthSave + "_h" + heightSave);
-        }
-
-        if (!canSave)
-            return;
-        /**
-         * Create the image file that is redrawn again.
-         * */
-        String absolutePathSavedPhoto = FileUtils.APP_FOLDER;
-        new SaveAsync(getContext()).setOnSavedFinish(this)
-                .execute(saveBitmap, absolutePathSavedPhoto);
-    }
-
-    private Matrix fitRatioWordMatrix(Matrix matrix, float ratio) {
-        Matrix tmp = new Matrix(matrix);
-        float values[] = new float[9];
-        matrix.getValues(values);
-        // get old values of matrix stickers:
-//        float scale_X = values[0];
-//        float skew_X = values[1];
-        float transform_X = values[2];
-//        float skew_Y = values[3];
-//        float scale_Y = values[4];
-        float transform_Y = values[5];
-
-        // set new values for matrix stickers:
-        float newTransform_X = transform_X * ratio;
-        float newTransform_Y = transform_Y * ratio;
-//        tmp.preScale(ratio, ratio);
-
-        Matrix concatMatrix = new Matrix();
-        concatMatrix.setTranslate(newTransform_X - transform_X, newTransform_Y - transform_Y);
-        tmp.postConcat(concatMatrix);
-        return tmp;
-    }
-
-    /**
-     * Scale fit matrix to collage view that has the new ratio.
-     *
-     * @param matrix the initial matrix of collageview.
-     * @param ratio  the ratio value of the saved-collageview with the collageview.
-     * @return the matrix is scale-fitted to the saved-collageview.
-     */
-    private Matrix fitRatioMatrix(Matrix matrix, float ratio) {
-        Matrix tmp = new Matrix(matrix);
-        float values[] = new float[9];
-        matrix.getValues(values);
-        // get old values of matrix stickers:
-//        float scale_X = values[0];
-//        float skew_X = values[1];
-        float transform_X = values[2];
-//        float skew_Y = values[3];
-//        float scale_Y = values[4];
-        float transform_Y = values[5];
-
-        // set new values for matrix stickers:
-        float newTransform_X = transform_X * ratio;
-        float newTransform_Y = transform_Y * ratio;
-        tmp.preScale(ratio, ratio);
-
-        Matrix concatMatrix = new Matrix();
-        concatMatrix.setTranslate(newTransform_X - transform_X, newTransform_Y - transform_Y);
-        tmp.postConcat(concatMatrix);
-        return tmp;
-    }
 
     @Override
     public void onSavedDone(Uri uri) {
-//        if(true)
-//            return;
-//        Flog.d(TAG, "onSavedDone = " + uri);
-//        if (mCollageViewListener != null) {
-//            if (savedCollageView != null) {
-//                savedCollageView.release();
-//                savedCollageView = null;
-//            }
-//            mCollageViewListener.onSavedDone(uri);
-//        }
+
     }
 
     @Override
@@ -1914,38 +1415,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         return mMagazineBmp;
     }
 
-    public void saveAdaptive(int wScreen, int hScreen) {
-        Flog.d(TAG, "--------------saveAdaptive----------------");
-        Flog.d(TAG, "mCollageViewRatio=" + mCollageViewRatio);
-        Flog.d(TAG, "screen: w=" + wScreen + "_h=" + hScreen);
-        int wSave = 0, hSave = 0;
-        int wImg = wScreen;
-        int hImg = (int) (wImg / mCollageViewRatio);
-        Flog.d(TAG, "image: w=" + wImg + "_h=" + hImg);
-        float rImg = 1 / mCollageViewRatio;
-        Flog.d(TAG, "image: r=" + rImg);
-
-        if (wImg < hImg) {
-            wSave = wScreen;
-            hSave = (int) (wSave * rImg);
-            if (hSave > hScreen) {
-                hSave = hScreen;
-                wSave = (int) (hSave / rImg);
-            }
-        } else {
-            wSave = wScreen;
-            hSave = (int) (wSave * rImg);
-        }
-
-        Flog.d(TAG, "save: w=" + wSave + "_h=" + hSave);
-        Flog.d(TAG, "*********************************");
-        createSaveBitmap(wSave, hSave);
-    }
-
-
-
-
-
 
     public void setBgGallery(Bitmap bmp) {
         if (bmp == null || bmp.isRecycled())
@@ -1976,6 +1445,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
     public void setScreenSizes(int widthScreen, int heightScreen) {
         mWidthScreen = widthScreen;
         mHeightScreen = heightScreen;
+        invalidate();
         Flog.d(TAG, "Screen: w=" + mWidthScreen + "_h=" + mHeightScreen);
     }
 }

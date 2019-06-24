@@ -1,7 +1,10 @@
 package com.app.avy.ui.fragment
 
 import android.annotation.TargetApi
+import android.graphics.Color
+import android.graphics.PixelFormat
 import android.net.Uri
+import android.opengl.GLSurfaceView
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -14,9 +17,12 @@ import com.app.avy.ui.view.ExampleSceneLoader
 import com.app.avy.ui.view.ModelSurfaceView
 import com.app.avy.ui.view.SceneLoader
 import org.andresoviedo.util.android.ContentUtils
+import android.opengl.GLSurfaceView.RENDERMODE_WHEN_DIRTY
+import javax.microedition.khronos.egl.EGLConfig
+import javax.microedition.khronos.opengles.GL10
+
 
 class ModelFragment : Fragment() {
-
 
     private val REQUEST_CODE_LOAD_TEXTURE = 1000
     private val FULLSCREEN_DELAY = 10000
@@ -36,7 +42,7 @@ class ModelFragment : Fragment() {
     /**
      * Background GL clear color. Default is light gray
      */
-    private val backgroundColor = floatArrayOf(0f, 0f, 0f, 1.0f)
+    private val backgroundColor = floatArrayOf(0.07f, 0.07f, 0.07f, 1.0f)
 
     private var gLView: ModelSurfaceView? = null
 
@@ -47,6 +53,7 @@ class ModelFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         gLView = ModelSurfaceView(this)
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -55,6 +62,7 @@ class ModelFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        ContentUtils.provideAssets(activity)
 
         paramUri = Uri.parse("assets://" + context!!.packageName + "/" + "models/ToyPlane.obj")
 
@@ -106,7 +114,7 @@ class ModelFragment : Fragment() {
             return
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-         //   hideSystemUIKitKat()
+            //   hideSystemUIKitKat()
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             hideSystemUIJellyBean()
         }

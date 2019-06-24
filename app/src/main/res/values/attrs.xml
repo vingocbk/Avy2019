@@ -1,48 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="GaugeSeekBar">
-        <attr name="startAngleDegrees" format="float" />
-        <attr name="thumbRadius" format="dimension" />
-        <attr name="thumbDrawable" format="reference" />
-        <attr name="showThumb" format="boolean" />
-        <attr name="thumbColor" format="color" />
-        <attr name="trackGradient" format="color" />
-        <attr name="showProgress" format="boolean" />
-        <attr name="trackGradientPositions" format="reference" />
-        <attr name="progress" format="float" />
-        <attr name="interactive" format="boolean" />
-        <attr name="trackWidth" format="dimension" />
-        <attr name="progressWidth" format="dimension" />
-        <attr name="progressGradient" format="reference" />
-        <attr name="progressGradientPositions" format="reference" />
+        <attr name="startAngleDegrees" format="float"/>
+        <attr name="thumbRadius" format="dimension"/>
+        <attr name="thumbDrawable" format="reference"/>
+        <attr name="showThumb" format="boolean"/>
+        <attr name="thumbColor" format="color"/>
+        <attr name="trackGradient" format="color"/>
+        <attr name="showProgress" format="boolean"/>
+        <attr name="trackGradientPositions" format="reference"/>
+        <attr name="progress" format="float"/>
+        <attr name="interactive" format="boolean"/>
+        <attr name="trackWidth" format="dimension"/>
+        <attr name="progressWidth" format="dimension"/>
+        <attr name="progressGradient" format="reference"/>
+        <attr name="progressGradientPositions" format="reference"/>
     </declare-styleable>
 
     <!--AutoScroll Attr-->
 
     <declare-styleable name="AutoScrollViewPager">
-        <attr name="slideInterval" format="integer" />
+        <attr name="slideInterval" format="integer"/>
         <attr name="slideDirection" format="enum">
-            <enum name="left" value="0" />
-            <enum name="right" value="1" />
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
         </attr>
-        <attr name="stopWhenTouch" format="boolean" />
-        <attr name="cycle" format="boolean" />
-        <attr name="slideDuration" format="integer" />
+        <attr name="stopWhenTouch" format="boolean"/>
+        <attr name="cycle" format="boolean"/>
+        <attr name="slideDuration" format="integer"/>
     </declare-styleable>
 
     <!--indicator Attr-->
 
-    <declare-styleable name = "ViewPagerIndicator">
-        <attr name = "itemSize" format = "dimension" />
-        <attr name = "itemScale" format = "float" />
-        <attr name = "itemSelectedTint" format = "color" />
-        <attr name = "itemTint" format = "color" />
-        <attr name = "delimiterSize" format = "dimension" />
-        <attr name = "itemIcon" format = "reference" />
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="itemSize" format="dimension"/>
+        <attr name="itemScale" format="float"/>
+        <attr name="itemSelectedTint" format="color"/>
+        <attr name="itemTint" format="color"/>
+        <attr name="delimiterSize" format="dimension"/>
+        <attr name="itemIcon" format="reference"/>
     </declare-styleable>
 
     <declare-styleable name="MaskedEditText">
-        <attr name="mask" format="string" />
+        <attr name="mask" format="string"/>
     </declare-styleable>
+
+    <string-array name="months">
+        <item>@string/january</item>
+        <item>@string/february</item>
+        <item>@string/march</item>
+        <item>@string/april</item>
+        <item>@string/may</item>
+        <item>@string/june</item>
+        <item>@string/july</item>
+        <item>@string/august</item>
+        <item>@string/september</item>
+        <item>@string/october</item>
+        <item>@string/november</item>
+        <item>@string/december</item>
+    </string-array>
+
+    <array name="week_day_letters">
+        <item>@string/monday_letter</item>
+        <item>@string/tuesday_letter</item>
+        <item>@string/wednesday_letter</item>
+        <item>@string/thursday_letter</item>
+        <item>@string/friday_letter</item>
+        <item>@string/saturday_letter</item>
+        <item>@string/sunday_letter</item>
+    </array>
 
 </resources>

@@ -171,12 +171,12 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
         when (id) {
             R.id.layout_control -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.container_main, ControlFragment.newInstance(this))
+                    .add(R.id.container_main, ControlFragment.newInstance(this))
                     .addToBackStack(ControlFragment::class.java.simpleName)
                     .commit()
             }
             R.id.layout_setting -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container_main, SettingFragment())
+                supportFragmentManager.beginTransaction().add(R.id.container_main, SettingFragment())
                     .addToBackStack(SettingFragment::class.java.simpleName)
                     .commit()
             }
@@ -194,7 +194,7 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
             }
 
             R.id.layout_manager -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container_main, ManageFragment())
+                supportFragmentManager.beginTransaction().add(R.id.container_main, ManageFragment())
                     .addToBackStack(ManageFragment::class.java.simpleName)
                     .commit()
             }

@@ -716,6 +716,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:gravity="center"
+            android:orientation="horizontal"
             android:layout_weight="1">
 
         <TextView
@@ -731,7 +732,23 @@
                 android:layout_centerInParent="true"
                 android:layout_alignParentEnd="true"
                 android:gravity="center"
-                android:text="Done"/>
+                android:text="Save"/>
+
+
+        <TextView
+                android:id="@+id/tv_send"
+                style="@style/Regular_H4"
+                android:layout_width="@dimen/with_150dp"
+                android:layout_height="48dp"
+                android:background="@drawable/ic_border_press"
+                android:paddingStart="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp"
+                android:textColor="@color/color_control"
+                android:textAllCaps="true"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:text="Send"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

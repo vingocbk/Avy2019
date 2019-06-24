@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/week_holder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_black">
+
+
+    <RelativeLayout
+            android:id="@+id/week_events_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        <com.app.avy.ui.view.WeeklyViewGrid
+                android:id="@+id/week_horizontal_grid_holder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <LinearLayout
+                android:id="@+id/week_events_columns_holder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:id="@+id/week_column_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/icon_with_32dp"
+                    android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/md_grey_white"
+                        android:text="10pm-11pm \n Gặp Khách hàng"/>
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/week_column_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/icon_with_32dp"
+                    android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/md_grey_white"
+                        android:text="6pm-7pm \n Đi bơi"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/md_grey_white"
+                        android:text="9pm-11pm \n Xem phim"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <RelativeLayout
+                    android:id="@+id/week_column_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            <RelativeLayout
+                    android:id="@+id/week_column_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            <RelativeLayout
+                    android:id="@+id/week_column_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/week_column_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/icon_with_32dp"
+                    android:layout_weight="1">
+                <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Regular_H2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/md_grey_white"
+                        android:text="10pm-11pm \n Gặp Khách hàng"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <RelativeLayout
+                    android:id="@+id/week_column_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/week_top_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:visibility="visible">
+
+        <LinearLayout
+                android:id="@+id/week_letters_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/padding_4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Regular_H3"
+                    android:id="@+id/week_day_label_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/md_grey_white"
+                    android:text="@string/monday_short"
+            />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Regular_H3"
+                    android:id="@+id/week_day_label_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/tuesday_short"
+                    android:textColor="@color/md_grey_white"
+            />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Regular_H3"
+                    android:id="@+id/week_day_label_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/wednesday_short"
+                    android:textColor="@color/md_grey_white"
+            />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Regular_H3"
+                    android:id="@+id/week_day_label_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/thursday_short"
+                    android:textColor="@color/md_grey_white"
+            />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Regular_H3"
+                    android:id="@+id/week_day_label_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/friday_short"
+                    android:textColor="@color/md_grey_white"
+            />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Regular_H3"
+                    android:id="@+id/week_day_label_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/saturday_short"
+                    android:textColor="@color/md_grey_white"
+            />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Regular_H3"
+                    android:id="@+id/week_day_label_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/sunday_short"
+                    android:textColor="@color/md_grey_white"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/week_all_day_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/week_letters_holder"
+                android:orientation="vertical">
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

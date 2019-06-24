@@ -4,7 +4,10 @@ import android.view.View
 import com.app.avy.BaseFragment
 import com.app.avy.R
 import com.app.avy.listenner.OnItemClickListener
+import com.app.avy.utils.Config
+import com.app.avy.utils.seconds
 import kotlinx.android.synthetic.main.fragment_home.*
+import org.joda.time.DateTime
 
 class HomeFragment : BaseFragment(), View.OnClickListener {
     lateinit var mListener: OnItemClickListener
@@ -25,7 +28,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
             .addToBackStack(WeatherFragment::class.java.simpleName)
             .commit()
         ///
-        childFragmentManager.beginTransaction().replace(R.id.container_header, HeaderFragment())
+        childFragmentManager.beginTransaction().add(R.id.container_header, HeaderFragment())
             .addToBackStack(HeaderFragment::class.java.simpleName)
             .commit()
 
@@ -34,9 +37,13 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
             .addToBackStack(MusicFragment::class.java.simpleName)
             .commit()
 
-
-        childFragmentManager.beginTransaction().replace(R.id.container_3d, ModelFragment())
+        childFragmentManager.beginTransaction().add(R.id.container_3d, ModelFragment())
             .addToBackStack(ModelFragment::class.java.simpleName)
+            .commit()
+
+        childFragmentManager.beginTransaction()
+            .add(R.id.container_note, WeekFragmentHolder.getInstance(getThisWeekDateTime()))
+            .addToBackStack(WeekFragmentHolder::class.java.simpleName)
             .commit()
 
         onEvenClick()
@@ -86,6 +93,15 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
                 }
             }
         }
+    }
+
+    private fun getThisWeekDateTime(): String {
+        var thisweek =
+            DateTime().withDayOfWeek(1).withTimeAtStartOfDay().minusDays(if (Config(context!!).isSundayFirst) 1 else 0)
+        if (DateTime().minusDays(7).seconds() > thisweek.seconds()) {
+            thisweek = thisweek.plusDays(7)
+        }
+        return thisweek.toString()
     }
 
 }

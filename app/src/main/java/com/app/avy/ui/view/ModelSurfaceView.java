@@ -1,5 +1,6 @@
 package com.app.avy.ui.view;
 
+import android.graphics.PixelFormat;
 import android.opengl.GLSurfaceView;
 import android.view.MotionEvent;
 import com.app.avy.ui.fragment.ModelFragment;
@@ -38,6 +39,7 @@ public class ModelSurfaceView extends GLSurfaceView {
 
         touchHandler = new TouchController(this, mRenderer);
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

@@ -1,17 +1,10 @@
 package com.app.avy.ui.fragment
 
-import android.content.Context
 import android.graphics.BitmapFactory
 import android.graphics.Color
-import android.graphics.Matrix
 import android.util.DisplayMetrics
 import android.util.Log
-import android.view.Gravity
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
-import androidx.annotation.RawRes
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -25,7 +18,6 @@ import com.app.avy.module.LightRequest
 import com.app.avy.network.NetworkService
 import com.app.avy.network.RetrofitHelper
 import com.app.avy.ui.adapter.ControlAdapter
-import com.app.avy.utils.Constant
 import com.lib.collageview.CollageView
 import com.lib.collageview.helpers.Flog
 import com.lib.collageview.helpers.svg.SVGItem
@@ -37,7 +29,6 @@ import kotlinx.android.synthetic.main.fragment_control.*
 import org.xmlpull.v1.XmlPullParserException
 import top.defaults.colorpicker.ColorPickerView
 import java.io.IOException
-import java.util.*
 import kotlin.collections.ArrayList
 
 class ControlFragment : BaseFragment(), View.OnClickListener {
@@ -133,8 +124,6 @@ class ControlFragment : BaseFragment(), View.OnClickListener {
                 "ControlFragment",
                 "2------ ${layout_kitchen.width}  ${layout_kitchen.height}"
             )
-
-
         }
 
         /*mCollageView.setScreenSizes(
@@ -152,16 +141,10 @@ class ControlFragment : BaseFragment(), View.OnClickListener {
             var height = (layout_kitchen.height - mCollageView.height) / 2
 
             var x1 = mListCoordinates[0].x
+
             var x2 = icon.width.toFloat() - mListCoordinates[mListCoordinates.size - 1].x
 
             var y1 = convertPixelsToDp(icon.height.toFloat()) - mListCoordinates[mListCoordinates.size - 1].y
-
-           /* if (x2 > x1) {
-                mCollageView.translationX = x2 - x1
-
-            } else {
-                mCollageView.translationX = x1 - x2
-            }*/
 
             Log.e("ControlFragment", "3------>" + "---" + mCollageView.matrix)
 
@@ -171,8 +154,8 @@ class ControlFragment : BaseFragment(), View.OnClickListener {
 
             var scalex = (width + x1) / width
         }
-
         mCollageView.setLayoutStyle(mSvg)
+
         mCollageView.show()
 
         if (9 < mScreenInch && mScreenInch < 11) {
@@ -205,6 +188,7 @@ class ControlFragment : BaseFragment(), View.OnClickListener {
     }
 
     private fun colorHex(color: Int) {
+        Log.e("colorHex", "----->$color")
         val r = Color.red(color)
         val g = Color.green(color)
         val b = Color.blue(color)

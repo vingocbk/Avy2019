@@ -1,6 +1,5 @@
 package org.andresoviedo.android_3d_model_engine.services;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
@@ -48,10 +47,8 @@ public abstract class LoaderTask extends AsyncTask<Void, Integer, List<Object3DD
 		super.onPreExecute();
 		this.dialog.setMessage("Loading...");
 		this.dialog.setCancelable(false);
-		//this.dialog.show();
+		this.dialog.show();
 	}
-
-
 
 	@Override
 	protected List<Object3DData> doInBackground(Void... params) {

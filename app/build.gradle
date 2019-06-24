@@ -58,7 +58,10 @@ dependencies {
     implementation 'com.github.arbelkilani:Clock-view:1.0'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation "androidx.media:media:$androidx_media_version"
-    implementation"com.google.android.gms:play-services-gcm:17.0.0"
+    implementation "com.google.android.gms:play-services-gcm:17.0.0"
+    implementation 'com.duolingo.open:rtl-viewpager:1.0.3'
+    implementation 'com.android.support:support-core-ui:28.0.0'
+    implementation 'joda-time:joda-time:2.10.2'
 
     // Room components
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"

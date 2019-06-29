@@ -1,43 +1,30 @@
 package com.lib.collageview.helpers;
 
-import android.content.Context;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-/**
- * Created by vutha on 4/12/2017.
- */
-
 public class Utils {
-    public static String getSimpleDate() {
-        String ret = null;
+    public static final Integer[] arr = {15, 16, 19, 20, 21, 23, 24, 28};
 
-        SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss");
-        ret = sdfNow.format(new Date(System.currentTimeMillis()));
-        ret = ret.trim();
-        return ret;
-    }
 
-    public static int getScreenHeight(Context context) {
-        return context.getResources().getDisplayMetrics().heightPixels;
-    }
-
-    public static int getScreenWidth(Context context) {
-        return context.getResources().getDisplayMetrics().widthPixels;
-    }
-
-    public static int getStatusBarHeight(Context context) {
-        int result = 0;
-        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = context.getResources().getDimensionPixelSize(resourceId);
+    public static int mapIndex(int index) {
+        switch (index) {
+            case 15:
+                return 6;
+            case 16:
+                return 7;
+            case 19:
+                return 4;
+            case 20:
+                return 5;
+            case 21:
+                return 3;
+            case 23:
+                return 1;
+            case 24:
+                return 2;
+            case 28:
+                return 8;
+            default:
+                return 0;
         }
-        return result;
-    }
 
-    public static int getNavigationBarHeight(Context context) {
-        int resourceId = context.getResources().getIdentifier("navigation_bar_height", "dimen", "android");
-        return context.getResources().getDimensionPixelSize(resourceId);
     }
 }

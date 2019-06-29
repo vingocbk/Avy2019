@@ -46,35 +46,14 @@ public class PhotoViewList extends ArrayList<PhotoView> {
                  * First: Clip rect entire layout parent
                  * Second: Clip path for each photo
                  * */
-
-
                 canvas.save();
                 canvas.clipRect( mCollageView.getCollageViewRect(), Region.Op.INTERSECT);
-                Flog.d(TAG, "coolageview rect=" + mCollageView.getCollageViewRect());
-                item.onDraw(canvas);
+                item.onDraw(canvas, i);
                 canvas.restore();
-            } else {
-                Flog.d(TAG, "item " + i + " is null");
             }
         }
     }
 
-    /**
-     * Set margin distance between photos.
-     *
-     * @param marginValue the value of margin.
-     */
-    public void setItemMargin(float marginValue) {
-        for (PhotoView item : this) {
-            item.setPathAfterMargin(SVGPathUtils.zoomPath(new Path(item.getPath()), marginValue));
-        }
-    }
-
-    public void setItemRound(float roundValue) {
-        for (PhotoView item : this) {
-            item.setRoundValue(roundValue);
-        }
-    }
 
     public boolean onTouchEvent(MotionEvent event) {
         int curIdx = getTouchedIndex(event);
@@ -113,8 +92,7 @@ public class PhotoViewList extends ArrayList<PhotoView> {
     public int getTouchedIndex(MotionEvent event) {
         int index = -1;
         for (int i = this.size() - 1; i >= 0; i--) {
-            if (this.get(i).getRegion().contains(
-                    (int) event.getX(), (int) event.getY())) {
+            if (this.get(i).getRegion().contains((int) event.getX(), (int) event.getY())) {
                 index = i;
                 break;
             }
@@ -153,34 +131,16 @@ public class PhotoViewList extends ArrayList<PhotoView> {
         srcPhotoview.fitPhotoToLayout();
         dstPhotoview.fitPhotoToLayout();
 
-        // swap selected states between two elements in list.
-//        boolean isSelected = srcPhotoview.isSelected();
         srcPhotoview.setIsSelected(false);
         dstPhotoview.setIsSelected(true);
 
-        /**
-         * Not have to swap index ids.
-         * */
-//        // swap the index ids between two elements in list.
-//        srcPhotoview.setIndex(dstIdx);
-//        dstPhotoview.setIndex(srcIdx);
+
     }
 
     public void release() {
         for (PhotoView item : this) {
             item.release();
         }
-    }
-
-    public boolean unselected() {
-        if (this.isEmpty() || mCurIndex == -1 || mCurIndex >= this.size()) return false;
-        this.get(mCurIndex).setIsSelected(false);
-        mCurIndex = -1;
-        return true;
-    }
-
-    public void setCurIndex(int curIndex) {
-        mCurIndex = curIndex;
     }
 
     public int[] getNoContentIndex() {
@@ -208,35 +168,6 @@ public class PhotoViewList extends ArrayList<PhotoView> {
         return ans;
     }
 
-    public void setParentView(CollageView collageView) {
-        mCollageView = collageView;
-        mContext = collageView.getContext();
-        for (PhotoView item : this) {
-            item.setParentView(collageView);
-        }
-    }
-
-    public void setStrokeWidthLinePaint(float widthStroke) {
-        for (PhotoView photoView : this) {
-            photoView.setStrokeWidthLinePaint(widthStroke);
-        }
-    }
-
-    public void setWidthSignAddition(float widthSignAddition) {
-        for (PhotoView photoView : this) {
-            photoView.setWidthSignAddition(widthSignAddition);
-        }
-    }
-
-    public float getWidthSignAddition() {
-        if (this == null || this.isEmpty()) return 0f;
-        return this.get(0).getWidthSignAddition();
-    }
-
-    public float getStrokeWidthLinePaint() {
-        if (this == null || this.isEmpty()) return 0f;
-        return this.get(0).getStrokeWidthLinePaint();
-    }
 
     public void setMaxWidth(float maxWidth) {
         mMaxWidth = maxWidth;

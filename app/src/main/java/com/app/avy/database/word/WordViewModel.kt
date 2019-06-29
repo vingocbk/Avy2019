@@ -25,6 +25,14 @@ class WordViewModel constructor(application: Application) : AndroidViewModel(app
         return mRepository!!.getWordWithId(type)
     }
 
+    fun seachItem(word: String, select: Boolean): LiveData<List<String>> {
+        return mRepository!!.searchItem(word, select)
+    }
+
+    fun searchItemInCabinet(word: String, type: String): LiveData<List<Word>> {
+        return mRepository!!.searchItemInCabinet(word, type)
+    }
+
     fun deleteWord() {
         mRepository!!.deleteAllWord()
     }
@@ -36,6 +44,4 @@ class WordViewModel constructor(application: Application) : AndroidViewModel(app
     fun updateWordWithType(word: String, type: String, select: Boolean) {
         mRepository!!.updateWordWithType(word, type, select)
     }
-
-
 }

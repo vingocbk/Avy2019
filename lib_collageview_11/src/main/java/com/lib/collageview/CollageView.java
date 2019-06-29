@@ -1,17 +1,7 @@
 package com.lib.collageview;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.Region;
-import android.graphics.Shader;
+import android.graphics.*;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -25,11 +15,14 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.ColorInt;
 import com.lib.collageview.customviews.listviews.PhotoViewList;
+import com.lib.collageview.customviews.stickers.BaseStickerView;
+import com.lib.collageview.customviews.stickers.liststickers.StickerViewList;
 import com.lib.collageview.customviews.views.DragPhotoView;
 import com.lib.collageview.customviews.views.PhotoView;
 import com.lib.collageview.helpers.ConstValues;
 import com.lib.collageview.helpers.Flog;
 import com.lib.collageview.helpers.MathUtil;
+import com.lib.collageview.helpers.Utils;
 import com.lib.collageview.helpers.bitmap.BitmapHelper;
 import com.lib.collageview.helpers.bitmap.CanvasUtils;
 import com.lib.collageview.helpers.svg.SVGItem;
@@ -38,8 +31,6 @@ import com.lib.collageview.helpers.svg.SVGPathUtils;
 import com.lib.collageview.interfaces.CollageViewListener;
 import com.lib.collageview.interfaces.PhotoViewListener;
 import com.lib.collageview.interfaces.StickerViewListener;
-import com.lib.collageview.stickers.BaseStickerView;
-import com.lib.collageview.stickers.liststickers.StickerViewList;
 import com.lib.collageview.tasks.LoadPhotoAsync;
 import com.lib.collageview.tasks.SaveAsync;
 
@@ -47,6 +38,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -253,12 +245,12 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
 
     @Override
     protected void onDraw(Canvas canvas) {
-
         if (mTypeCollage != ConstValues.COLLAGE_TEXT_TYPE) {
-
             if (mSvgItem == null) return;
 
-            drawBackground(canvas, mBackgroundColor);
+            // canvas.scale(1, 1.2f);
+
+            //drawBackground(canvas, mBackgroundColor);
 
             if (mPhotoViewList != null)
                 mPhotoViewList.onDraw(canvas);
@@ -338,7 +330,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
                      * -> Unfocus and do nothing.
                      * */
                     mFocusedViewtype = FOCUS_ON_NOTHING;
-                    Flog.d(TAG, "onFocusedView 3333333333");
+                    Flog.d(TAG, "onFocusedView 3333333333" + isFocusable());
                     callbackOnTouch(event);
                     return true;
                 }
@@ -373,7 +365,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
             }
 
             if (!result) {
-                // nothing to handle onTouch
                 /**
                  * Callbacked when the all views is unselected.
                  * -> Unfocus and do nothing.
@@ -385,13 +376,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
             callbackOnTouch(event);
 
         } else {
-
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-
-
-            }
-
-
             if (event.getAction() != MotionEvent.ACTION_UP && event.getAction() != MotionEvent.ACTION_CANCEL) {
                 invalidate();
             }
@@ -647,10 +631,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
             temp.transform(doubleMatrix);
             photoView.setPath(temp);
         }
-        if (mBeforeMarginValue < 1F) {
-            mPhotoViewList.setItemMargin(mBeforeMarginValue);
-        }
-
         /**
          * Invoke onMeasure() method first. After that, call onDraw() method
          * */
@@ -695,11 +675,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
             photoView.setRoundValue(mRoundValue);
             photoView.fitPhotoToLayout();
         }
-        Flog.d(TAG, "mZoomPathValue size of margin value = " + mBeforeMarginValue);
-        if (mBeforeMarginValue < 1F) {
-            Flog.d(TAG, "marginnnnnnnnnnnnnnn");
-            mPhotoViewList.setItemMargin(mBeforeMarginValue);
-        }
+
 
         /**
          * Invoke onMeasure() method first. After that, call onDraw() method
@@ -956,7 +932,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         final float ROUND_VALUE_PER_STEP = (progressValue / maxValue) / maxValue;
         mRoundValue = ROUND_VALUE_PER_STEP * curMarginValue * getWidth();
         Flog.d(TAG, "setPhotoRound mRoundValue=" + mRoundValue + "_progress=" + curMarginValue + "_ROUND_VALUE_PER_STEP=" + ROUND_VALUE_PER_STEP);
-        mPhotoViewList.setItemRound(mRoundValue);
         invalidate();
     }
 
@@ -1008,11 +983,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
                                 mPhotoViewList.swap(srcIdx, dstIdx);
                             }
 
-                            if (mCollageViewListener != null)
-                                mCollageViewListener.onSwapDone(srcIdx, dstIdx);
-                            /**
-                             * Disappear DragPhotoView. Then swap two photoviews if satisfying.
-                             * */
+
                             CollageView.this.invalidate();
                         }
                     });
@@ -1034,13 +1005,13 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
      * @param event motion event of collageview.
      */
     private void callbackOnTouch(MotionEvent event) {
-        Flog.d(TAG, "onFocusedView callbackOnTouch 111111");
-        Flog.d(TAG, "onFocusedView callbackOnTouch getAction: " + (event.getAction() == MotionEvent.ACTION_DOWN));
-        Flog.d(TAG, "onFocusedView callbackOnTouch mCollageViewListener: " + mCollageViewListener);
-
         if (event.getAction() == MotionEvent.ACTION_UP && mCollageViewListener != null) {
             Flog.d(TAG, "onFocusedView callbackOnTouch 2222222");
-            mCollageViewListener.onFocusedView(mFocusedViewtype);
+            mPhotoViewList.get(mPhotoViewList.getCurrentIndex()).setFocus(!mPhotoViewList.get(mPhotoViewList.getCurrentIndex()).getFocus());
+            if (Arrays.asList(Utils.arr).contains(mPhotoViewList.getCurrentIndex())) {
+                mCollageViewListener.onFocusedView(mFocusedViewtype);
+            }
+
         }
     }
 
@@ -1194,8 +1165,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
 
     @Override
     public void onTextStickerClicked(int stickerIndex) {
-        if (mCollageViewListener != null)
-            mCollageViewListener.onTextStickerClicked(stickerIndex);
+
     }
 
     @Override
@@ -1216,8 +1186,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
 
     @Override
     public void onStickerMoving(int stickerIndex) {
-        if (mCollageViewListener != null)
-            mCollageViewListener.onStickerMoving(stickerIndex);
+
     }
 
     @Override
@@ -1228,8 +1197,7 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
     @Override
     public void onInputTextSticker(int textStickerIndex) {
         Flog.d(TAG, "onInputTextSticker idx= " + textStickerIndex);
-        if (mCollageViewListener != null)
-            mCollageViewListener.onInputTextSticker(textStickerIndex);
+
     }
 
     @Override
@@ -1303,9 +1271,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
     @Override
     public void onLoadDone(int idPhoto, Bitmap bmp, boolean outOfMemoryError) {
         Flog.d(TAG, "onLoadDone outOfMemoryError=" + outOfMemoryError);
-        if (outOfMemoryError && mCollageViewListener != null) {
-            mCollageViewListener.outOfMemoryError(idPhoto);
-        }
         mCntThreadDone++;
         Flog.d(TAG, "mCntThreadDone=" + mCntThreadDone + "_bmp=" + bmp + "_id=" + idPhoto);
         if (bmp != null)
@@ -1313,14 +1278,15 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
         if (mPhotoViewList == null || idPhoto >= mPhotoViewList.size()) return;
         PhotoView photoView = mPhotoViewList.get(idPhoto);
         photoView.setBitmap(bmp);
-        photoView.fitPhotoToLayout();
-        if (mCntThreadDone == mTotalThreads) {
-            Flog.d(TAG, "all load done!");
-            mCollageViewListener.onPhotosLoadDone();
-            // All the changed photos load done. Update the collageview.
-            invalidate();
-        }
+        invalidate();
     }
+
+    public void setRectF(int idPhoto, RectF rectF) {
+        PhotoView photoView = mPhotoViewList.get(idPhoto);
+        photoView.setRectF(rectF);
+        invalidate();
+    }
+
 
     /**
      * Get the type of current view that is focused/selected on collageview.
@@ -1354,7 +1320,6 @@ public class CollageView extends FrameLayout implements StickerViewListener, Pho
                 savedCollageView.release();
                 savedCollageView = null;
             }
-            mCollageViewListener.onSavedDone(path);
         }
     }
 

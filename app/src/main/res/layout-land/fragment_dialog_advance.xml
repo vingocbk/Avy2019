@@ -24,6 +24,7 @@
             android:layout_marginEnd="@dimen/icon_with_48dp"
             android:layout_marginTop="@dimen/padding_24dp"
             android:inputType="numberPassword"
+            android:imeOptions="actionDone"
             android:hint="@string/txt_pass"/>
 
     <TextView

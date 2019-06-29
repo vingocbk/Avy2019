@@ -27,6 +27,14 @@ class WordRepository(application: Application) {
         return mWordDao.getWordWithId(type)
     }
 
+    fun searchItem(word: String, select: Boolean): LiveData<List<String>> {
+        return mWordDao.searchItem(word, select)
+    }
+
+    fun searchItemInCabinet(word: String, type: String) :LiveData<List<Word>>{
+        return mWordDao.searchItemInCabinet(word, type)
+    }
+
     fun insert(word: Word) {
         insertAsyncTask(mWordDao).execute(word)
     }

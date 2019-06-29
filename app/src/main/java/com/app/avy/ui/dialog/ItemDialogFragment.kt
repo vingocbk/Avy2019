@@ -46,7 +46,7 @@ class ItemDialogFragment : DialogFragment() {
 
         arguments?.let {
             mType = it.getInt(BUNDLE_DATA)
-            var data: ArrayList<Word> = ArrayList<Word>()
+            val data: ArrayList<Word> = ArrayList<Word>()
             mWordViewModel.getWordsWithId(mType.toString()).observe(this, Observer { it ->
                 for (i in it.indices) {
                     if (it[i].select) {

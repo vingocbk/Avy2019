@@ -2,6 +2,7 @@
 <androidx.appcompat.widget.LinearLayoutCompat
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/root_advan"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:background="@color/color_black"
@@ -47,7 +48,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Model speed"/>
+                        android:text="Mode speed"/>
 
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -116,8 +117,6 @@
                                     android:id="@+id/spinner_speed"
                                     android:layout_width="@dimen/icon_with_64dp"
                                     android:layout_height="wrap_content"
-                                    app:met_floatingLabel="none"
-                                    android:background="@null"
                                     app:met_hideUnderline="true"
                                     android:textColor="@android:color/transparent"
                                     android:textColorHint="@android:color/transparent"
@@ -239,11 +238,13 @@
                             android:layout_height="0dp">
 
                         <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edt_in"
                                 style="@style/Regular_H6"
                                 android:layout_width="@dimen/icon_with_64dp"
                                 android:layout_height="48dp"
                                 app:met_floatingLabel="none"
                                 android:hint="in"
+                                android:inputType="number"
                                 android:layout_margin="@dimen/padding_8dp"
                                 android:paddingStart="@dimen/padding_8dp"
                                 android:gravity="center|start"
@@ -263,11 +264,13 @@
                             android:layout_weight="1">
 
                         <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edt_time"
                                 style="@style/Regular_H6"
                                 android:layout_width="@dimen/icon_with_64dp"
                                 android:layout_height="48dp"
                                 app:met_floatingLabel="none"
                                 android:hint="Time"
+                                android:inputType="number"
                                 android:layout_margin="@dimen/padding_8dp"
                                 android:paddingStart="@dimen/padding_8dp"
                                 android:gravity="center"
@@ -323,11 +326,13 @@
                             android:layout_height="0dp">
 
                         <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edt_out"
                                 style="@style/Regular_H6"
                                 android:layout_width="@dimen/icon_with_64dp"
                                 android:layout_height="48dp"
                                 app:met_floatingLabel="none"
                                 android:hint="out"
+                                android:inputType="number"
                                 android:layout_margin="@dimen/padding_8dp"
                                 android:paddingStart="@dimen/padding_8dp"
                                 android:gravity="center|start"
@@ -585,12 +590,86 @@
                         android:layout_marginEnd="@dimen/padding_16dp"
                         android:layout_weight="1">
                     <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_local_ip"
                             style="@style/Regular_H6"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             app:met_floatingLabel="none"
                             android:layout_margin="@dimen/padding_8dp"
                             android:paddingStart="@dimen/padding_8dp"
+                            android:gravity="center|start"
+                            android:maxLines="1"
+                            android:lines="1"
+                            android:hint="192.168.1.10"
+                            android:background="@drawable/bg_border"
+                            android:layout_centerInParent="true"
+                    />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/padding_16dp"
+                        android:layout_marginEnd="@dimen/padding_16dp"
+                        android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_ssid"
+                            style="@style/Regular_H6"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            app:met_floatingLabel="none"
+                            android:layout_margin="@dimen/padding_8dp"
+                            android:paddingStart="@dimen/padding_8dp"
+                            android:gravity="center|start"
+                            android:hint="hpt"
+                            android:background="@drawable/bg_border"
+                            android:layout_centerInParent="true"
+                    />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/padding_16dp"
+                        android:layout_marginEnd="@dimen/padding_16dp"
+                        android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_pass"
+                            style="@style/Regular_H6"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            app:met_floatingLabel="none"
+                            android:hint="@string/txt_pass"
+                            android:layout_margin="@dimen/padding_8dp"
+                            android:paddingStart="@dimen/padding_8dp"
+                            android:gravity="center|start"
+                            android:inputType="textPassword"
+                            android:background="@drawable/bg_border"
+                            android:layout_centerInParent="true"
+                    />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/padding_16dp"
+                        android:layout_marginEnd="@dimen/padding_16dp"
+                        android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_device_ip"
+                            style="@style/Regular_H6"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            app:met_floatingLabel="none"
+                            android:layout_margin="@dimen/padding_8dp"
+                            android:paddingStart="@dimen/padding_8dp"
+                            android:hint="192.162.1.100"
                             android:gravity="center|start"
                             android:background="@drawable/bg_border"
                             android:layout_centerInParent="true"
@@ -606,6 +685,7 @@
                         android:layout_marginEnd="@dimen/padding_16dp"
                         android:layout_weight="1">
                     <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_ip_wifi"
                             style="@style/Regular_H6"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
@@ -613,70 +693,7 @@
                             android:layout_margin="@dimen/padding_8dp"
                             android:paddingStart="@dimen/padding_8dp"
                             android:gravity="center|start"
-                            android:background="@drawable/bg_border"
-                            android:layout_centerInParent="true"
-                    />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:gravity="center"
-                        android:layout_marginStart="@dimen/padding_16dp"
-                        android:layout_marginEnd="@dimen/padding_16dp"
-                        android:layout_weight="1">
-                    <androidx.appcompat.widget.AppCompatEditText
-                            style="@style/Regular_H6"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            app:met_floatingLabel="none"
-                            android:hint="......"
-                            android:layout_margin="@dimen/padding_8dp"
-                            android:paddingStart="@dimen/padding_8dp"
-                            android:gravity="center|start"
-                            android:background="@drawable/bg_border"
-                            android:layout_centerInParent="true"
-                    />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:gravity="center"
-                        android:layout_marginStart="@dimen/padding_16dp"
-                        android:layout_marginEnd="@dimen/padding_16dp"
-                        android:layout_weight="1">
-                    <androidx.appcompat.widget.AppCompatEditText
-                            style="@style/Regular_H6"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            app:met_floatingLabel="none"
-                            android:layout_margin="@dimen/padding_8dp"
-                            android:paddingStart="@dimen/padding_8dp"
-                            android:gravity="center|start"
-                            android:background="@drawable/bg_border"
-                            android:layout_centerInParent="true"
-                    />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:gravity="center"
-                        android:layout_marginStart="@dimen/padding_16dp"
-                        android:layout_marginEnd="@dimen/padding_16dp"
-                        android:layout_weight="1">
-                    <androidx.appcompat.widget.AppCompatEditText
-                            style="@style/Regular_H6"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            app:met_floatingLabel="none"
-                            android:layout_margin="@dimen/padding_8dp"
-                            android:paddingStart="@dimen/padding_8dp"
-                            android:gravity="center|start"
+                            android:hint="192.168.1.0"
                             android:background="@drawable/bg_border"
                             android:layout_centerInParent="true"
                     />
@@ -700,7 +717,7 @@
                             android:paddingStart="@dimen/padding_8dp"
                             android:gravity="center|start"
                             android:background="@drawable/bg_border"
-                            android:hint="Sencity :0.28,0.28,0.28"
+                            android:hint="Sencity :0.3,0.3,0.3"
                             android:textColorHint="@color/md_grey_600_dark"
                             android:layout_centerInParent="true"
                     />
@@ -732,6 +749,7 @@
                 android:layout_centerInParent="true"
                 android:layout_alignParentEnd="true"
                 android:gravity="center"
+                android:layout_marginEnd="@dimen/padding_16dp"
                 android:text="Save"/>
 
 
@@ -747,6 +765,7 @@
                 android:textAllCaps="true"
                 android:layout_centerInParent="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/padding_16dp"
                 android:gravity="center"
                 android:text="Send"/>
 

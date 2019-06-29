@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/root_view"
                 android:orientation="horizontal"
                 android:layout_width="@dimen/with_150dp"
                 android:background="@drawable/ic_border"
@@ -19,6 +20,7 @@
             android:gravity="center">
 
         <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_circle"
                 android:src="@drawable/ic_circle_white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,6 +39,7 @@
     </RelativeLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_view"
             style="@style/Bold_H6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -18,7 +18,7 @@ public class ConstValues {
     public static final float ZOOM_IN_RATIO = 1.05f;
     public static final float ZOOM_OUT_RATIO = 0.95f;
     public static final int NO_COLOR_VALUE = 0x7604;
-    public static final float NO_VALUE = 0X113;
+    public static final float NO_VALUE = 0.5f;
     public static final int BITMAP_SCALE_VALUE = 3;
 
     public static final int COLLAGE_PHOTO_TYPE = 0x11;

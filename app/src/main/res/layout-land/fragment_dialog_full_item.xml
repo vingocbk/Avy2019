@@ -24,13 +24,14 @@
             android:layout_height="36dp"
             android:textColor="@color/md_grey_white"
             android:textColorHint="@color/md_grey_500"
-            android:gravity="center|left"
-            android:drawableStart="@drawable/ic_search_black_24dp"
+            android:gravity="center"
             android:drawablePadding="@dimen/padding_8dp"
             android:hint="@string/txt_search"
             android:background="@null"
             android:padding="@dimen/padding_4dp"
-            android:visibility="gone"
+            android:layout_below="@+id/tv_title"
+            android:imeOptions="actionSearch"
+            android:visibility="visible"
             tools:ignore="RtlSymmetry"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -38,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/tv_update"
-            android:layout_below="@+id/tv_title">
+            android:layout_below="@+id/edt_search">
 
     </androidx.recyclerview.widget.RecyclerView>
 

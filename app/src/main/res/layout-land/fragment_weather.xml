@@ -164,13 +164,14 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="center|bottom"
                         android:layout_height="match_parent">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="@dimen/icon_with_56dp"
                             android:layout_height="@dimen/icon_with_48dp"
                             android:gravity="center"
+                            android:layout_marginBottom="@dimen/padding_8dp"
                             android:background="@drawable/bg_border_weather"
                             android:orientation="vertical">
 
@@ -220,13 +221,14 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="center|bottom"
                         android:layout_height="match_parent">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="@dimen/icon_with_56dp"
                             android:layout_height="@dimen/icon_with_48dp"
                             android:gravity="center"
+                            android:layout_marginBottom="@dimen/padding_8dp"
                             android:background="@drawable/bg_border_weather"
                             android:orientation="vertical">
 
@@ -276,7 +278,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
-                        android:gravity="center"
+                        android:gravity="center|bottom"
                         android:orientation="vertical"
                         android:layout_height="match_parent">
 
@@ -284,6 +286,7 @@
                             android:layout_width="@dimen/icon_with_56dp"
                             android:layout_height="@dimen/icon_with_48dp"
                             android:gravity="center"
+                            android:layout_marginBottom="@dimen/padding_8dp"
                             android:background="@drawable/bg_border_weather"
                             android:orientation="vertical">
 

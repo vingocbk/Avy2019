@@ -79,10 +79,8 @@ class ModelFragment : Fragment() {
 
         scene!!.init()
 
-        // TODO: Alert user when there is no multitouch support (2 fingers). He won't be able to rotate or zoom
         ContentUtils.printTouchCapabilities(context!!.packageManager)
 
-        setupOnSystemVisibilityChangeListener()
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -114,7 +112,7 @@ class ModelFragment : Fragment() {
             return
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            //   hideSystemUIKitKat()
+               hideSystemUIKitKat()
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             hideSystemUIJellyBean()
         }

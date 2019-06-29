@@ -14,7 +14,7 @@ import com.lib.collageview.CollageView;
 
 public abstract class BaseView {
 
-    protected CollageView mCollageView;
+   protected CollageView mCollageView;
     protected Context mContext;
     /**
      * The index of photoview/stickerview in list of them.
@@ -27,12 +27,9 @@ public abstract class BaseView {
         mContext = collageView.getContext();
     }
 
-    public void setParentView(CollageView collageView) {
-        mCollageView = collageView;
-        mContext = collageView.getContext();
-    }
 
-    public abstract void onDraw(Canvas canvas);
+
+    public abstract void onDraw(Canvas canvas,int index);
 
     public abstract void release();
 

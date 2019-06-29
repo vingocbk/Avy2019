@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.os.Handler
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
@@ -27,27 +29,38 @@ import com.app.avy.utils.Constant
 import java.util.*
 import kotlin.collections.ArrayList
 import androidx.recyclerview.widget.DefaultItemAnimator
+import com.app.avy.module.ConfigData
+import com.app.avy.network.MyObserver
+import es.dmoral.toasty.Toasty
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 
 class ManageFragment : BaseFragment(), OnItemClickListener, ManageAdapter.OnItemSpinnerClickListener,
-    ItemDialogFragment.HandleViewListenner, View.OnClickListener {
-    val TAG = ManageFragment::class.java.simpleName
+    ItemDialogFragment.HandleViewListenner, View.OnClickListener, View.OnLongClickListener {
 
-    lateinit var ft: FragmentManager
-    lateinit var newFragment: DialogFragment
+    val TAG: String = ManageFragment::class.java.simpleName
+
     lateinit var mWordViewModel: WordViewModel
     lateinit var mRecyclerView: RecyclerView
     lateinit var mAdapter: ManageAdapter
+    lateinit var mPref: SharedPreferencesManager
     var mList: ArrayList<ManageModule> = ArrayList<ManageModule>()
     var mCount: Int = 0
     lateinit var data: ArrayList<Word>
-
+    var mHeadIP: String? = null
+    var mLastIP: String? = null
     var mScreenInch: Double = 0.0
 
     override fun getID() = R.layout.fragment_manage
 
     @SuppressLint("CheckResult")
     override fun onViewReady() {
+        mPref = SharedPreferencesManager.getInstance(activity!!)
+        mHeadIP = mPref.getStringFromSharePreferen(SharedPreferencesManager.HEADER_IP)
+        mLastIP = mPref.getStringFromSharePreferen(SharedPreferencesManager.LASST_IP)
+
         mScreenInch = Constant.getScreenInch(activity!!)
         // sample
         mCount = SharedPreferencesManager.getInstance(context!!)
@@ -65,6 +78,17 @@ class ManageFragment : BaseFragment(), OnItemClickListener, ManageAdapter.OnItem
         item_2.setOnClickListener(this)
         item_3.setOnClickListener(this)
 
+        item_1.setOnLongClickListener(this)
+        item_2.setOnLongClickListener(this)
+        item_3.setOnLongClickListener(this)
+
+        edt_search.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                Constant.hideKeyboard(activity!!)
+                searchItem((edt_search.text!!.toString().trim()))
+            }
+            true
+        }
     }
 
     override fun onItemSpinnerClick(type: Int) {
@@ -72,7 +96,7 @@ class ManageFragment : BaseFragment(), OnItemClickListener, ManageAdapter.OnItem
     }
 
     override fun handleView(type: String) {
-        // FullItemDialogFragment.getInstance(type.toString()).show(childFragmentManager, "dialog_full_item")
+
     }
 
     override fun onItemClick(id: Int) {
@@ -93,7 +117,24 @@ class ManageFragment : BaseFragment(), OnItemClickListener, ManageAdapter.OnItem
         }
     }
 
-    fun initRecyclerView() {
+    override fun onLongClick(v: View?): Boolean {
+        var type: String = " "
+        when (v!!.id) {
+            R.id.item_1 -> {
+                type = 1.toString()
+            }
+            R.id.item_2 -> {
+                type = 2.toString()
+            }
+            R.id.item_3 -> {
+                type = 3.toString()
+            }
+        }
+        FullItemDialogFragment.getInstance(type).show(childFragmentManager, "dialog_full_item")
+        return true
+    }
+
+    private fun initRecyclerView() {
         mRecyclerView.setHasFixedSize(true)
         mRecyclerView.layoutManager = GridLayoutManager(context, 4)
         mAdapter = ManageAdapter(this, this)
@@ -101,7 +142,7 @@ class ManageFragment : BaseFragment(), OnItemClickListener, ManageAdapter.OnItem
         mRecyclerView.adapter = mAdapter
     }
 
-    fun handleItem(type: String) {
+    private fun handleItem(type: String) {
         data = ArrayList<Word>()
         mWordViewModel.getWordsWithId(type.toString()).observe(this, Observer { it ->
             for (i in it.indices) {
@@ -122,8 +163,8 @@ class ManageFragment : BaseFragment(), OnItemClickListener, ManageAdapter.OnItem
         }, 100)
     }
 
-    fun handleWithDevice() {
-        var start: Int
+    private fun handleWithDevice() {
+        val start: Int
         if (9 < mScreenInch && mScreenInch < 11) {
             layout_view_2.visibility = View.GONE
             layout_item_view.visibility = View.VISIBLE
@@ -140,6 +181,67 @@ class ManageFragment : BaseFragment(), OnItemClickListener, ManageAdapter.OnItem
 
         for (i in start..mCount) {
             mList.add(ManageModule(i))
+        }
+    }
+
+    private fun searchItem(word: String) {
+        val item: ArrayList<String> = ArrayList()
+        ConfigData.getConfig()?.let {
+            val result = Constant.handleConfig(it, word).toLowerCase()
+            Log.e(TAG, "-------> $result")
+            mWordViewModel.seachItem(result.toUpperCase(), true).observe(this, Observer { it ->
+                if (it.isNotEmpty()) {
+                    for (i in it.indices) {
+                        if (item.isEmpty()) {
+                            item.add(it[i])
+                        } else if (!item.contains(it[i])) {
+                            item.add(it[i])
+                        }
+                    }
+                    Observable.merge(
+                        Constant.createOpenObservable(
+                            activity!!.application as MyApplication,
+                            item,
+                            mHeadIP!!,
+                            mLastIP!!
+                        )
+                    )
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeOn(Schedulers.io())
+                        .subscribe(MyObserver(activity!!))
+
+                    mAdapter.setItem(item)
+
+                    if (item.contains("1")) {
+                        item_1.setBackgroundResource(R.drawable.ic_border_press)
+                        img_circle_1.setImageDrawable(ContextCompat.getDrawable(activity!!, R.drawable.ic_circle_press))
+
+                        tv_view_1.setTextColor(ContextCompat.getColor(activity!!, R.color.color_control))
+                        tv_count_1.setTextColor(ContextCompat.getColor(activity!!, R.color.md_grey_white))
+
+                    }
+
+                    if (item.contains("2")) {
+                        item_2.setBackgroundResource(R.drawable.ic_border_press)
+                        img_circle_2.setImageDrawable(ContextCompat.getDrawable(activity!!, R.drawable.ic_circle_press))
+
+                        tv_view_2.setTextColor(ContextCompat.getColor(activity!!, R.color.color_control))
+                        tv_count_2.setTextColor(ContextCompat.getColor(activity!!, R.color.md_grey_white))
+
+                    }
+
+                    if (item.contains("3")) {
+                        item_3.setBackgroundResource(R.drawable.ic_border_press)
+                        img_circle_3.setImageDrawable(ContextCompat.getDrawable(activity!!, R.drawable.ic_circle_press))
+
+                        tv_view_3.setTextColor(ContextCompat.getColor(activity!!, R.color.color_control))
+                        tv_count_3.setTextColor(ContextCompat.getColor(activity!!, R.color.md_grey_white))
+
+                    }
+                } else {
+                    Toasty.info(activity!!, "Không tìm thấy kết quả.", Toasty.LENGTH_SHORT).show()
+                }
+            })
         }
     }
 }

@@ -201,6 +201,7 @@
 
 
                 <TextView
+                        android:id="@+id/tv_turn_light"
                         style="@style/Regular_H5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -234,9 +235,11 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img_bg_kitchen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_svg_lady_01"
+                    android:scaleType="fitXY"
                     android:layout_centerInParent="true"/>
 
             <com.lib.collageview.CollageView
@@ -291,6 +294,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/md_grey_white"
                             android:textAllCaps="true"
+
                             android:padding="@dimen/padding_4dp"
                             android:text="@string/txt_setup"/>
 

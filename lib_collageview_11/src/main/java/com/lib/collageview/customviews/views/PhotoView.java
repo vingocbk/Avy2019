@@ -23,9 +23,12 @@ import com.lib.collageview.CollageView;
 import com.lib.collageview.R;
 import com.lib.collageview.helpers.ConstValues;
 import com.lib.collageview.helpers.Flog;
+import com.lib.collageview.helpers.Utils;
 import com.lib.collageview.helpers.bitmap.BitmapHelper;
 import com.lib.collageview.helpers.bitmap.CanvasUtils;
 import com.lib.collageview.interfaces.PhotoViewListener;
+
+import java.util.Arrays;
 
 /**
  * Created by vutha on 3/22/2017.
@@ -34,7 +37,6 @@ public class PhotoView extends BaseView {
 
     private static final String TAG = PhotoView.class.getSimpleName();
     private static final boolean USE_OLD_CODE_SCALE = false;
-    // we can be in one of these 3 states
     private static final int NONE = 0;
     private static final int DRAG = 1;
     private static final int ZOOM = 2;
@@ -42,6 +44,7 @@ public class PhotoView extends BaseView {
     public final float MAX_ZOOM_VALUE = 8F;
     private final float BITMAP_SCALE = 0.7f;
     private float mWidthSignAddition = 25;
+
     /**
      * Initialize local variable for check conditions and save values.
      * Used for rotating and moving photoview.
@@ -53,6 +56,7 @@ public class PhotoView extends BaseView {
     private float pointerZoomCoeff = 0.05f;
     private float oldScale = 0f;
     private float mLastX, mLastY;
+    private boolean isFocus = false;
     /**
      * The current path of photoview.
      */
@@ -78,9 +82,9 @@ public class PhotoView extends BaseView {
      */
     private Rect mRect;
     private RectF mRectF;
+    private RectF mRectFItem;
     private Path mRoundPath;
     private float mRoundValue = 0;
-    private boolean isSavedState = false;
     /**
      * Scale-value bound [minScale, maxScale].
      */
@@ -98,11 +102,9 @@ public class PhotoView extends BaseView {
     private boolean mIsFiltered = false;
     private PointF mScaleCenter = new PointF();
     private PointF mLastMovePoint = new PointF();
-    private float mScaleBase = 0;
     private float total = 0;
     private float[] preCoords = new float[4];
     private float[] curCoords = new float[4];
-    private float preScale = 0F;
     // these matrices will be used to move and zoom image
     private Matrix savedMatrix = new Matrix();
     private int mode = NONE;
@@ -136,7 +138,6 @@ public class PhotoView extends BaseView {
 
         mScaleCenter.set(0, 0);
         mLastMovePoint.set(0, 0);
-        mScaleBase = 0;
     }
 
     private void initPaints() {
@@ -155,10 +156,9 @@ public class PhotoView extends BaseView {
          * Initialize paint for border-line when photoview is selected.
          * */
         mBorderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        colorBorderDefault = ContextCompat.getColor(mContext, R.color.borderDefault);
+        colorBorderDefault = Color.WHITE;
+        mBorderPaint.setAntiAlias(true);
         mBorderPaint.setColor(colorBorderDefault);
-//        mBorderPaint.setColor(ContextCompat.getColor(mContext, android.R.color.
-// parent));
         setStrokeStylePaint(mBorderPaint, mStrokeWidth);
 
         mHighLightPaint = new Paint();
@@ -168,40 +168,46 @@ public class PhotoView extends BaseView {
          * Initialize paint for line of addition-sign used to suggest that user select photo from gallery.
          * */
         mLinePaint = new Paint();
-        mLinePaint.setColor(ContextCompat.getColor(mContext, R.color.colorSecondaryDark));
-        mLinePaint.setStyle(Paint.Style.STROKE);
-        mLinePaint.setStrokeWidth(mContext.getResources().getDimension(R.dimen.collage_select_line_width));
+        mLinePaint.setAntiAlias(true);
+        mLinePaint.setStyle(Paint.Style.FILL);
+
+        mLinePaint.setColor(Color.RED);
+        mLinePaint.setTextSize(14);
+
     }
 
     private void setStrokeStylePaint(Paint paint, float strokeWidth) {
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(strokeWidth);
+        paint.setStrokeWidth(3f);
         paint.setAntiAlias(true);
     }
 
+
+    /**
+     * ANTI-ALIAS on clipPath:
+     * Draw the Path on top of the bitmap as a blurred transparent line some pixels wide
+     * with paint.setXfermode(new PorterDuffXfermode(Mode.DST_IN)).
+     *//*
+//        canvas.drawPath(mPath, mAntiAliasPaint);
+    }*/
     @Override
-    public void onDraw(Canvas canvas) {
+    public void onDraw(Canvas canvas, int index) {
 
-        drawRound(canvas);
-
+        // drawRound(canvas);
         CanvasUtils.clipPath(canvas, mPath);
-//        canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
-        if (mBitmap != null) {
-            canvas.drawBitmap(mBitmap, mMatrix, mPaint);
-//            Flog.d(TAG, "mIsSelected=" + mIsSelected);
-        } else {
-            if (!isSavedState)
-                drawAddPhotoviewSign(canvas);
+        if (mRectFItem != null) {
+            if (isFocus)
+                mPaint.setColor(Color.DKGRAY);
+            else
+                mPaint.setColor(Color.TRANSPARENT);
+            canvas.drawRect(mRectFItem, mPaint);
         }
 
-//        Flog.d(TAG, "c1=" + isSavedState + "_c3=" + (mBitmap != null));
-        if (mBitmap == null) {
-            setColorPathBorder(colorBorderDefault);
-        } else {
-            if (mBorderPaint.getColor() == colorBorderDefault && mBorderPaint.getShader() == null) {
-                mBorderPaint.setColor(Color.TRANSPARENT);
-            }
+        if (Arrays.asList(Utils.arr).contains(index)) {
+            drawAddPhotoviewSign(canvas, index);
+
         }
+
         drawBorderLine(canvas);
 
         if (mBitmap != null && mIsSelected) {
@@ -232,11 +238,8 @@ public class PhotoView extends BaseView {
      *               a drawing primitive (e.g. Rect, Path, text, Bitmap),
      *               and a paint (to describe the colors and styles for the drawing).
      */
-    private void drawAddPhotoviewSign(Canvas canvas) {
-        canvas.drawLine(mRectF.centerX() - mWidthSignAddition, mRectF.centerY(),
-                mRectF.centerX() + mWidthSignAddition, mRectF.centerY(), mLinePaint);
-        canvas.drawLine(mRectF.centerX(), mRectF.centerY() - mWidthSignAddition,
-                mRectF.centerX(), mRectF.centerY() + mWidthSignAddition, mLinePaint);
+    private void drawAddPhotoviewSign(Canvas canvas, int index) {
+        canvas.drawText(String.valueOf(Utils.mapIndex(index)), mRectF.centerX() / 2, mRectF.centerY() / 2, mLinePaint);
     }
 
     @Override
@@ -787,12 +790,12 @@ public class PhotoView extends BaseView {
         if (scaleW < scaleH)
             scaleW = scaleH;
         /*
-        * Translate to center of rect:
-        * */
+         * Translate to center of rect:
+         * */
         mMatrix.setTranslate(leftTranslateX, topTranslateY);
         /*
-        * Center crop photo to rect:
-        * */
+         * Center crop photo to rect:
+         * */
         mMatrix.postScale(scaleW, scaleW, centerX, centerY);
     }
 
@@ -808,8 +811,8 @@ public class PhotoView extends BaseView {
     private void drawRound(Canvas canvas) {
         if (mRoundValue <= 0) return;
         mRoundPath.reset();
-        mRoundPath.addRoundRect(mRectF, mRoundValue, mRoundValue, Path.Direction.CW);
-        CanvasUtils.clipPath(canvas, mRoundPath, Region.Op.REPLACE);
+        //  mRoundPath.addRoundRect(mRectF, mRoundValue, mRoundValue, Path.Direction.CW);
+        // CanvasUtils.clipPath(canvas, mRoundPath, Region.Op.REPLACE);
     }
 
     /**
@@ -822,12 +825,12 @@ public class PhotoView extends BaseView {
      *               and a paint (to describe the colors and styles for the drawing).
      */
     public void drawBorderLine(Canvas canvas) {
-        Flog.d(TAG, "drawBorderLine");
+        Flog.d(TAG, "drawBorderLine" + mRoundPath);
         canvas.drawPath(mPath, mBorderPaint);
 
         if (mRoundValue <= 0) return;
         canvas.drawPath(mRoundPath, mBorderPaint);
-//        canvas.drawRoundRect(mRectF, mRoundValue, mRoundValue, mBorderPaint);
+        //  canvas.drawRoundRect(mRectF, mRoundValue, mRoundValue, mBorderPaint);
     }
 
     public Path getPath() {
@@ -957,10 +960,14 @@ public class PhotoView extends BaseView {
 
     @Override
     public void setBitmap(Bitmap bitmap) {
-//        mBitmap = BitmapHelper.recycle(mBitmap);
         mBitmap = bitmap;
         Flog.d(TAG, "setBitmap=" + mBitmap);
         initScaleLimit();
+    }
+
+    public void setRectF(RectF rectF) {
+        mRectFItem = new RectF();
+        mRectFItem = rectF;
     }
 
     public RectF getRectF() {
@@ -1013,8 +1020,12 @@ public class PhotoView extends BaseView {
         mMatrix = matrix;
     }
 
-    public void setSavedState(boolean savedState) {
-        isSavedState = savedState;
+    public void setFocus(boolean focus) {
+        isFocus = focus;
+    }
+
+    public boolean getFocus() {
+        return isFocus;
     }
 
     public void setColorPathBorder(int color) {

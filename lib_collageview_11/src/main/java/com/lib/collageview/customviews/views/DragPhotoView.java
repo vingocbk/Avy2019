@@ -40,7 +40,7 @@ public class DragPhotoView extends BaseView {
     }
 
     @Override
-    public void onDraw(Canvas canvas) {
+    public void onDraw(Canvas canvas,int index) {
         if (mBitmap != null) {
             canvas.drawBitmap(mBitmap, mMatrix, mDragPaint);
         }

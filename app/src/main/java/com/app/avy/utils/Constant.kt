@@ -1,5 +1,6 @@
 package com.app.avy.utils
 
+import android.app.Activity
 import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
@@ -13,22 +14,31 @@ import java.util.regex.Pattern
 import kotlin.collections.ArrayList
 import androidx.fragment.app.FragmentActivity
 import com.app.avy.BaseActivity
+import android.content.Context.INPUT_METHOD_SERVICE
+import androidx.core.content.ContextCompat.getSystemService
+import com.app.avy.MyApplication
+import com.app.avy.module.ConfigModule
+import io.reactivex.Observable
 
 
 object Constant {
 
-    val SIZE_KEY = 10
+    const val HTTP_CONFIG = "http://192.168.4.1"
 
-    val BUNDLE_WEB_URL = "BUNDLE_WEB_URL"
+    const val HTTP = "http://"
 
-    val BASE_URL_WEATHER = "http://api.openweathermap.org/data/2.5/"
+    const val SIZE_KEY = 10
 
-    val API_KEY_WEATHER = "755e0b1311fb0c86d66bbabf8201a5c1"
+    const val BUNDLE_WEB_URL = "BUNDLE_WEB_URL"
 
-    val OFF_VOLUME = 20
-    val ON_VOLUME = 21
-    val INCREASE_VOLUME = 22
-    val REDUCTION_VOLUME = 23
+    const val BASE_URL_WEATHER = "http://api.openweathermap.org/data/2.5/"
+
+    const val API_KEY_WEATHER = "755e0b1311fb0c86d66bbabf8201a5c1"
+
+    const val OFF_VOLUME = 20
+    const val ON_VOLUME = 21
+    const val INCREASE_VOLUME = 22
+    const val REDUCTION_VOLUME = 23
 
     const val MONTHLY_VIEW = 1
     const val YEARLY_VIEW = 2
@@ -107,13 +117,6 @@ object Constant {
     const val WEEK_START_TIMESTAMP = "week_start_timestamp"
     const val SOURCE_SIMPLE_CALENDAR = "simple-calendar"
     const val CALDAV = "Caldav"
-
-
-
-
-
-
-
 
     var itemDefault: ArrayList<String> = arrayListOf(
         "Hạt nêm",
@@ -243,6 +246,7 @@ object Constant {
         }
     }
 
+
     fun getScreenInch(context: FragmentActivity): Double {
         val dm = DisplayMetrics()
         context.windowManager.defaultDisplay.getMetrics(dm)
@@ -256,5 +260,53 @@ object Constant {
     }
 
     fun getNowSeconds() = System.currentTimeMillis() / 1000L
+
+    fun handleConfig(data: ConfigModule, word: String): String {
+        var result = word
+        for (i in data.all.indices) {
+            for (j in data.all[i].models.indices) {
+                if (result.toUpperCase().contains(data.all[i].models[j].toUpperCase())) {
+                    result = result.toUpperCase()
+                        .replace(data.all[i].models[j].toUpperCase(), data.all[i].name.toUpperCase())
+                }
+            }
+        }
+        Log.e("Constant", "handleConfig--- $result")
+        return result
+    }
+
+     fun createOpenObservable(
+        application: MyApplication,
+        item: ArrayList<String>,
+        headIP: String,
+        lastIP: String
+    ): List<Observable<*>> {
+        val result = ArrayList<Observable<*>>()
+        for (i in item.indices) {
+            result.add(
+                application.retrofitHelper()
+                    .getNetworkService("$HTTP$headIP".plus(lastIP.toInt() + item[i].toInt()))
+                    .openWindow()
+            )
+        }
+        return result
+    }
+
+     fun createCloseObservable(
+        application: MyApplication,
+        item: ArrayList<String>,
+        headIP: String,
+        lastIP: String
+    ): List<Observable<*>> {
+        val result = ArrayList<Observable<*>>()
+        for (i in item.indices) {
+            result.add(
+                application.retrofitHelper()
+                    .getNetworkService("$HTTP$headIP".plus(lastIP.toInt() + item[i].toInt()))
+                    .closeWindow()
+            )
+        }
+        return result
+    }
 
 }

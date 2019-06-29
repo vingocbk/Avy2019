@@ -477,9 +477,6 @@ public class BitmapUtil {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             return null;
-        } catch (IOException e2) {
-            e2.printStackTrace();
-            return null;
         }
     }
 

@@ -17,17 +17,15 @@ import kotlinx.android.synthetic.main.item_cabinet.view.*
 import kotlin.collections.ArrayList
 import android.content.Context.INPUT_METHOD_SERVICE
 import android.view.inputmethod.InputMethodManager
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getSystemService
 
 
 class ManageAdapter(var listener: OnItemClickListener, var listener1: OnItemSpinnerClickListener) :
     RecyclerView.Adapter<ManageAdapter.ViewHolder>() {
-    lateinit var spinnerAdapter: ManageSpinnerAdapter
     var mData: List<ManageModule> = ArrayList<ManageModule>()
     lateinit var mWordViewModel: WordViewModel
-    var startClickTime: Long = 0
-    private val MAX_CLICK_DURATION = 200
-
+    var mListItemSelect: List<String> = ArrayList<String>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -54,10 +52,30 @@ class ManageAdapter(var listener: OnItemClickListener, var listener1: OnItemSpin
             return@setOnLongClickListener true
         }
 
+        for (i in mListItemSelect.indices) {
+            if (mData[position].count == mListItemSelect[i].toInt()) {
+                holder.root_view.setBackgroundResource(R.drawable.ic_border_press)
+                holder.img_circle.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        holder.itemView.context,
+                        R.drawable.ic_circle_press
+                    )
+                )
+
+                holder.tv_view.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.color_control))
+                holder.tv_count.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.md_grey_white))
+
+
+            }
+        }
+
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tv_count = itemView.tv_count
+        val root_view = itemView.root_view
+        val img_circle = itemView.img_circle
+        val tv_view = itemView.tv_view
     }
 
     fun setData(list: ArrayList<ManageModule>) {
@@ -66,6 +84,10 @@ class ManageAdapter(var listener: OnItemClickListener, var listener1: OnItemSpin
 
     interface OnItemSpinnerClickListener {
         fun onItemSpinnerClick(type: Int)
+    }
+
+    fun setItem(list: ArrayList<String>) {
+        mListItemSelect = list
     }
 
 }

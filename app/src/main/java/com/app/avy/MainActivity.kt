@@ -39,6 +39,7 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
     val TAG = MainActivity::class.java.simpleName
 
     var count: Int = 0
+    var tesst: Int = 0
     var mTvCount: AppCompatTextView? = null
 
     private var mPermissions = arrayOf(
@@ -75,7 +76,7 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
             )
         }
         initCheckPermission()
-        supportFragmentManager.beginTransaction().replace(R.id.container_main, HomeFragment.newInstance(this))
+        supportFragmentManager.beginTransaction().add(R.id.container_main, HomeFragment.newInstance(this))
             .addToBackStack(HomeFragment::class.java.simpleName)
             .commit()
         onEvenClick()
@@ -91,7 +92,8 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
         mSnownoySupport?.stopRecording()
         showDialog()
         listen()
-        //mTvCount?.text = count.toString()
+        tesst++
+        mTvCount?.text = tesst.toString()
     }
 
     override fun onReadyForSpeech(params: Bundle?) {
@@ -206,7 +208,7 @@ class MainActivity : BaseActivity(), View.OnClickListener, OnItemClickListener, 
         when (id) {
             R.id.layout_setup -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.container_main, SetupHotkeyFragment())
+                    .add(R.id.container_main, SetupHotkeyFragment())
                     .addToBackStack(SetupHotkeyFragment::class.java.simpleName)
                     .commit()
             }

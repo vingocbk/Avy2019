@@ -2,6 +2,7 @@ package com.app.avy.ui.fragment.setting
 
 import android.content.Context
 import android.media.AudioManager
+import android.view.MotionEvent
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.SeekBar
@@ -12,7 +13,8 @@ import com.app.avy.ui.dialog.AdvancedDialogFragment
 import com.app.avy.utils.SharedPreferencesManager
 import kotlinx.android.synthetic.main.fragment_setting_cabinet.*
 
-class SettingCabinetFragment : BaseFragment(), View.OnClickListener, SeekBar.OnSeekBarChangeListener {
+class SettingCabinetFragment : BaseFragment(), View.OnClickListener, SeekBar.OnSeekBarChangeListener,
+    View.OnTouchListener {
     lateinit var listener: OnItemClickListener
 
     private var audioManager: AudioManager? = null
@@ -35,6 +37,7 @@ class SettingCabinetFragment : BaseFragment(), View.OnClickListener, SeekBar.OnS
 
     override fun onViewReady() {
         tv_setting_advanced.setOnClickListener(this)
+        root_setting_cabin.setOnTouchListener(this)
         setDataSpinner()
 
         /*audioManager = context!!.getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -51,6 +54,8 @@ class SettingCabinetFragment : BaseFragment(), View.OnClickListener, SeekBar.OnS
             }
         }
     }
+
+    override fun onTouch(v: View?, event: MotionEvent?) = true
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
         audioManager!!.setStreamVolume(

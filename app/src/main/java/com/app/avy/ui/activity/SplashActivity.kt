@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.app.avy.BaseActivity
 import com.app.avy.MainActivity
+import com.app.avy.MyApplication
 import com.app.avy.R
 import com.app.avy.database.cabinet.Cabinet
 import com.app.avy.database.cabinet.CabinetViewModle
@@ -14,15 +15,24 @@ import com.app.avy.database.hotkey.HokeyViewModle
 import com.app.avy.database.hotkey.Hotkey
 import com.app.avy.database.word.Word
 import com.app.avy.database.word.WordViewModel
+import com.app.avy.module.ConfigData
+import com.app.avy.module.ConfigModule
 import com.app.avy.utils.Constant
 import com.app.avy.utils.SharedPreferencesManager
+import com.google.gson.Gson
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 
 
 class SplashActivity : BaseActivity() {
+    val TAG = SplashActivity::class.java.simpleName
     lateinit var mHotkeyViewModel: HokeyViewModle
     lateinit var mCabinetViewModle: CabinetViewModle
     lateinit var mWordViewModel: WordViewModel
     var mCount: Int = 0
+
+    var tesst = "tim nước mạn"
 
     override fun getId() = R.layout.splash_activity
 
@@ -42,7 +52,6 @@ class SplashActivity : BaseActivity() {
     }
 
     fun handleHotkey() {
-
         mHotkeyViewModel.getAllWords().observe(this,
             Observer<List<Hotkey>> {
                 if (it.isEmpty()) {
@@ -100,5 +109,32 @@ class SplashActivity : BaseActivity() {
 
         SharedPreferencesManager.getInstance(this)
             .storeStringInSharePreferen(SharedPreferencesManager.ADVANCED_PASS, "12345")
+
+
+
+        (application as MyApplication).retrofitHelper().getNetworkService("https://pastebin.com/raw/")
+            .getConfig()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : io.reactivex.Observer<ConfigModule> {
+                override fun onComplete() {
+                    Log.e(TAG, "-----> onComplete")
+
+                }
+
+                override fun onSubscribe(d: Disposable) {
+                }
+
+                override fun onNext(t: ConfigModule) {
+                    Log.e(TAG, "-----> ${Gson().toJson(t)}")
+                    ConfigData.setConfig(t)
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.e(TAG, "----->onError  ${e.message}")
+
+                }
+            })
     }
+
 }

@@ -10,5 +10,4 @@ class Hotkey(
     @ColumnInfo(name = "hotkey") var hotkey: String,
     @ColumnInfo(name = "view") var view: String,
     @ColumnInfo(name = "save") var isSave: Boolean
-
 )

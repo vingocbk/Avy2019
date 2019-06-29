@@ -20,6 +20,7 @@
             android:drawablePadding="@dimen/padding_8dp"
             android:paddingStart="@dimen/padding_16dp"
             android:hint="@string/txt_search"
+            android:imeOptions="actionSearch"
             tools:ignore="RtlSymmetry"/>
 
 
